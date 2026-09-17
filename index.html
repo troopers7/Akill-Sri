@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Akil | Temple Architecture & Sculptures</title>
+  <meta name="theme-color" content="#657A5B">
+  <meta name="description" content="A world-class sacred architectural studio crafting South Indian temple sanctuaries, Vastu master plans, monolithic Chola granite vimanas, and Rajagopurams engineered for a thousand years.">
+  
+  <!-- Preload Luxury Editorial Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/src/styles/variables.css">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/components.css">
+  <link rel="stylesheet" href="/src/styles/refinements.css">
+</head>
+<body>
+  <a class="skip-link" href="#app-view">Skip to content</a>
+
+  <!-- Sticky Luxury Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="#home" class="brand-logo" aria-label="Sri Akil Architecture Home">
+        <span class="brand-title">SRI AKIL</span>
+        <span class="brand-subtitle">Temple architecture & sculptures</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
+          <li><a href="#projects" class="nav-link" data-page="projects">Projects</a></li>
+          <li><a href="#project-detail" class="nav-link" data-page="project-detail">Case Study</a></li>
+          <li><a href="#services" class="nav-link" data-page="services">Services</a></li>
+          <li><a href="#temple-design" class="nav-link" data-page="temple-design">Temple Design</a></li>
+          <li><a href="#about" class="nav-link" data-page="about">About</a></li>
+          <li><a href="#process" class="nav-link" data-page="process">Process</a></li>
+          <li><a href="#insights" class="nav-link" data-page="insights">Insights</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Ambient Temple Chime Sound Toggle -->
+        <button class="audio-toggle-btn" id="audio-toggle" title="Play Sacred Temple Chime" aria-label="Toggle Temple Bell Chime" aria-pressed="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+          </svg>
+        </button>
+
+        <a href="#start-project" class="btn btn-gold" style="padding: 10px 22px; font-size: 0.75rem;" data-page="start-project">
+          Start Project <span class="btn-arrow">→</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <nav class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation" inert>
+    <a href="#home" class="mobile-nav-link active" data-page="home">01. Home</a>
+    <a href="#projects" class="mobile-nav-link" data-page="projects">02. Projects Gallery</a>
+    <a href="#project-detail" class="mobile-nav-link" data-page="project-detail">03. Project Case Study</a>
+    <a href="#services" class="mobile-nav-link" data-page="services">04. Disciplines & Services</a>
+    <a href="#temple-design" class="mobile-nav-link" data-page="temple-design">05. Temple Design & Anatomy</a>
+    <a href="#about" class="mobile-nav-link" data-page="about">06. Legacy & Sthapathis</a>
+    <a href="#process" class="mobile-nav-link" data-page="process">07. 8-Stage Process</a>
+    <a href="#insights" class="mobile-nav-link" data-page="insights">08. Architectural Insights</a>
+    <a href="#start-project" class="btn btn-gold" style="margin-top: 24px;" data-page="start-project">
+      START YOUR PROJECT →
+    </a>
+  </nav>
+
+  <!-- Dynamic Application Page Container -->
+  <main id="app-view" tabindex="-1">
+    <noscript>Please enable JavaScript to explore the portfolio and project planner.</noscript>
+    <!-- Rendered dynamically by src/main.js based on route hash -->
+  </main>
+
+  <!-- Global Modals -->
+  <!-- Case Study Lightbox Modal -->
+  <div class="modal-overlay" id="case-study-modal" role="dialog" aria-modal="true" aria-label="Case study" inert>
+    <div class="modal-dialog" id="case-study-modal-dialog">
+      <button class="modal-close-btn" id="modal-close-case-study" aria-label="Close Case Study">&times;</button>
+      <div id="modal-case-study-content"></div>
+    </div>
+  </div>
+
+  <!-- Insights Reader Modal -->
+  <div class="modal-overlay" id="insight-reader-modal" role="dialog" aria-modal="true" aria-label="Architectural journal reader" inert>
+    <div class="modal-dialog" style="max-width: 860px;" id="insight-reader-dialog">
+      <button class="modal-close-btn" id="modal-close-insight" aria-label="Close Article">&times;</button>
+      <div id="modal-insight-content"></div>
+    </div>
+  </div>
+
+  <!-- Global Architectural Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3 class="gold-text">Sri Akil</h3>
+          <p style="font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-primary);">
+            Sacred Temple Architecture & Construction
+          </p>
+          <p class="footer-creed">
+            Reviving thousand-year Chola and Dravidian stone mastery. We engineer sacred sanctuaries where timeless Agama geometry converges with contemporary structural permanence.
+          </p>
+          <div style="margin-top: var(--space-4);">
+            <a href="#start-project" class="btn btn-outline-gold" style="font-size: 0.75rem; padding: 10px 20px;">
+              Commission A Sanctuary →
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Sacred Home</a></li>
+            <li><a href="#projects">Project Portfolio</a></li>
+            <li><a href="#project-detail">Case Studies</a></li>
+            <li><a href="#services">Architectural Disciplines</a></li>
+            <li><a href="#temple-design">Temple Styles & Anatomy</a></li>
+            <li><a href="#about">Studio Heritage</a></li>
+            <li><a href="#process">8-Stage Progression</a></li>
+            <li><a href="#insights">Heritage Journal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Architectural Studios</h4>
+          <div class="studio-locations">
+            <div class="location-item">
+              <span class="location-city">Thanjavur (Craft Guild)</span>
+              <span>Kalaivani Salai, Kumbakonam Corridor, TN</span>
+            </div>
+            <div class="location-item">
+              <span class="location-city">Chennai (Design Studio)</span>
+              <span>Boat Club Road, R.A. Puram, Chennai</span>
+            </div>
+            <div class="location-item">
+              <span class="location-city">London (Global Liaison)</span>
+              <span>Berkeley Square, Mayfair, London W1</span>
+            </div>
+            <div class="location-item">
+              <span class="location-city">Singapore (SE Asia)</span>
+              <span>Marina Boulevard, Tower 2, Singapore</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Canonical Archival</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            Receive our quarterly monographs on lithic conservation, Dravidian acoustics, and newly consecrated sacred projects.
+          </p>
+          <a href="#insights" class="btn btn-outline-gold" style="margin-top: 20px;">Explore the Journal →</a>
+          <p style="font-size: 0.72rem; color: var(--text-dim); margin-top: 8px;">
+            Certified Agama & Shilpa Shastra compliant.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Sri Akil SACRED ARCHITECTURAL STUDIO. ALL RIGHTS RESERVED.</p>
+        <p class="editorial-italic" style="color: var(--gold-primary); font-size: 0.95rem;">
+          "यत्र विश्वं भवत्येकनीडम् — Where the entire cosmos finds a single nest in stone."
+        </p>
+        <div class="footer-bottom-links">
+          <a href="#about">Privacy & Trust</a>
+          <a href="#start-project">Consultation Terms</a>
+          <a href="#temple-design">Agama Canon</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top" hidden>↑</button>
+  <div id="site-status" class="sr-only" role="status" aria-live="polite"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

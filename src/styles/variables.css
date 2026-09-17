@@ -1,0 +1,78 @@
+:root {
+  /* Color Palette - Light Sage & Bronze */
+  --bg: #FAF7EF; /* Background */
+  --primary: #657A5B; /* Sage Green (primary) */
+  --accent: #B08D57; /* Bronze accent */
+  --section-bg: #E9E6D8; /* Section background */
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --card-bg-hover: rgba(255, 255, 255, 0.98);
+
+  --text-primary: #343A32; /* Main text */
+  --text-muted: #6b6b61;
+  --text-soft: #5a5f56;
+  --text-dim: #6b6b61;
+
+  /* Compatibility tokens used by the existing page templates. */
+  --bg-dark: var(--bg);
+  --bg-surface: var(--section-bg);
+  --bg-card: var(--card-bg);
+  --bg-card-hover: var(--card-bg-hover);
+  --text-ivory: #FAF7EF;
+  --text-ivory-soft: var(--text-soft);
+  --gold-primary: #806338;
+  --gold-bright: #806338;
+  --gold-border: rgba(176, 141, 87, 0.3);
+  --gold-border-hover: rgba(176, 141, 87, 0.6);
+  --primary-deep: #4D6144;
+  --header-height: 84px;
+
+  /* Bronze variables (replacing previous gold tokens) */
+  --bronze-primary: #B08D57;
+  --bronze-bright: #806338;
+  --bronze-pale: #EFE1C9;
+  --bronze-deep: #8B6B3F;
+  --bronze-border: rgba(176, 141, 87, 0.22);
+  --bronze-border-hover: rgba(176, 141, 87, 0.55);
+  --bronze-glow: rgba(176, 141, 87, 0.12);
+  --bronze-gradient: linear-gradient(135deg, #B08D57 0%, #D3B285 50%, #8B6B3F 100%);
+  --bronze-text-gradient: linear-gradient(135deg, #343A32 0%, #B08D57 60%, #8B6B3F 100%);
+
+  --neutral-1: #CFC9BF;
+  --neutral-2: #BFB8AA;
+
+  --border-subtle: rgba(52, 58, 50, 0.06);
+  --border-glass: rgba(52, 58, 50, 0.04);
+
+  /* Typography */
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* 8px Spacing System */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-16: 128px;
+  --space-20: 160px;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 4px 12px rgba(52, 58, 50, 0.05);
+  --shadow-md: 0 12px 32px rgba(52, 58, 50, 0.09);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.08);
+  --shadow-bronze: 0 0 35px rgba(176,141,87,0.10);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Container */
+  --container-max: 1380px;
+  --container-pad: 32px;
+}
