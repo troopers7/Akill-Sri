@@ -271,12 +271,12 @@ function renderHomePage() {
         <div class="philosophy-grid">
           <div>
             <span class="section-tag">Studio Philosophy</span>
-            <h2>Where Ancient Agama Canons Meet Contemporary Engineering.</h2>
+            <h2>Where old temple rules meet modern engineering.</h2>
             <p class="lead">
-              A temple is not merely a structure of worship; it is the cosmic being—the Viraat Purusha—rendered into indestructible stone.
+              A temple is not just a prayer hall; it is the cosmic body—the Viraat Purusha—made into strong stone.
             </p>
             <p>
-              For nearly a century, our studio has preserved the heroic granite masonry traditions of the Imperial Cholas and Classical Dravidian dynasties. We reject fragile reinforced concrete that deteriorates within decades. Instead, we engineer sanctuaries out of virgin black Krishna granite (Karunkal), using dry-interlocking tenons and sacred Ayadi mathematical ratios.
+              For almost 25 years, our studio has kept alive the granite building style. We avoid weak concrete that breaks in a few decades. Instead, we build sanctuaries with pure black Krishna granite (Karunkal), using dry stone joints and sacred Ayadi ratios.
             </p>
             <div style="margin-top: var(--space-4);">
               <a href="#about" class="btn btn-ghost">
