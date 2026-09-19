@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 
-const routes = ['home', 'projects', 'project-detail', 'services', 'temple-design', 'about', 'process', 'insights', 'start-project'];
+const routes = ['home', 'projects', 'project-detail', 'services', 'temple-design', 'about', 'process', 'insights', 'contact', 'start-project'];
 
 for (const width of [320, 390, 768, 1024, 1440]) {
   test(`all routes render without page overflow at ${width}px`, async ({ page }) => {
@@ -135,4 +135,22 @@ test('anatomy and process selection preserve keyboard focus', async ({ page }) =
   await stage.click();
   await expect(stage).toBeFocused();
   await expect(stage).toHaveAttribute('aria-pressed', 'true');
+});
+
+test('contact page validates inputs and submits inquiry', async ({ page }) => {
+  await page.goto('/#contact');
+  await expect(page.locator('main h1')).toHaveText(/Connect with Our Master Architects/);
+  await page.locator('#btn-submit-contact').click();
+  await expect(page.locator('#contact-feedback')).toBeVisible();
+  await expect(page.locator('#contact-feedback')).toHaveClass(/error/);
+
+  await page.locator('#contact-name').fill('Sundar Raman');
+  await page.locator('#contact-email').fill('sundar@example.com');
+  await page.locator('#contact-phone').fill('+91 98400 12345');
+  await page.locator('#contact-message').fill('Seeking Agama advisory for a monolithic Krishna granite Vimana on a 5-acre property.');
+  await page.locator('#btn-submit-contact').click();
+
+  await expect(page.locator('#contact-feedback')).toBeVisible();
+  await expect(page.locator('#contact-feedback')).toHaveClass(/success/);
+  await expect(page.locator('#contact-feedback')).toContainText('AKIL-INQ-');
 });

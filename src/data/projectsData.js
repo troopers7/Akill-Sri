@@ -1,7 +1,7 @@
 export const projectsData = [
   {
     id: "thanjavur-vimana",
-    title: "The Monolithic Shiva Vimana",
+    title: "Kaalashthri Temple",
     subtitle: "Imperial Chola Architectural Sanctuary",
     category: "chola",
     location: "Kumbakonam Valley, Tamil Nadu",
@@ -11,7 +11,7 @@ export const projectsData = [
     footprint: "48,000 sq.ft Complex",
     vimanaHeight: "108 Feet (33.5m)",
     masterSthapathi: "Dr. K. Sthapathi, Senior Shilpa Guru",
-    image: "/assets/hero_temple.jpg",
+    image: "/assets/kalahasthi_temple.jpg",
     tags: ["Imperial Chola", "Monolithic Granite", "Consecrated 2024"],
     stats: {
       graniteWeight: "18,400 Metric Tonnes",

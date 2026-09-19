@@ -135,7 +135,8 @@ window.addEventListener('scroll', updateScrollUI, { passive: true });
 const pageNames = {
   home: 'Temple Architecture & Sculptures', projects: 'Projects', 'project-detail': 'Case Study',
   services: 'Services', 'temple-design': 'Temple Design', about: 'Our Heritage',
-  process: 'Our Process', insights: 'Heritage Journal', 'start-project': 'Project Planner'
+  process: 'Our Process', insights: 'Heritage Journal', 'start-project': 'Project Planner',
+  contact: 'Contact Us'
 };
 function handleRoute() {
   projectWizard.save();
@@ -192,6 +193,9 @@ function renderCurrentPage() {
       break;
     case 'insights':
       renderInsightsPage();
+      break;
+    case 'contact':
+      renderContactPage();
       break;
     case 'start-project':
       projectWizard.render();
@@ -301,13 +305,13 @@ function renderHomePage() {
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Featured Sanctuary</span>
-          <h2>The Monolithic Shiva Vimana</h2>
+          <h2>Kaalashthri Temple</h2>
           <p>An Imperial Chola masterpiece constructed from 18,400 metric tonnes of virgin Krishna granite, consecrated in the sacred Kaveri delta.</p>
         </div>
 
         <div class="spotlight-card">
           <div class="spotlight-media">
-            <img src="/assets/hero_temple.jpg" alt="${featuredProject.title}" class="spotlight-img">
+            <img src="${featuredProject.image}" alt="${featuredProject.title}" class="spotlight-img" style="object-position: center 10%;">
             <span class="spotlight-badge">Consecrated 2024</span>
           </div>
           <div class="spotlight-info">
@@ -663,6 +667,9 @@ function renderProjectDetailPage() {
 
           <!-- Sticky Sidebar Specifications -->
           <div style="background: var(--bg-surface); border: 1px solid var(--gold-border); border-radius: 4px; padding: var(--space-6); position: sticky; top: 104px;">
+            <div style="margin-bottom: var(--space-4); border-radius: 4px; overflow: hidden; height: 200px; border: 1px solid var(--bronze-border);">
+              <img src="${project.image}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover; object-position: center 10%;">
+            </div>
             <span class="section-tag">Sanctuary Dossier</span>
             <h3 style="font-size: 1.35rem; margin: var(--space-2) 0;">${project.title}</h3>
             <p style="font-size: 0.85rem; color: var(--text-muted);">${project.subtitle}</p>
@@ -1160,7 +1167,207 @@ appView.addEventListener('keydown', event => {
   }
 });
 
-/* 9. START YOUR PROJECT (MULTI-STEP WIZARD) */
+/* 9. CONTACT PAGE */
+function renderContactPage() {
+  appView.innerHTML = `
+    <div class="section-spacing" style="padding-top: 140px;">
+      <div class="container">
+        <!-- Hero Header -->
+        <div class="contact-hero">
+          <span class="section-tag">Direct Studio Inquiries</span>
+          <h1>Connect with Our Master Architects & Sthapathis</h1>
+          <p class="lead" style="max-width: 720px; margin: var(--space-3) auto 0;">
+            Whether you envision a monumental granite sanctuary, an authentic acoustic mandapam, or a heritage restoration, our hereditary sthapathis and architectural consultants are at your service.
+          </p>
+        </div>
+
+        <!-- Contact Main Grid -->
+        <div class="contact-grid">
+          <!-- Left: Inquiry Form -->
+          <div class="contact-form-panel">
+            <span class="section-tag">Consultation Request</span>
+            <h3>Send an Architectural Inquiry</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-4);">
+              Fill out the form below. A senior sthapathi or project director will review your architectural intent and respond within 24–48 hours.
+            </p>
+
+            <div id="contact-feedback" class="contact-form-feedback" hidden></div>
+
+            <form id="contact-form" novalidate>
+              <div class="contact-form-grid">
+                <div class="contact-form-group">
+                  <label for="contact-name">Full Name *</label>
+                  <input type="text" id="contact-name" class="form-input" placeholder="e.g. Srikanth Ramanathan" required>
+                </div>
+
+                <div class="contact-form-group">
+                  <label for="contact-email">Email Address *</label>
+                  <input type="email" id="contact-email" class="form-input" placeholder="patron@example.com" required>
+                </div>
+
+                <div class="contact-form-group">
+                  <label for="contact-phone">Phone / WhatsApp *</label>
+                  <input type="tel" id="contact-phone" class="form-input" placeholder="+91 98765 43210" required>
+                </div>
+
+                <div class="contact-form-group">
+                  <label for="contact-studio">Preferred Studio Location</label>
+                  <select id="contact-studio" class="form-input">
+                    <option value="Chennai" selected>Chennai Studio (Design & BIM)</option>
+                    <option value="Thanjavur">Thanjavur Guild (Craft & Quarry)</option>
+                    <option value="London">London Liaison (UK & Europe)</option>
+                    <option value="Singapore">Singapore (SE Asia & Diaspora)</option>
+                    <option value="Virtual">Virtual / Video Conference</option>
+                  </select>
+                </div>
+
+                <div class="contact-form-group contact-form-full">
+                  <label for="contact-type">Sanctuary Typology / Intent</label>
+                  <select id="contact-type" class="form-input">
+                    <option value="New Temple Complex">New Monolithic Granite Temple Complex</option>
+                    <option value="Rajagopuram Gateway">Rajagopuram Entrance Gateway Tower</option>
+                    <option value="Acoustic Mandapam">Acoustic Kalyana Mandapam / Hall</option>
+                    <option value="Private Sanctum">Private Estate Sanctum / Family Shrine</option>
+                    <option value="Heritage Restoration">Heritage Lithic Restoration & Stabilization</option>
+                    <option value="Vastu Planning">Agama & Vastu Purusha Mandala Planning</option>
+                    <option value="General Inquiry">General Patron Advisory / Studio Visit</option>
+                  </select>
+                </div>
+
+                <div class="contact-form-group contact-form-full">
+                  <label for="contact-message">Project Vision & Land Details *</label>
+                  <textarea id="contact-message" class="form-input" rows="4" placeholder="Briefly describe your proposed deity, land location, approximate acreage, or architectural questions…" required></textarea>
+                </div>
+
+                <div class="contact-form-full" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-2);">
+                  <button type="submit" class="btn btn-gold" id="btn-submit-contact">
+                    SUBMIT INQUIRY <span class="btn-arrow">→</span>
+                  </button>
+                  <a href="#start-project" class="btn-ghost" style="font-size: 0.8rem;">
+                    Or launch full 6-Step Project Planner →
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Right: Studio Offices -->
+          <div class="contact-studios-panel">
+            <div class="contact-studio-card">
+              <div class="studio-card-header">
+                <span class="studio-card-city">Chennai Studio</span>
+                <span class="studio-card-tag">Design & BIM</span>
+              </div>
+              <p class="studio-card-address">
+                Boat Club Road, R.A. Puram, Chennai, Tamil Nadu 600028
+              </p>
+              <div class="studio-contact-links">
+                <a href="tel:+914424991234">📞 +91 44 2499 1234</a>
+                <a href="mailto:chennai@sriakil.com">✉ chennai@sriakil.com</a>
+                <span>⏱ Mon – Sat: 9:00 AM – 6:30 PM IST</span>
+              </div>
+            </div>
+
+            <div class="contact-studio-card">
+              <div class="studio-card-header">
+                <span class="studio-card-city">Thanjavur Guild</span>
+                <span class="studio-card-tag">Craft & Stoneworks</span>
+              </div>
+              <p class="studio-card-address">
+                Kalaivani Salai, Kumbakonam Sacred Corridor, Thanjavur District, TN 612001
+              </p>
+              <div class="studio-contact-links">
+                <a href="tel:+914352425678">📞 +91 435 242 5678</a>
+                <a href="mailto:thanjavur@sriakil.com">✉ thanjavur@sriakil.com</a>
+                <span>⏱ Mon – Sat: 8:00 AM – 6:00 PM IST (Visits by Appt)</span>
+              </div>
+            </div>
+
+            <div class="contact-studio-card">
+              <div class="studio-card-header">
+                <span class="studio-card-city">Global Liaisons</span>
+                <span class="studio-card-tag">London & Singapore</span>
+              </div>
+              <p class="studio-card-address">
+                Mayfair, London W1 • Marina Boulevard Tower 2, Singapore
+              </p>
+              <div class="studio-contact-links">
+                <a href="mailto:global@sriakil.com">✉ global@sriakil.com</a>
+                <a href="https://wa.me/919840012345" target="_blank" rel="noopener">💬 WhatsApp: +91 98400 12345</a>
+                <span>⏱ Worldwide Patron Advisory Service</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Direct Contact Channels Strip -->
+        <div class="contact-quick-channels">
+          <div class="quick-channel-card">
+            <div style="font-size: 1.6rem; margin-bottom: 8px;">📞</div>
+            <h4>Direct Sthapathi Hotline</h4>
+            <p>Speak directly with our architectural advisory desk for urgent project questions.</p>
+            <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">+91 98400 12345</p>
+          </div>
+
+          <div class="quick-channel-card">
+            <div style="font-size: 1.6rem; margin-bottom: 8px;">✉</div>
+            <h4>Canonical Advisory Email</h4>
+            <p>Send site surveys, CAD drawings, or land documents for our initial evaluation.</p>
+            <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">enquiry@sriakil.com</p>
+          </div>
+
+          <div class="quick-channel-card">
+            <div style="font-size: 1.6rem; margin-bottom: 8px;">🏛</div>
+            <h4>Guild Workshop Visits</h4>
+            <p>Schedule a private guided tour of our master stone-carving yards in Kumbakonam.</p>
+            <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">By Prior Appointment</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Attach contact form listener
+  const form = document.getElementById('contact-form');
+  const feedback = document.getElementById('contact-feedback');
+  if (form) {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const phone = document.getElementById('contact-phone').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+      const studio = document.getElementById('contact-studio').value;
+      const type = document.getElementById('contact-type').value;
+
+      if (!name || !email || !phone || !message) {
+        feedback.hidden = false;
+        feedback.className = 'contact-form-feedback error';
+        feedback.textContent = 'Please fill out all required fields marked with an asterisk (*).';
+        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        feedback.hidden = false;
+        feedback.className = 'contact-form-feedback error';
+        feedback.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      const refId = `AKIL-INQ-${Math.floor(100000 + Math.random() * 900000)}`;
+      feedback.hidden = false;
+      feedback.className = 'contact-form-feedback success';
+      feedback.innerHTML = `
+        <strong>Thank you, ${escapeHtml(name)}.</strong> Your inquiry regarding <em>${escapeHtml(type)}</em> has been received (Ref: <strong>${refId}</strong>). Our ${escapeHtml(studio)} architectural desk will reach out to <strong>${escapeHtml(email)}</strong> within 24–48 hours.
+      `;
+      form.reset();
+      feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  }
+}
+
+/* 10. START YOUR PROJECT (MULTI-STEP WIZARD) */
 function renderStartProjectPage() {
   const { currentStep, totalSteps } = state.wizard;
   const progressPercent = ((currentStep - 1) / (totalSteps - 1)) * 100;

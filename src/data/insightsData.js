@@ -23,7 +23,7 @@ export const insightsData = [
       <p>Modern laser photogrammetry conducted by our studio on the Thanjavur monument verified that the deviations across the 216-foot height are less than 0.08%—an accuracy that rivals contemporary computerized CNC stone fabrication.</p>
       
       <h3>Applying Chola Proportions in Modern Architecture</h3>
-      <p>In our studio's recent commissions, including the newly consecrated Monolithic Shiva Vimana in the Kumbakonam Valley, we revived these exact Chola algorithms. By using modern Finite Element Analysis (FEA) alongside the ancient <em>Shilpa Shastras</em>, we can guarantee that newly consecrated temples will easily surpass the 1,000-year structural milestone without a single gram of rust-prone steel rebar.</p>
+      <p>In our studio's recent commissions, including the newly consecrated Kaalashthri Temple in the Kumbakonam Valley, we revived these exact Chola algorithms. By using modern Finite Element Analysis (FEA) alongside the ancient <em>Shilpa Shastras</em>, we can guarantee that newly consecrated temples will easily surpass the 1,000-year structural milestone without a single gram of rust-prone steel rebar.</p>
     `
   },
   {
