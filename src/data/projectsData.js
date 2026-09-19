@@ -1,7 +1,7 @@
 export const projectsData = [
   {
     id: "thanjavur-vimana",
-    title: "Kaalashthri Temple",
+    title: "Sri Kaalashthri Temple",
     subtitle: "Imperial Chola Architectural Sanctuary",
     category: "chola",
     location: "Kumbakonam Valley, Tamil Nadu",

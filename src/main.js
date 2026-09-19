@@ -305,7 +305,7 @@ function renderHomePage() {
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Featured Sanctuary</span>
-          <h2>Kaalashthri Temple</h2>
+          <h2>Sri Kaalashthri Temple</h2>
           <p>An Imperial Chola masterpiece constructed from 18,400 metric tonnes of virgin Krishna granite, consecrated in the sacred Kaveri delta.</p>
         </div>
 
