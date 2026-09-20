@@ -203,6 +203,293 @@ p.lead { font-size: 1.4rem; }
   .back-to-top { bottom: 16px; right: 16px; }
   .mandala-caption { font-size: .65rem; }
 }
+
+/* ==========================================================================
+   PAGE TRANSITION & AMBIENT PROGRESS ANIMATIONS
+   ========================================================================== */
+
+/* Top Ambient Progress Bar */
+.page-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3.5px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, #D4AF37 100%);
+  box-shadow: 0 0 10px rgba(176, 141, 87, 0.6), 0 0 18px rgba(101, 122, 91, 0.4);
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateZ(0);
+}
+
+.page-progress-bar.start {
+  opacity: 1;
+  width: 72%;
+  transition: width 0.35s cubic-bezier(0.12, 0.9, 0.25, 1), opacity 0.15s ease;
+}
+
+.page-progress-bar.finish {
+  opacity: 1;
+  width: 100%;
+  transition: width 0.22s ease-out, opacity 0.3s ease 0.18s;
+}
+
+/* Page Entrance Animation */
+@keyframes pageEnterFadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#app-view.page-enter {
+  animation: pageEnterFadeSlide 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Staggered entrance for section elements */
+@keyframes childStaggerIn {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#app-view.page-enter .hero-content > * {
+  animation: childStaggerIn 0.48s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+#app-view.page-enter .hero-content > *:nth-child(1) { animation-delay: 0.04s; }
+#app-view.page-enter .hero-content > *:nth-child(2) { animation-delay: 0.08s; }
+#app-view.page-enter .hero-content > *:nth-child(3) { animation-delay: 0.12s; }
+#app-view.page-enter .hero-content > *:nth-child(4) { animation-delay: 0.16s; }
+#app-view.page-enter .hero-content > *:nth-child(5) { animation-delay: 0.20s; }
+
+#app-view.page-enter .hero-bg-wrapper {
+  animation: childStaggerIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.06s both;
+}
+
+#app-view.page-enter .section-header {
+  animation: childStaggerIn 0.46s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+#app-view.page-enter .project-card,
+#app-view.page-enter .service-preview-card,
+#app-view.page-enter .service-pillar-card,
+#app-view.page-enter .style-card,
+#app-view.page-enter .team-card,
+#app-view.page-enter .insight-card,
+#app-view.page-enter .stage-detail-card,
+#app-view.page-enter .confirmation-card {
+  animation: childStaggerIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+#app-view.page-enter .projects-grid > *:nth-child(1) { animation-delay: 0.05s; }
+#app-view.page-enter .projects-grid > *:nth-child(2) { animation-delay: 0.09s; }
+#app-view.page-enter .projects-grid > *:nth-child(3) { animation-delay: 0.13s; }
+#app-view.page-enter .projects-grid > *:nth-child(4) { animation-delay: 0.17s; }
+#app-view.page-enter .projects-grid > *:nth-child(5) { animation-delay: 0.21s; }
+#app-view.page-enter .projects-grid > *:nth-child(6) { animation-delay: 0.25s; }
+
+/* Native View Transitions (when supported) */
+::view-transition-old(root) {
+  animation: 0.2s cubic-bezier(0.16, 1, 0.3, 1) both vTransitionOut;
+}
+::view-transition-new(root) {
+  animation: 0.32s cubic-bezier(0.16, 1, 0.3, 1) both vTransitionIn;
+}
+@keyframes vTransitionOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.995); }
+}
+@keyframes vTransitionIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   BUTTON CLICK & TACTILE RIPPLE ANIMATIONS
+   ========================================================================== */
+
+/* Button ripple containers */
+.btn,
+.filter-pill,
+.timeline-nav-btn,
+.option-card,
+.case-back-link,
+.audio-toggle-btn,
+.mobile-menu-toggle {
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Tactile press feedback on click / active */
+.btn:active,
+.filter-pill:active,
+.timeline-nav-btn:active,
+.case-back-link:active,
+.audio-toggle-btn:active,
+.mobile-menu-toggle:active,
+.wizard-step-node:active {
+  transform: scale(0.955) translateY(1.5px) !important;
+  transition: transform 0.08s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Sacred ripple wave animation */
+.btn-ripple {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: scale(0);
+  opacity: 0.55;
+  animation: btnRippleWave 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  z-index: 10;
+}
+
+@keyframes btnRippleWave {
+  0% {
+    transform: scale(0);
+    opacity: 0.55;
+  }
+  60% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* Luxury Light Sheen Sweep on Hover for Gold Buttons */
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -80%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    70deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.btn-gold:hover::after {
+  opacity: 1;
+  animation: btnSheenSweep 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes btnSheenSweep {
+  0% { left: -80%; }
+  100% { left: 180%; }
+}
+
+/* Dynamic arrow animation */
+.btn .btn-arrow {
+  display: inline-block;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(6px);
+}
+
+.btn:active .btn-arrow {
+  transform: translateX(9px) scale(1.18);
+}
+
+/* Project Card Lift and Scale */
+.project-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(52, 58, 50, 0.12);
+}
+
+.project-card:active {
+  transform: scale(0.985) translateY(-2px);
+}
+
+.project-card .project-card-img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-card-img {
+  transform: scale(1.045);
+}
+
+/* Option Cards, Visual Cards & Wizard Panel Transitions */
+.stage-detail-card,
+.mandala-visual-card,
+.spotlight-card,
+.wizard-main-panel {
+  animation: pageEnterFadeSlide 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.option-card {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s ease,
+              background 0.22s ease,
+              box-shadow 0.22s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-2px);
+}
+
+.option-card:active {
+  transform: scale(0.98);
+}
+
+/* Filter Pills Smooth Bounce & Active Transition */
+.filter-pill {
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filter-pill:hover {
+  transform: translateY(-1.5px);
+}
+
+.filter-pill.active {
+  transform: scale(1.03);
+}
+
+/* Anatomy Pin Micro-animation */
+.anatomy-hotspot-pin {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease;
+}
+
+.anatomy-hotspot-pin:hover {
+  transform: translate(-50%, -50%) scale(1.18);
+}
+
+.anatomy-hotspot-pin:active {
+  transform: translate(-50%, -50%) scale(0.92);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
 }

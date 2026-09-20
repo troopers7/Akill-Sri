@@ -138,6 +138,62 @@ const pageNames = {
   process: 'Our Process', insights: 'Heritage Journal', 'start-project': 'Project Planner',
   contact: 'Contact Us'
 };
+
+// Top Progress Bar Controller
+let progressTimer = null;
+function startProgressBar() {
+  const bar = document.getElementById('page-progress-bar');
+  if (!bar) return;
+  clearTimeout(progressTimer);
+  bar.classList.remove('finish');
+  bar.classList.add('start');
+}
+
+function completeProgressBar() {
+  const bar = document.getElementById('page-progress-bar');
+  if (!bar) return;
+  bar.classList.remove('start');
+  bar.classList.add('finish');
+  progressTimer = setTimeout(() => {
+    bar.classList.remove('finish');
+  }, 400);
+}
+
+// Global Button Interaction & Sacred Ripple Animation
+function initButtonAnimations() {
+  document.addEventListener('pointerdown', event => {
+    if (reducedMotion.matches) return;
+    const btn = event.target.closest(
+      '.btn, button, .nav-link, .mobile-nav-link, .filter-pill, .option-card, .project-card, .timeline-nav-btn, .case-back-link, .wizard-step-node, .anatomy-hotspot-pin'
+    );
+    if (!btn) return;
+
+    const style = window.getComputedStyle(btn);
+    if (style.position === 'static') {
+      btn.style.position = 'relative';
+    }
+
+    const rect = btn.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height) * 2.2;
+    const ripple = document.createElement('span');
+    ripple.className = 'btn-ripple';
+    ripple.style.width = `${size}px`;
+    ripple.style.height = `${size}px`;
+    ripple.style.left = `${event.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${event.clientY - rect.top - size / 2}px`;
+
+    if (btn.classList.contains('btn-gold') || (btn.classList.contains('filter-pill') && btn.classList.contains('active'))) {
+      ripple.style.background = 'radial-gradient(circle, rgba(255, 255, 255, 0.48) 0%, rgba(239, 225, 201, 0.22) 50%, transparent 75%)';
+    } else {
+      ripple.style.background = 'radial-gradient(circle, rgba(176, 141, 87, 0.38) 0%, rgba(101, 122, 91, 0.18) 50%, transparent 75%)';
+    }
+
+    btn.appendChild(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove(), { once: true });
+    setTimeout(() => { if (ripple.parentNode) ripple.remove(); }, 600);
+  });
+}
+
 function handleRoute() {
   projectWizard.save();
   const [page, query = ''] = window.location.hash.slice(1).split('?');
@@ -155,13 +211,41 @@ function handleRoute() {
     if (active) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
   });
-  renderCurrentPage();
-  document.title = `${pageNames[state.activePage]} | Sri Akil`;
-  window.scrollTo({ top: 0, behavior: 'instant' });
-  if (routeInitialized) appView.focus({ preventScroll: true });
-  routeInitialized = true;
-  updateScrollUI();
+
+  const doRender = () => {
+    renderCurrentPage();
+    document.title = `${pageNames[state.activePage]} | Sri Akil`;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    if (routeInitialized) appView.focus({ preventScroll: true });
+    routeInitialized = true;
+    updateScrollUI();
+
+    // Trigger silky smooth page entrance animation
+    if (!reducedMotion.matches) {
+      appView.classList.remove('page-enter');
+      void appView.offsetWidth;
+      appView.classList.add('page-enter');
+    }
+  };
+
+  startProgressBar();
+
+  if (!reducedMotion.matches && typeof document.startViewTransition === 'function') {
+    const transition = document.startViewTransition(() => {
+      doRender();
+    });
+    transition.finished.finally(() => {
+      completeProgressBar();
+    });
+  } else {
+    doRender();
+    requestAnimationFrame(() => {
+      completeProgressBar();
+    });
+  }
 }
+
+initButtonAnimations();
 
 window.addEventListener('hashchange', handleRoute);
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', handleRoute);
@@ -507,7 +591,16 @@ function renderProjectsPage() {
   function updateResults() {
     const matches = filterProjects(projectsData, state.projectFilter, state.searchQuery);
     const ids = new Set(matches.map(project => project.id));
-    appView.querySelectorAll('.project-card').forEach(card => { card.hidden = !ids.has(card.dataset.id); });
+    appView.querySelectorAll('.project-card').forEach(card => {
+      const isVisible = ids.has(card.dataset.id);
+      const wasHidden = card.hidden;
+      card.hidden = !isVisible;
+      if (isVisible && wasHidden && !reducedMotion.matches) {
+        card.style.animation = 'none';
+        void card.offsetWidth;
+        card.style.animation = 'childStaggerIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both';
+      }
+    });
     appView.querySelectorAll('[data-filter]').forEach(button => {
       const active = button.dataset.filter === state.projectFilter;
       button.classList.toggle('active', active);
