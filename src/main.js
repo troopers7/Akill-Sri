@@ -1283,20 +1283,6 @@ function renderContactPage() {
               </div>
             </div>
 
-            <div class="contact-studio-card">
-              <div class="studio-card-header">
-                <span class="studio-card-city">Global Liaisons</span>
-                <span class="studio-card-tag">London & Singapore</span>
-              </div>
-              <p class="studio-card-address">
-                Mayfair, London W1 • Marina Boulevard Tower 2, Singapore
-              </p>
-              <div class="studio-contact-links">
-                <a href="mailto:global@sriakil.com">✉ global@sriakil.com</a>
-                <a href="https://wa.me/919840012345" target="_blank" rel="noopener">💬 WhatsApp: +91 98400 12345</a>
-                <span>⏱ Worldwide Patron Advisory Service</span>
-              </div>
-            </div>
           </div>
         </div>
 
