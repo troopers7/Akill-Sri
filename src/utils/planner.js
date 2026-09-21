@@ -65,10 +65,11 @@ export function briefEntries(wizard) {
   ];
 }
 
-export function createBriefText(wizard) {
+export function createBriefText(wizard, referenceId = '') {
   return [
     'SRI AKIL — PROJECT BRIEF',
-    'Prepared locally. Not submitted to the studio.',
+    referenceId ? `Reference: ${referenceId}` : 'Reference: not yet filed',
+    referenceId ? 'Submitted to the studio desk by email and WhatsApp.' : 'Prepared in the project planner.',
     '',
     ...briefEntries(wizard).map(([label, value]) => `${label}\n${value}\n`),
     'Reference files are not included in this document. Share them separately with the studio.'

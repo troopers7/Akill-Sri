@@ -141,6 +141,13 @@ p.lead { font-size: 1.4rem; }
 .brief-review div { border-bottom: 1px solid var(--bronze-border); padding-bottom: 12px; min-width: 0; }
 .brief-review dt { font-size: .72rem; color: var(--primary-deep); margin-bottom: 4px; }
 .brief-review dd { overflow-wrap: anywhere; white-space: pre-wrap; font-size: .9rem; }
+.submission-channels { list-style: none; display: grid; gap: 12px; margin-block: 22px; text-align: left; }
+.submission-channels li { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 4px 12px; align-items: baseline; border-bottom: 1px solid var(--bronze-border); padding-bottom: 12px; }
+.submission-channels small { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--primary-deep); }
+.submission-channels a { color: var(--bronze-deep); overflow-wrap: anywhere; text-decoration: underline; }
+.delivery-status { grid-column: 2; font-style: normal; font-size: .78rem; color: var(--text-soft); }
+.delivery-status[data-status="sent"] { color: var(--primary-deep); }
+.delivery-status[data-status="failed"], .delivery-status[data-status="manual"] { color: #963c2c; }
 .confirmation-card { background: var(--section-bg); padding: clamp(24px, 5vw, 64px); border-radius: 12px; }
 @media (max-width: 1240px) {
   .desktop-nav { display: none; }

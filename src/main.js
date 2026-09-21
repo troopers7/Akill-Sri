@@ -16,24 +16,6 @@ const state = {
   selectedProcessStep: '01',
   projectFilter: 'all',
   searchQuery: '',
-  wizard: {
-    currentStep: 1,
-    totalSteps: 6,
-    category: 'New Temple Complex',
-    location: 'Domestic India (Tamil Nadu / Karnataka / AP)',
-    acreage: '2.5 Acres',
-    style: 'Imperial Chola Monolithic Granite',
-    deity: 'Lord Shiva (Mahadeva)',
-    footprint: '25,000 sq.ft Sanctum & Prakaram',
-    stone: 'Dense Black Krishna Granite (Karunkal)',
-    services: ['Architecture & Master Planning', 'Agama & Ayadi Calculations', 'Traditional Stone Craft & Masonry', 'Turnkey Consecration Execution'],
-    patronName: '',
-    trustName: '',
-    email: '',
-    phone: '',
-    notes: '',
-    uploadedFileName: ''
-  }
 };
 
 // Routing & View Controller
@@ -309,7 +291,7 @@ function renderHomePage() {
       <div class="hero-content">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          <span>Architectural Studio • Founded 2000</span>
+          <span>Architectural Studio â€¢ Founded 2000</span>
         </div>
 
         <h1 class="hero-title">Sacred spaces.<br><em>Timeless legacies.</em></h1>
@@ -319,13 +301,13 @@ function renderHomePage() {
 
         <div class="hero-actions">
           <a href="#start-project" class="btn btn-gold">
-            START YOUR PROJECT <span class="btn-arrow">→</span>
+            START YOUR PROJECT <span class="btn-arrow">â†’</span>
           </a>
           <a href="#projects" class="btn btn-outline-gold">
             EXPLORE OUR WORK
           </a>
         </div>
-        <div class="hero-note"><span class="hero-note-symbol" aria-hidden="true">✦</span><span>Traditional wisdom. Thoughtful design.<br>From the first sketch to the final carved detail.</span></div>
+        <div class="hero-note"><span class="hero-note-symbol" aria-hidden="true">âœ¦</span><span>Traditional wisdom. Thoughtful design.<br>From the first sketch to the final carved detail.</span></div>
       </div>
     </section>
 
@@ -361,14 +343,14 @@ function renderHomePage() {
             <span class="section-tag">Studio Philosophy</span>
             <h2>Where old temple rules meet modern engineering.</h2>
             <p class="lead">
-              A temple is not just a prayer hall; it is the cosmic body—the Viraat Purusha—made into strong stone.
+              A temple is not just a prayer hall; it is the cosmic bodyâ€”the Viraat Purushaâ€”made into strong stone.
             </p>
             <p>
               For almost 25 years, our studio has kept alive the granite building style. We avoid weak concrete that breaks in a few decades. Instead, we build sanctuaries with pure black Krishna granite (Karunkal), using dry stone joints and sacred Ayadi ratios.
             </p>
             <div style="margin-top: var(--space-4);">
               <a href="#about" class="btn btn-ghost">
-                DISCOVER OUR HERITAGE & STHAPATHIS <span class="btn-arrow">→</span>
+                DISCOVER OUR HERITAGE & STHAPATHIS <span class="btn-arrow">â†’</span>
               </a>
             </div>
           </div>
@@ -426,7 +408,7 @@ function renderHomePage() {
 
             <div>
               <a href="#project-detail" class="btn btn-gold" id="btn-view-spotlight-case">
-                EXPLORE FULL CASE STUDY <span class="btn-arrow">→</span>
+                EXPLORE FULL CASE STUDY <span class="btn-arrow">â†’</span>
               </a>
             </div>
           </div>
@@ -442,7 +424,7 @@ function renderHomePage() {
             <span class="section-tag">Disciplines & Mastery</span>
             <h2>Seven Pillars of Sacred Execution</h2>
           </div>
-          <a href="#services" class="btn btn-outline-gold">View All Services →</a>
+          <a href="#services" class="btn btn-outline-gold">View All Services â†’</a>
         </div>
 
         <div class="service-preview-grid">
@@ -453,7 +435,7 @@ function renderHomePage() {
               <p style="font-family: var(--font-editorial); font-style: italic; color: var(--gold-bright); font-size: 0.95rem; margin-bottom: var(--space-3);">${service.subtitle}</p>
               <p style="font-size: 0.9rem; color: var(--text-ivory-soft);">${service.description.substring(0, 160)}...</p>
               <a href="#services" class="btn-ghost" style="display: inline-block; margin-top: var(--space-3); font-size: 0.8rem;">
-                Learn More →
+                Learn More â†’
               </a>
             </div>
           `).join('')}
@@ -498,7 +480,7 @@ function renderHomePage() {
           Whether envisioning a monumental 11-tier Rajagopuram, a private family sanctum, or preserving an ancient heritage shrine, our master sthapathis are ready to guide your sacred journey.
         </p>
         <a href="#start-project" class="btn btn-gold" style="padding: 18px 44px; font-size: 0.9rem;">
-          START YOUR PROJECT <span class="btn-arrow">→</span>
+          START YOUR PROJECT <span class="btn-arrow">â†’</span>
         </a>
       </div>
     </section>
@@ -542,7 +524,7 @@ function renderProjectsPage() {
 
           <div style="max-width: 480px;">
             <label class="form-label" for="project-search-input">Find your inspiration</label>
-            <input type="search" id="project-search-input" class="form-input" placeholder="Search by name, stone, tradition or location…" value="${escapeHtml(state.searchQuery)}">
+            <input type="search" id="project-search-input" class="form-input" placeholder="Search by name, stone, tradition or locationâ€¦" value="${escapeHtml(state.searchQuery)}">
           </div>
         </div>
 
@@ -569,7 +551,7 @@ function renderProjectsPage() {
 
                 <div style="margin-top: var(--space-4);">
                   <span class="btn-ghost" style="font-size: 0.8rem; padding: 0;">
-                    VIEW ARCHITECTURAL CASE STUDY →
+                    VIEW ARCHITECTURAL CASE STUDY â†’
                   </span>
                 </div>
               </div>
@@ -632,7 +614,7 @@ function renderProjectDetailPage() {
     <!-- Case Study Hero -->
     <section class="case-study-hero">
       <div class="container">
-        <a class="case-back-link" href="#projects">← Back to all projects</a>
+        <a class="case-back-link" href="#projects">â† Back to all projects</a>
         <!-- Project Switcher Tabs -->
         <div style="display: flex; gap: 8px; overflow-x: auto; margin-bottom: var(--space-6); padding-bottom: 8px;">
           ${projectsData.map(p => `
@@ -791,7 +773,7 @@ function renderProjectDetailPage() {
             </div>
 
             <a href="#start-project" class="btn btn-gold" style="width: 100%; margin-top: var(--space-4); font-size: 0.8rem;">
-              COMMISSION SIMILAR PROJECT →
+              COMMISSION SIMILAR PROJECT â†’
             </a>
           </div>
         </div>
@@ -842,7 +824,7 @@ function renderServicesPage() {
                 </ul>
                 <div style="margin-top: var(--space-4);">
                   <a href="#start-project" data-inquire-service="${escapeHtml(service.title)}" class="btn btn-outline-gold" style="font-size: 0.72rem; padding: 8px 16px; width: 100%;">
-                    Inquire For This Discipline →
+                    Inquire For This Discipline â†’
                   </a>
                 </div>
               </div>
@@ -858,7 +840,7 @@ function renderServicesPage() {
             We work with temple trusts, endowment boards, and private patrons worldwide to develop initial feasibility blueprints, Vastu audits, and cost governance frameworks.
           </p>
           <a href="#start-project" class="btn btn-gold">
-            SCHEDULE A SANCTUM CONSULTATION →
+            SCHEDULE A SANCTUM CONSULTATION â†’
           </a>
         </div>
       </div>
@@ -877,7 +859,7 @@ function renderTempleDesignPage() {
           <span class="section-tag">Architectural Canons</span>
           <h1>South Indian Temple Styles & Sacred Anatomy</h1>
           <p class="lead">
-            An exploration of dynastic architectural idioms—Imperial Chola, Classical Dravidian, Later Pandya, and Vijayanagara—paired with the sacred anatomical organs of a consecrated temple.
+            An exploration of dynastic architectural idiomsâ€”Imperial Chola, Classical Dravidian, Later Pandya, and Vijayanagaraâ€”paired with the sacred anatomical organs of a consecrated temple.
           </p>
         </div>
 
@@ -964,7 +946,7 @@ function renderTempleDesignPage() {
 
               <div style="margin-top: var(--space-6);">
                 <a href="#start-project" class="btn btn-outline-gold" style="font-size: 0.75rem; width: 100%;">
-                  Plan This Element In Your Temple →
+                  Plan This Element In Your Temple â†’
                 </a>
               </div>
             </div>
@@ -1110,7 +1092,7 @@ function renderProcessPage() {
 
             <div class="milestone-badge">
               <small>Mandatory Sacred Inspection Gate</small>
-              <span>✦ ${currentStage.milestone}</span>
+              <span>âœ¦ ${currentStage.milestone}</span>
             </div>
           </div>
 
@@ -1124,7 +1106,7 @@ function renderProcessPage() {
 
             <div style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--border-subtle);">
               <a href="#start-project" class="btn btn-gold" style="width: 100%; font-size: 0.78rem;">
-                INITIATE STAGE 01 DISCOVERY →
+                INITIATE STAGE 01 DISCOVERY â†’
               </a>
             </div>
           </div>
@@ -1179,7 +1161,7 @@ function renderInsightsPage() {
                 
                 <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: var(--space-3); margin-top: auto; font-size: 0.78rem; color: var(--text-muted);">
                   <span>By ${article.author} (${article.role})</span>
-                  <span class="btn-ghost" style="padding: 0; font-size: 0.78rem;">Read Article →</span>
+                  <span class="btn-ghost" style="padding: 0; font-size: 0.78rem;">Read Article â†’</span>
                 </div>
               </div>
             </div>
@@ -1231,7 +1213,7 @@ function openArticleModal(articleId) {
         Have questions about applying this research to your upcoming sanctuary?
       </p>
       <a href="#start-project" class="btn btn-gold">
-        COMMISSION ARCHITECTURAL CONSULTATION →
+        COMMISSION ARCHITECTURAL CONSULTATION â†’
       </a>
     </div>
   `;
@@ -1281,7 +1263,7 @@ function renderContactPage() {
             <span class="section-tag">Consultation Request</span>
             <h3>Send an Architectural Inquiry</h3>
             <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-4);">
-              Fill out the form below. A senior sthapathi or project director will review your architectural intent and respond within 24–48 hours.
+              Fill out the form below. A senior sthapathi or project director will review your architectural intent and respond within 24â€“48 hours.
             </p>
 
             <div id="contact-feedback" class="contact-form-feedback" hidden></div>
@@ -1329,15 +1311,15 @@ function renderContactPage() {
 
                 <div class="contact-form-group contact-form-full">
                   <label for="contact-message">Project Vision & Land Details *</label>
-                  <textarea id="contact-message" class="form-input" rows="4" placeholder="Briefly describe your proposed deity, land location, approximate acreage, or architectural questions…" required></textarea>
+                  <textarea id="contact-message" class="form-input" rows="4" placeholder="Briefly describe your proposed deity, land location, approximate acreage, or architectural questionsâ€¦" required></textarea>
                 </div>
 
                 <div class="contact-form-full" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-2);">
                   <button type="submit" class="btn btn-gold" id="btn-submit-contact">
-                    SUBMIT INQUIRY <span class="btn-arrow">→</span>
+                    SUBMIT INQUIRY <span class="btn-arrow">â†’</span>
                   </button>
                   <a href="#start-project" class="btn-ghost" style="font-size: 0.8rem;">
-                    Or launch full 6-Step Project Planner →
+                    Or launch full 6-Step Project Planner â†’
                   </a>
                 </div>
               </div>
@@ -1355,9 +1337,9 @@ function renderContactPage() {
                 Boat Club Road, R.A. Puram, Chennai, Tamil Nadu 600028
               </p>
               <div class="studio-contact-links">
-                <a href="tel:+914424991234">📞 +91 44 2499 1234</a>
-                <a href="mailto:chennai@sriakil.com">✉ chennai@sriakil.com</a>
-                <span>⏱ Mon – Sat: 9:00 AM – 6:30 PM IST</span>
+                <a href="tel:+914424991234">ðŸ“ž +91 44 2499 1234</a>
+                <a href="mailto:chennai@sriakil.com">âœ‰ chennai@sriakil.com</a>
+                <span>â± Mon â€“ Sat: 9:00 AM â€“ 6:30 PM IST</span>
               </div>
             </div>
 
@@ -1370,9 +1352,9 @@ function renderContactPage() {
                 Kalaivani Salai, Kumbakonam Sacred Corridor, Thanjavur District, TN 612001
               </p>
               <div class="studio-contact-links">
-                <a href="tel:+914352425678">📞 +91 435 242 5678</a>
-                <a href="mailto:thanjavur@sriakil.com">✉ thanjavur@sriakil.com</a>
-                <span>⏱ Mon – Sat: 8:00 AM – 6:00 PM IST (Visits by Appt)</span>
+                <a href="tel:+914352425678">ðŸ“ž +91 435 242 5678</a>
+                <a href="mailto:thanjavur@sriakil.com">âœ‰ thanjavur@sriakil.com</a>
+                <span>â± Mon â€“ Sat: 8:00 AM â€“ 6:00 PM IST (Visits by Appt)</span>
               </div>
             </div>
 
@@ -1382,21 +1364,21 @@ function renderContactPage() {
         <!-- Quick Direct Contact Channels Strip -->
         <div class="contact-quick-channels">
           <div class="quick-channel-card">
-            <div style="font-size: 1.6rem; margin-bottom: 8px;">📞</div>
+            <div style="font-size: 1.6rem; margin-bottom: 8px;">ðŸ“ž</div>
             <h4>Direct Sthapathi Hotline</h4>
             <p>Speak directly with our architectural advisory desk for urgent project questions.</p>
             <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">+91 98400 12345</p>
           </div>
 
           <div class="quick-channel-card">
-            <div style="font-size: 1.6rem; margin-bottom: 8px;">✉</div>
+            <div style="font-size: 1.6rem; margin-bottom: 8px;">âœ‰</div>
             <h4>Canonical Advisory Email</h4>
             <p>Send site surveys, CAD drawings, or land documents for our initial evaluation.</p>
             <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">enquiry@sriakil.com</p>
           </div>
 
           <div class="quick-channel-card">
-            <div style="font-size: 1.6rem; margin-bottom: 8px;">🏛</div>
+            <div style="font-size: 1.6rem; margin-bottom: 8px;">ðŸ›</div>
             <h4>Guild Workshop Visits</h4>
             <p>Schedule a private guided tour of our master stone-carving yards in Kumbakonam.</p>
             <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">By Prior Appointment</p>
@@ -1438,462 +1420,10 @@ function renderContactPage() {
       feedback.hidden = false;
       feedback.className = 'contact-form-feedback success';
       feedback.innerHTML = `
-        <strong>Thank you, ${escapeHtml(name)}.</strong> Your inquiry regarding <em>${escapeHtml(type)}</em> has been received (Ref: <strong>${refId}</strong>). Our ${escapeHtml(studio)} architectural desk will reach out to <strong>${escapeHtml(email)}</strong> within 24–48 hours.
+        <strong>Thank you, ${escapeHtml(name)}.</strong> Your inquiry regarding <em>${escapeHtml(type)}</em> has been received (Ref: <strong>${refId}</strong>). Our ${escapeHtml(studio)} architectural desk will reach out to <strong>${escapeHtml(email)}</strong> within 24â€“48 hours.
       `;
       form.reset();
       feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
   }
-}
-
-/* 10. START YOUR PROJECT (MULTI-STEP WIZARD) */
-function renderStartProjectPage() {
-  const { currentStep, totalSteps } = state.wizard;
-  const progressPercent = ((currentStep - 1) / (totalSteps - 1)) * 100;
-
-  appView.innerHTML = `
-    <div class="section-spacing" style="padding-top: 140px;">
-      <div class="container">
-        <div class="section-header" style="max-width: 820px;">
-          <span class="section-tag">Sanctuary Commissioning Wizard</span>
-          <h1>Start Your Sacred Project</h1>
-          <p class="lead">
-            A guided architectural discovery ledger to calibrate temple category, geographic coordinates, stone preferences, and sacred deity requirements.
-          </p>
-        </div>
-
-        <div class="wizard-container">
-          <!-- Main Form Step Panel -->
-          <div class="wizard-main-panel">
-            <!-- Progress Tracker -->
-            <div class="wizard-progress-bar-container">
-              <div class="wizard-steps-indicator">
-                ${[1, 2, 3, 4, 5, 6].map(step => `
-                  <div class="wizard-step-node ${step === currentStep ? 'active' : ''} ${step < currentStep ? 'completed' : ''}" data-goto-step="${step}">
-                    <div class="wizard-step-circle">${step < currentStep ? '✓' : step}</div>
-                    <span>Step 0${step}</span>
-                  </div>
-                `).join('')}
-              </div>
-              <div class="progress-track">
-                <div class="progress-fill" style="width: ${progressPercent}%;"></div>
-              </div>
-            </div>
-
-            <!-- Dynamic Step Content Form -->
-            <form id="wizard-form" onsubmit="event.preventDefault();">
-              ${renderWizardStepContent(currentStep)}
-
-              <!-- Navigation Controls -->
-              <div class="wizard-nav-actions">
-                ${currentStep > 1 ? `
-                  <button type="button" class="btn btn-outline-gold" id="btn-wizard-prev">
-                    ← Previous Step
-                  </button>
-                ` : `<div></div>`}
-
-                ${currentStep < totalSteps ? `
-                  <button type="button" class="btn btn-gold" id="btn-wizard-next">
-                    Continue to Step 0${currentStep + 1} →
-                  </button>
-                ` : `
-                  <button type="submit" class="btn btn-gold" id="btn-wizard-submit">
-                    SUBMIT SACRED COMMISSION DOSSIER →
-                  </button>
-                `}
-              </div>
-            </form>
-          </div>
-
-          <!-- Live Dynamic Summary Sidebar -->
-          <div class="wizard-summary-panel">
-            <div class="summary-heading">
-              <h4>COMMISSION DOSSIER SUMMARY</h4>
-            </div>
-
-            <div class="summary-item">
-              <small>Temple Typology</small>
-              <span>${state.wizard.category}</span>
-            </div>
-
-            <div class="summary-item">
-              <small>Location & Terrain</small>
-              <span>${state.wizard.location}</span>
-            </div>
-
-            <div class="summary-item">
-              <small>Architectural Tradition</small>
-              <span>${state.wizard.style}</span>
-            </div>
-
-            <div class="summary-item">
-              <small>Presiding Deity</small>
-              <span>${state.wizard.deity}</span>
-            </div>
-
-            <div class="summary-item">
-              <small>Sanctum Footprint</small>
-              <span>${state.wizard.footprint}</span>
-            </div>
-
-            <div class="summary-item">
-              <small>Preferred Lithic Medium</small>
-              <span>${state.wizard.stone.split('(')[0]}</span>
-            </div>
-
-            <div class="summary-item">
-              <small>Disciplines Requested</small>
-              <span style="font-size: 0.82rem; color: var(--gold-bright);">${state.wizard.services.length} Selected</span>
-            </div>
-
-            <div class="dossier-seal-badge">
-              <span>✦</span>
-              <span>Audited under Agama & Mayamata Standards</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-
-  attachWizardEventListeners();
-}
-
-function renderWizardStepContent(step) {
-  switch (step) {
-    case 1:
-      return `
-        <h3>01 / Select Sacred Project Category</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">What nature of sacred sanctuary are you planning to commission?</p>
-        
-        <div class="options-grid">
-          ${[
-            { title: 'New Temple Complex', desc: 'Monumental standalone temple campus with Vimana, Gopuram, and Prakarams.' },
-            { title: 'Private Family Sanctum', desc: 'Intimate bespoke stone shrine for private estate or rural retreat.' },
-            { title: 'Rajagopuram Gateway', desc: 'Towering multi-tier entrance gateway addition to an existing sanctuary.' },
-            { title: 'Acoustic Stone Mandapam', desc: 'Pillared wedding pavilion or Carnatic music hall with musical columns.' },
-            { title: 'Heritage Restoration', desc: 'Lithic conservation, salt desiccation, and structural stabilization.' },
-            { title: 'Agama Master Planning Only', desc: 'Vastu Purusha Mandala layout and Ayadi calculations documentation.' }
-          ].map(opt => `
-            <div class="option-card ${state.wizard.category === opt.title ? 'selected' : ''}" data-select-category="${opt.title}">
-              <h4>${opt.title}</h4>
-              <p>${opt.desc}</p>
-            </div>
-          `).join('')}
-        </div>
-      `;
-
-    case 2:
-      return `
-        <h3>02 / Geographic Location & Terrain</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">Where is the sacred land situated?</p>
-        
-        <div class="form-group">
-          <label class="form-label">Geographic Region</label>
-          <select class="form-select" id="wizard-input-location">
-            <option value="Domestic India (Tamil Nadu / Kaveri Delta)" ${state.wizard.location.includes('Tamil Nadu') ? 'selected' : ''}>Domestic India (Tamil Nadu / Kaveri Delta)</option>
-            <option value="Domestic India (Karnataka / Andhra / Telangana)" ${state.wizard.location.includes('Karnataka') ? 'selected' : ''}>Domestic India (Karnataka / Andhra / Telangana)</option>
-            <option value="Domestic India (Northern / Western States)" ${state.wizard.location.includes('Northern') ? 'selected' : ''}>Domestic India (Northern / Western States)</option>
-            <option value="North America (USA & Canada)" ${state.wizard.location.includes('USA') ? 'selected' : ''}>North America (USA & Canada)</option>
-            <option value="Europe & United Kingdom" ${state.wizard.location.includes('Europe') ? 'selected' : ''}>Europe & United Kingdom</option>
-            <option value="Southeast Asia & Singapore" ${state.wizard.location.includes('Singapore') ? 'selected' : ''}>Southeast Asia & Singapore</option>
-            <option value="Australia & Middle East" ${state.wizard.location.includes('Australia') ? 'selected' : ''}>Australia & Middle East</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Available Land Acreage / Plot Dimensions</label>
-          <input type="text" class="form-input" id="wizard-input-acreage" placeholder="e.g. 5 Acres, or 120 x 180 feet" value="${state.wizard.acreage}">
-        </div>
-      `;
-
-    case 3:
-      return `
-        <h3>03 / Architectural Tradition & Presiding Deity</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">Specify the canonical style and sacred deity.</p>
-
-        <div class="form-group">
-          <label class="form-label">Architectural Dynasty & Tradition</label>
-          <select class="form-select" id="wizard-input-style">
-            <option value="Imperial Chola Monolithic Granite" ${state.wizard.style.includes('Chola') ? 'selected' : ''}>Imperial Chola (Monumental Granite Vimana, Brihadeeswara proportions)</option>
-            <option value="Classical Dravidian" ${state.wizard.style.includes('Classical') ? 'selected' : ''}>Classical Dravidian (Octagonal Shikhara, Balanced Gopurams)</option>
-            <option value="Later Pandya Style" ${state.wizard.style.includes('Pandya') ? 'selected' : ''}>Later Pandya (Sky-scraping Rajagopurams, curved roll cornices)</option>
-            <option value="Vijayanagara & Nayaka Tradition" ${state.wizard.style.includes('Vijayanagara') ? 'selected' : ''}>Vijayanagara (Acoustic musical pillars, grand mandapams)</option>
-            <option value="Contemporary Heritage Fusion" ${state.wizard.style.includes('Contemporary') ? 'selected' : ''}>Contemporary Heritage Fusion</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Presiding Deity (Moolavar)</label>
-          <input type="text" class="form-input" id="wizard-input-deity" placeholder="e.g. Lord Shiva, Sri Venkateswara, Lord Murugan, Maha Devi, etc." value="${state.wizard.deity}">
-        </div>
-      `;
-
-    case 4:
-      return `
-        <h3>04 / Sizing & Stone Medium</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">Define the scale and sacred stone choice.</p>
-
-        <div class="form-group">
-          <label class="form-label">Estimated Built Footprint (sq. ft.)</label>
-          <select class="form-select" id="wizard-input-footprint">
-            <option value="Under 5,000 sq.ft (Private / Compact Shrine)" ${state.wizard.footprint.includes('Under 5,000') ? 'selected' : ''}>Under 5,000 sq.ft (Private / Compact Shrine)</option>
-            <option value="5,000 – 15,000 sq.ft (Medium Community Sanctuary)" ${state.wizard.footprint.includes('5,000 – 15,000') ? 'selected' : ''}>5,000 – 15,000 sq.ft (Medium Community Sanctuary)</option>
-            <option value="15,000 – 40,000 sq.ft (Monumental Temple Complex)" ${state.wizard.footprint.includes('15,000 – 40,000') ? 'selected' : ''}>15,000 – 40,000 sq.ft (Monumental Temple Complex)</option>
-            <option value="Over 40,000 sq.ft (Grand Regional Pilgrimage Sanctuary)" ${state.wizard.footprint.includes('Over 40,000') ? 'selected' : ''}>Over 40,000 sq.ft (Grand Regional Pilgrimage Sanctuary)</option>
-          </select>
-        </div>
-
-        <label class="form-label" style="margin-top: var(--space-4);">Preferred Stone Medium</label>
-        <div class="options-grid">
-          ${[
-            { title: 'Black Krishna Granite (Karunkal)', desc: 'Supreme hardness (Mohs 7), acoustically resonant, 1,000-year durability.' },
-            { title: 'Warm Golden Sandstone', desc: 'Warm ivory-gold hues, fine detail carving, ideal for arid climates.' },
-            { title: 'Tawny Grey Granite', desc: 'Resilient plutonic stone, subtle crystalline flecks, ideal for mandapams.' },
-            { title: 'White Teak Marble', desc: 'Pristine translucency for sanctum floor inlays and decorative screens.' }
-          ].map(s => `
-            <div class="option-card ${state.wizard.stone.includes(s.title.split('(')[0].trim()) ? 'selected' : ''}" data-select-stone="${s.title}">
-              <h4>${s.title}</h4>
-              <p>${s.desc}</p>
-            </div>
-          `).join('')}
-        </div>
-      `;
-
-    case 5:
-      return `
-        <h3>05 / Scope of Architectural Services</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">Select all disciplines you require from our studio.</p>
-
-        <div class="options-grid">
-          ${servicesData.map(serv => {
-            const isSelected = state.wizard.services.includes(serv.title);
-            return `
-              <div class="option-card ${isSelected ? 'selected' : ''}" data-toggle-service="${serv.title}">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <h4>${serv.title}</h4>
-                  <span style="color: var(--gold-bright); font-size: 0.9rem;">${isSelected ? '✓' : '+'}</span>
-                </div>
-                <p>${serv.subtitle}</p>
-              </div>
-            `;
-          }).join('')}
-        </div>
-      `;
-
-    case 6:
-      return `
-        <h3>06 / Patron Details & Reference Upload</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">Complete your dossier for our Chief Sthapathi's initial review.</p>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
-          <div class="form-group">
-            <label class="form-label">Patron / Trustee Name *</label>
-            <input type="text" class="form-input" id="wizard-input-name" required placeholder="e.g. S. Ramanathan" value="${state.wizard.patronName}">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Trust / Foundation Name</label>
-            <input type="text" class="form-input" id="wizard-input-trust" placeholder="e.g. Sri Venkateswara Temple Trust" value="${state.wizard.trustName}">
-          </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
-          <div class="form-group">
-            <label class="form-label">Email Address *</label>
-            <input type="email" class="form-input" id="wizard-input-email" required placeholder="trustee@domain.org" value="${state.wizard.email}">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Phone / WhatsApp *</label>
-            <input type="tel" class="form-input" id="wizard-input-phone" required placeholder="+91 / +1 / +44 ..." value="${state.wizard.phone}">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Sacred Vision & Specific Requirements</label>
-          <textarea class="form-textarea" id="wizard-input-notes" placeholder="Tell us about specific Agama traditions, family lineage intentions, consecration target dates, or site terrain features...">${state.wizard.notes}</textarea>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Architectural Blueprint / Survey / Reference Upload</label>
-          <div class="file-dropzone" id="file-dropzone">
-            <div class="dropzone-icon">⇪</div>
-            <strong>Click or Drag Site Plans / CAD / PDF Files Here</strong>
-            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">
-              Accepted formats: PDF, DWG, DXF, JPG, PNG (Max 50MB)
-            </p>
-            <input type="file" id="file-upload-input" style="display: none;" accept=".pdf,.dwg,.dxf,.jpg,.png,.jpeg">
-            <div id="file-upload-status" style="margin-top: 8px; font-weight: 600; color: var(--gold-bright); font-size: 0.85rem;">
-              ${state.wizard.uploadedFileName ? `Attached: ${state.wizard.uploadedFileName}` : ''}
-            </div>
-          </div>
-        </div>
-      `;
-  }
-}
-
-function attachWizardEventListeners() {
-  const form = document.getElementById('wizard-form');
-  const prevBtn = document.getElementById('btn-wizard-prev');
-  const nextBtn = document.getElementById('btn-wizard-next');
-
-  // Step Indicators click
-  document.querySelectorAll('[data-goto-step]').forEach(node => {
-    node.addEventListener('click', () => {
-      const step = parseInt(node.getAttribute('data-goto-step'), 10);
-      if (step <= state.wizard.currentStep || step === state.wizard.currentStep + 1) {
-        state.wizard.currentStep = step;
-        renderStartProjectPage();
-      }
-    });
-  });
-
-  // Previous Step
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      if (state.wizard.currentStep > 1) {
-        state.wizard.currentStep--;
-        renderStartProjectPage();
-      }
-    });
-  }
-
-  // Next Step
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      saveWizardCurrentStepData();
-      if (state.wizard.currentStep < state.wizard.totalSteps) {
-        state.wizard.currentStep++;
-        renderStartProjectPage();
-      }
-    });
-  }
-
-  // Category Selection (Step 1)
-  document.querySelectorAll('[data-select-category]').forEach(card => {
-    card.addEventListener('click', () => {
-      state.wizard.category = card.getAttribute('data-select-category');
-      renderStartProjectPage();
-    });
-  });
-
-  // Stone Selection (Step 4)
-  document.querySelectorAll('[data-select-stone]').forEach(card => {
-    card.addEventListener('click', () => {
-      state.wizard.stone = card.getAttribute('data-select-stone');
-      renderStartProjectPage();
-    });
-  });
-
-  // Services Toggle (Step 5)
-  document.querySelectorAll('[data-toggle-service]').forEach(card => {
-    card.addEventListener('click', () => {
-      const service = card.getAttribute('data-toggle-service');
-      const idx = state.wizard.services.indexOf(service);
-      if (idx > -1) {
-        state.wizard.services.splice(idx, 1);
-      } else {
-        state.wizard.services.push(service);
-      }
-      renderStartProjectPage();
-    });
-  });
-
-  // Dropzone file upload handling (Step 6)
-  const dropzone = document.getElementById('file-dropzone');
-  const fileInput = document.getElementById('file-upload-input');
-  const fileStatus = document.getElementById('file-upload-status');
-
-  if (dropzone && fileInput) {
-    dropzone.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', (e) => {
-      if (e.target.files && e.target.files[0]) {
-        state.wizard.uploadedFileName = e.target.files[0].name;
-        if (fileStatus) {
-          fileStatus.textContent = `Attached: ${e.target.files[0].name} (${(e.target.files[0].size / 1024).toFixed(1)} KB)`;
-        }
-      }
-    });
-  }
-
-  // Final Form Submission
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      saveWizardCurrentStepData();
-      showConfirmationDossier();
-    });
-  }
-}
-
-function saveWizardCurrentStepData() {
-  const loc = document.getElementById('wizard-input-location');
-  if (loc) state.wizard.location = loc.value;
-
-  const acreage = document.getElementById('wizard-input-acreage');
-  if (acreage) state.wizard.acreage = acreage.value;
-
-  const style = document.getElementById('wizard-input-style');
-  if (style) state.wizard.style = style.value;
-
-  const deity = document.getElementById('wizard-input-deity');
-  if (deity) state.wizard.deity = deity.value;
-
-  const footprint = document.getElementById('wizard-input-footprint');
-  if (footprint) state.wizard.footprint = footprint.value;
-
-  const name = document.getElementById('wizard-input-name');
-  if (name) state.wizard.patronName = name.value;
-
-  const trust = document.getElementById('wizard-input-trust');
-  if (trust) state.wizard.trustName = trust.value;
-
-  const email = document.getElementById('wizard-input-email');
-  if (email) state.wizard.email = email.value;
-
-  const phone = document.getElementById('wizard-input-phone');
-  if (phone) state.wizard.phone = phone.value;
-
-  const notes = document.getElementById('wizard-input-notes');
-  if (notes) state.wizard.notes = notes.value;
-}
-
-function showConfirmationDossier() {
-  const dossierId = `STH-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
-
-  appView.innerHTML = `
-    <div class="section-spacing" style="padding-top: 140px;">
-      <div class="container" style="max-width: 860px; text-align: center;">
-        <div style="background: var(--bg-surface); border: 1px solid var(--gold-border); border-radius: 4px; padding: var(--space-10); box-shadow: var(--shadow-lg);">
-          <span class="section-tag" style="background: rgba(197, 160, 89, 0.15);">Sacred Commission Received</span>
-          <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin: var(--space-3) 0;">Dossier Filed Under Sacred Seal</h1>
-          <p class="lead" style="color: var(--gold-bright);">
-            Dossier Reference ID: <strong>${dossierId}</strong>
-          </p>
-          <p style="color: var(--text-ivory-soft); max-width: 680px; margin: 0 auto var(--space-6);">
-            Thank you, <strong>${state.wizard.patronName || 'Respected Patron'}</strong> ${state.wizard.trustName ? `of ${state.wizard.trustName}` : ''}. Your architectural intent for a <strong>${state.wizard.category}</strong> dedicated to <strong>${state.wizard.deity}</strong> in <strong>${state.wizard.location}</strong> has been transmitted directly to the desk of our Chief Sthapathi.
-          </p>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: var(--space-6); border-radius: 4px; text-align: left; margin-bottom: var(--space-8);">
-            <h4 style="font-size: 0.85rem; color: var(--gold-primary); letter-spacing: 0.15em; margin-bottom: var(--space-3);">
-              CONSULTATION TIMELINE & NEXT PROCEDURES:
-            </h4>
-            <ol style="margin-left: var(--space-4); color: var(--text-ivory-soft); font-size: 0.92rem; display: flex; flex-direction: column; gap: 8px;">
-              <li><strong>Astrological Terrain Alignment:</strong> Our Vedic astrologers will cross-reference your geographic coordinates with true cardinal equinoxes.</li>
-              <li><strong>Preliminary Ayadi Ratio Sizing:</strong> We will draft the primary Manduka or Paramasayika sacred grid.</li>
-              <li><strong>Chief Sthapathi Direct Call:</strong> Within 48 business hours, our Managing Director will reach out to ${state.wizard.email || 'your email'} to schedule a virtual or on-site sanctum presentation.</li>
-            </ol>
-          </div>
-
-          <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
-            <a href="#home" class="btn btn-gold">
-              Return To Sacred Home
-            </a>
-            <button class="btn btn-outline-gold" onclick="window.print()">
-              Print / Save Sacred Dossier
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
 }
