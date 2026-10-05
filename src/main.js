@@ -371,20 +371,20 @@ function renderHomePage() {
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Featured Sanctuary</span>
-          <h2>Sri Kaalashthri Temple</h2>
-          <p>An Imperial Chola masterpiece constructed from 18,400 metric tonnes of virgin Krishna granite, consecrated in the sacred Kaveri delta.</p>
+          <h2>${featuredProject.title}</h2>
+          <p>${featuredProject.subtitle} — ${featuredProject.location}, ${featuredProject.year}.</p>
         </div>
 
         <div class="spotlight-card">
           <div class="spotlight-media">
             <img src="${featuredProject.image}" alt="${featuredProject.title}" class="spotlight-img" style="object-position: center 10%;">
-            <span class="spotlight-badge">Consecrated 2024</span>
+            <span class="spotlight-badge">${featuredProject.status} — ${featuredProject.year}</span>
           </div>
           <div class="spotlight-info">
             <span class="section-tag">${featuredProject.subtitle}</span>
             <h3 style="font-size: 2rem; margin: var(--space-2) 0;">${featuredProject.title}</h3>
             <p style="color: var(--text-ivory-soft);">
-              Built strictly to 10th-century Chola architectural canons codified in the Kamika Agama. Monolithic dry-stone interlocking joints with a 42-tonne capstone placed at an elevation of 108 feet.
+              ${featuredProject.chapters.vision.text}
             </p>
 
             <div class="spotlight-meta-list">
@@ -507,7 +507,7 @@ function renderProjectsPage() {
           <span class="section-tag">Portfolio & Sacred Works</span>
           <h1>Sanctuaries of Granite & Grace</h1>
           <p class="lead">
-            An archival monograph of monumental Dravidian vimanas, sky-scraping rajagopurams, acoustic kalyana mandapams, and heritage lithic restorations.
+            An archival record of Rajagopuram towers and temple stone works — from completed gateway landmarks to ongoing craft at site.
           </p>
         </div>
 
@@ -515,11 +515,8 @@ function renderProjectsPage() {
         <div class="projects-header-filter">
           <div class="filter-pills-bar">
             <button class="filter-pill ${state.projectFilter === 'all' ? 'active' : ''}" data-filter="all">All Sanctuaries (${projectsData.length})</button>
-            <button class="filter-pill ${state.projectFilter === 'chola' ? 'active' : ''}" data-filter="chola">Imperial Chola Vimanas</button>
+            <button class="filter-pill ${state.projectFilter === 'chola' ? 'active' : ''}" data-filter="chola">Temple Stone Works</button>
             <button class="filter-pill ${state.projectFilter === 'gopuram' ? 'active' : ''}" data-filter="gopuram">Rajagopurams</button>
-            <button class="filter-pill ${state.projectFilter === 'mandapam' ? 'active' : ''}" data-filter="mandapam">Stone Mandapams</button>
-            <button class="filter-pill ${state.projectFilter === 'private' ? 'active' : ''}" data-filter="private">Private Sanctums</button>
-            <button class="filter-pill ${state.projectFilter === 'restoration' ? 'active' : ''}" data-filter="restoration">Heritage Restorations</button>
           </div>
 
           <div style="max-width: 480px;">
@@ -627,13 +624,13 @@ function renderProjectDetailPage() {
         <span class="section-tag">${project.subtitle}</span>
         <h1 style="margin: var(--space-2) 0;">${project.title}</h1>
         <p class="lead" style="max-width: 820px;">
-          An exhaustive architectural monograph detailing the sacred intent, Vastu Purusha Mandala geometry, monolithic quarrying, and hydraulic structural erection.
+          ${project.location} — ${project.year} — ${project.status}. ${project.stoneType}.
         </p>
 
         <!-- Key Metrics Matrix -->
         <div class="case-study-matrix">
           <div class="matrix-cell">
-            <small>Granite Mass</small>
+            <small>Stone Work</small>
             <strong>${project.stats.graniteWeight}</strong>
           </div>
           <div class="matrix-cell">
