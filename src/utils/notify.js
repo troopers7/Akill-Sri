@@ -187,3 +187,69 @@ export async function sendAutomaticNotification(wizard, referenceId = '') {
     whatsapp: OWNER_WHATSAPP.map((owner, index) => ({ number: owner.number, label: owner.display, status: whatsapp[index] }))
   };
 }
+
+/** Flat JSON body handed to formsubmit.co for contact page inquiries. */
+export function contactInquiryEmailPayload(inquiry) {
+  const subject = `[${inquiry.refId}] New Architectural Project Inquiry: ${inquiry.type} — ${inquiry.name}`;
+  return {
+    _subject: subject,
+    _cc: OWNER_EMAILS.slice(1).join(','),
+    _replyto: inquiry.email,
+    _template: 'table',
+    _captcha: 'false',
+    'Application Reference': inquiry.refId,
+    'Filing Date': inquiry.filingDate,
+    'Patron Name': inquiry.name,
+    'Patron Email': inquiry.email,
+    'Direct Phone': inquiry.phone,
+    'Designated Studio Desk': inquiry.studio,
+    'Sanctuary Typology / Intent': inquiry.type,
+    'Vision & Land Details': inquiry.message,
+    'Architects Notified': OWNER_EMAILS.join(', ')
+  };
+}
+
+/** Direct mailto client backup link for contact inquiries. */
+export function contactMailtoUrl(inquiry) {
+  const subject = encodeURIComponent(`[${inquiry.refId}] Architectural Project Inquiry: ${inquiry.type} — ${inquiry.name}`);
+  const body = encodeURIComponent([
+    'SRI AKIL — ARCHITECTURAL PROJECT INQUIRY DOSSIER',
+    `Reference: ${inquiry.refId}`,
+    `Filing Date: ${inquiry.filingDate}`,
+    '',
+    'PATRON DETAILS:',
+    `• Patron Name: ${inquiry.name}`,
+    `• Email: ${inquiry.email}`,
+    `• Phone: ${inquiry.phone}`,
+    `• Studio Desk: ${inquiry.studio}`,
+    '',
+    'ARCHITECTURAL SCOPE & LAND VISION:',
+    `• Sanctuary Typology: ${inquiry.type}`,
+    '• Project Vision & Land Details:',
+    inquiry.message,
+    '',
+    `Dispatched to Principal Architect Desk (${OWNER_EMAILS.join(', ')}).`,
+    'Response timeline: within 24–48 hours.'
+  ].join('\n'));
+  return `mailto:${OWNER_EMAILS.join(',')}?subject=${subject}&body=${body}`;
+}
+
+/** Delivers contact inquiry directly to the architect's email via FormSubmit AJAX. */
+export async function deliverContactInquiry(inquiry) {
+  const endpoint = EMAIL_DELIVERY.alias.trim() || EMAIL_DELIVERY.endpoint.trim();
+  if (!endpoint) return DELIVERY_STATUS.manual;
+  try {
+    const response = await abortableFetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(contactInquiryEmailPayload(inquiry))
+    }, DELIVERY_TIMEOUT);
+    if (!response.ok) return DELIVERY_STATUS.failed;
+    const payload = await response.json().catch(() => null);
+    if (!payload) return DELIVERY_STATUS.sent;
+    return String(payload.success) === 'true' ? DELIVERY_STATUS.sent : DELIVERY_STATUS.failed;
+  } catch {
+    return DELIVERY_STATUS.failed;
+  }
+}
+

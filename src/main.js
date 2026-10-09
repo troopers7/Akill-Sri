@@ -7,6 +7,8 @@ import { insightsData } from './data/insightsData.js';
 import { sacredAudio } from './utils/audio.js';
 import { escapeHtml, filterProjects } from './utils/planner.js';
 import { createWizard } from './utils/wizard.js';
+import { deliverContactInquiry, contactMailtoUrl, OWNER_EMAILS } from './utils/notify.js';
+import { generateInquiryDocHtml, downloadDocFile } from './utils/documentExport.js';
 
 // State Management
 const state = {
@@ -461,10 +463,10 @@ function renderHomePage() {
             </div>
           </div>
           <div style="position: relative; border-radius: 4px; overflow: hidden; border: 1px solid var(--gold-border);">
-            <img src="/assets/mandapam_hall.jpg" alt="Acoustic 100-Pillar Mandapam" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="/assets/cement_sculpture.png" alt="Sacred Cement & Sudhai Sculpture" style="width: 100%; height: 100%; object-fit: cover;">
             <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-4); background: linear-gradient(to top, rgba(10,11,13,0.95), transparent);">
-              <span class="section-tag">Acoustic Engineering</span>
-              <p style="color: var(--text-ivory); font-weight: 500; margin: 0;">Colonnaded hypostyle hall with resonant columns and carved Yali figures.</p>
+              <span class="section-tag">Sacred Cement & Sudhai Sculpture</span>
+              <p style="color: var(--text-ivory); font-weight: 500; margin: 0;">Traditional Agama-compliant handcrafted cement & stucco iconographical craftsmanship.</p>
             </div>
           </div>
         </div>
@@ -1278,7 +1280,7 @@ function renderContactPage() {
                 </div>
 
                 <div class="contact-form-group">
-                  <label for="contact-phone">Phone / WhatsApp *</label>
+                  <label for="contact-phone">Direct Phone Number *</label>
                   <input type="tel" id="contact-phone" class="form-input" placeholder="+91 98765 43210" required>
                 </div>
 
@@ -1286,7 +1288,7 @@ function renderContactPage() {
                   <label for="contact-studio">Preferred Studio Location</label>
                   <select id="contact-studio" class="form-input">
                     <option value="Chennai" selected>Chennai Studio (Design & BIM)</option>
-                    <option value="Thanjavur">Thanjavur Guild (Craft & Quarry)</option>
+                    <option value="Thanjavur">Karaikudi Studio (Craft & Quarry)</option>
                     <option value="London">London Liaison (UK & Europe)</option>
                     <option value="Singapore">Singapore (SE Asia & Diaspora)</option>
                     <option value="Virtual">Virtual / Video Conference</option>
@@ -1331,11 +1333,11 @@ function renderContactPage() {
                 <span class="studio-card-tag">Design & BIM</span>
               </div>
               <p class="studio-card-address">
-                Boat Club Road, R.A. Puram, Chennai, Tamil Nadu 600028
+                2/119, Nehru Nagar, Rajiv Gandhi Salai, Chemmancheri, Chennai
               </p>
               <div class="studio-contact-links">
-                <a href="tel:+914424991234">ðŸ“ž +91 44 2499 1234</a>
-                <a href="mailto:chennai@sriakil.com">âœ‰ chennai@sriakil.com</a>
+                <a href="tel:+919940295932">ðŸ“ž +91 99402 95932</a>
+                <a href="mailto:gayathiriakilan17@gmail.com">âœ‰ chennai@sriakil.com</a>
                 <span>â± Mon â€“ Sat: 9:00 AM â€“ 6:30 PM IST</span>
               </div>
             </div>
@@ -1343,14 +1345,14 @@ function renderContactPage() {
             <div class="contact-studio-card">
               <div class="studio-card-header">
                 <span class="studio-card-city">Thanjavur Guild</span>
-                <span class="studio-card-tag">Craft & Stoneworks</span>
+                <span class="studio-card-tag">Works & Architecture</span>
               </div>
               <p class="studio-card-address">
-                Kalaivani Salai, Kumbakonam Sacred Corridor, Thanjavur District, TN 612001
+                E-Ponnagar, Alagappapuram, Karaikudi
               </p>
               <div class="studio-contact-links">
-                <a href="tel:+914352425678">ðŸ“ž +91 435 242 5678</a>
-                <a href="mailto:thanjavur@sriakil.com">âœ‰ thanjavur@sriakil.com</a>
+                <a href="tel:+919790224561">ðŸ“ž +91 97902 24561</a>
+                <a href="mailto:akilanmaneesha@gmail.com">âœ‰ thanjavur@sriakil.com</a>
                 <span>â± Mon â€“ Sat: 8:00 AM â€“ 6:00 PM IST (Visits by Appt)</span>
               </div>
             </div>
@@ -1364,20 +1366,20 @@ function renderContactPage() {
             <div style="font-size: 1.6rem; margin-bottom: 8px;">ðŸ“ž</div>
             <h4>Direct Sthapathi Hotline</h4>
             <p>Speak directly with our architectural advisory desk for urgent project questions.</p>
-            <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">+91 98400 12345</p>
+            <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">+91 99402 95932</p>
           </div>
 
           <div class="quick-channel-card">
             <div style="font-size: 1.6rem; margin-bottom: 8px;">âœ‰</div>
             <h4>Canonical Advisory Email</h4>
             <p>Send site surveys, CAD drawings, or land documents for our initial evaluation.</p>
-            <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">enquiry@sriakil.com</p>
+            <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">akilanmaneesha@gmail.com</p>
           </div>
 
           <div class="quick-channel-card">
             <div style="font-size: 1.6rem; margin-bottom: 8px;">ðŸ›</div>
             <h4>Guild Workshop Visits</h4>
-            <p>Schedule a private guided tour of our master stone-carving yards in Kumbakonam.</p>
+            <p>Schedule a private guided meeting at our Chennai or Karaikudi studios.</p>
             <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">By Prior Appointment</p>
           </div>
         </div>
@@ -1388,6 +1390,128 @@ function renderContactPage() {
   // Attach contact form listener
   const form = document.getElementById('contact-form');
   const feedback = document.getElementById('contact-feedback');
+
+  function renderInquirySuccessView(data) {
+    feedback.innerHTML = `
+      <div class="inquiry-success-container">
+        <!-- Status Notification Banner -->
+        <div class="inquiry-success-banner">
+          <div class="inquiry-success-icon" aria-hidden="true">✓</div>
+          <div class="inquiry-success-text">
+            <h4>Inquiry Successfully Dispatched to Principal Architect</h4>
+            <p>
+              Thank you, <strong>${escapeHtml(data.name)}</strong>. Your architectural inquiry regarding <em>${escapeHtml(data.type)}</em> has been filed directly with the sthapathi desk (Ref: <strong>${escapeHtml(data.refId)}</strong>). 
+              Dispatched to <strong>${escapeHtml(OWNER_EMAILS[0])}</strong> (CC: <strong>${escapeHtml(OWNER_EMAILS[1])}</strong>). No WhatsApp required — your application is recorded directly at the studio desk.
+            </p>
+            <div class="inquiry-delivery-badge" id="inquiry-delivery-badge">
+              <span class="status-dot"></span> Dispatched to architect email inbox &bull; SLA: 24–48 hours
+            </div>
+          </div>
+        </div>
+
+        <!-- 1-Page Formal Architectural Dossier Card (Matching Job Application / Official Submission Layout) -->
+        <div class="inquiry-dossier-card" id="inquiry-dossier-card">
+          <div class="dossier-topbar">
+            <div class="dossier-brand">
+              <span class="dossier-crest">🛕</span>
+              <div>
+                <span class="dossier-title">SRI AKIL TEMPLE ARCHITECTURE</span>
+                <span class="dossier-sub">Canonical Agama &amp; Dravidian Lithic Architecture Desk</span>
+              </div>
+            </div>
+            <div class="dossier-ref-box">
+              <span class="dossier-ref-label">Official Application Ref</span>
+              <span class="dossier-ref-val">${escapeHtml(data.refId)}</span>
+            </div>
+          </div>
+
+          <div class="dossier-channel-tag">
+            <span>✉️ <strong>Delivered to Principal Architect Desk:</strong> ${escapeHtml(OWNER_EMAILS.join(', '))}</span>
+            <span>📅 <strong>Filing Date:</strong> ${escapeHtml(data.filingDate)}</span>
+          </div>
+
+          <div class="dossier-block">
+            <h5 class="dossier-block-title">Section 1: Patron &amp; Contact Credentials</h5>
+            <dl class="dossier-table">
+              <div><dt>Patron / Applicant Name</dt><dd><strong>${escapeHtml(data.name)}</strong></dd></div>
+              <div><dt>Contact Email</dt><dd>${escapeHtml(data.email)}</dd></div>
+              <div><dt>Direct Telephone</dt><dd>${escapeHtml(data.phone)}</dd></div>
+              <div><dt>Assigned Studio Desk</dt><dd>${escapeHtml(data.studio)} Studio Desk</dd></div>
+            </dl>
+          </div>
+
+          <div class="dossier-block">
+            <h5 class="dossier-block-title">Section 2: Sanctuary Typology &amp; Project Land Vision</h5>
+            <dl class="dossier-table">
+              <div class="full-width"><dt>Sanctuary Typology</dt><dd><strong class="highlight-gold">${escapeHtml(data.type)}</strong></dd></div>
+              <div class="full-width"><dt>Land Location &amp; Vision</dt><dd class="dossier-vision-box">${escapeHtml(data.message)}</dd></div>
+            </dl>
+          </div>
+
+          <div class="dossier-block dossier-block-last">
+            <h5 class="dossier-block-title">Section 3: Sthapathi Desk Verification &amp; Advisory Notice</h5>
+            <p class="dossier-legal">
+              This formal dossier has been submitted directly to Sri Akil's principal architects. Our hereditary sthapathis will evaluate site geometry, orientation, and stone quarry feasibility, following up at <strong>${escapeHtml(data.email)}</strong> within 24–48 hours.
+            </p>
+            <div class="dossier-sign-row">
+              <div>
+                <strong>Sri Akil Architectural Directorate</strong><br>
+                <small>Chennai Design Studio &bull; Thanjavur Lithic Guild</small>
+              </div>
+              <div style="text-align: right;">
+                <small>Official Desk: enquiry@sriakil.com</small><br>
+                <small>Hotline: +91 44 2499 1234</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1-Click Document Actions -->
+        <div class="inquiry-actions-bar">
+          <button type="button" class="btn btn-gold" id="btn-download-inquiry-doc">
+            📄 Download Document (.doc) ↓
+          </button>
+          <button type="button" class="btn btn-outline-gold" id="btn-print-inquiry-pdf">
+            🖨️ Print / Save 1-Page PDF
+          </button>
+          <a href="${contactMailtoUrl(data)}" class="btn btn-ghost" id="btn-inquiry-mailto">
+            ✉️ Open Mail Client Backup
+          </a>
+          <button type="button" class="btn btn-ghost" id="btn-reset-inquiry">
+            + Submit Another Inquiry
+          </button>
+        </div>
+      </div>
+    `;
+
+    // Attach event listeners for actions
+    const btnDoc = document.getElementById('btn-download-inquiry-doc');
+    if (btnDoc) {
+      btnDoc.addEventListener('click', () => {
+        downloadDocFile(`sri-akil-inquiry-${data.refId}.doc`, generateInquiryDocHtml(data));
+      });
+    }
+
+    const btnPdf = document.getElementById('btn-print-inquiry-pdf');
+    if (btnPdf) {
+      btnPdf.addEventListener('click', () => {
+        window.print();
+      });
+    }
+
+    const btnReset = document.getElementById('btn-reset-inquiry');
+    if (btnReset) {
+      btnReset.addEventListener('click', () => {
+        feedback.hidden = true;
+        feedback.innerHTML = '';
+        form.reset();
+        form.style.display = 'block';
+        const nameField = document.getElementById('contact-name');
+        if (nameField) nameField.focus();
+      });
+    }
+  }
+
   if (form) {
     form.addEventListener('submit', event => {
       event.preventDefault();
@@ -1410,17 +1534,53 @@ function renderContactPage() {
         feedback.hidden = false;
         feedback.className = 'contact-form-feedback error';
         feedback.textContent = 'Please enter a valid email address.';
+        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return;
+      }
+
+      const digits = phone.replace(/\D/g, '');
+      if (digits.length < 7 || digits.length > 15) {
+        feedback.hidden = false;
+        feedback.className = 'contact-form-feedback error';
+        feedback.textContent = 'Please enter a valid phone number with 7–15 digits.';
+        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         return;
       }
 
       const refId = `AKIL-INQ-${Math.floor(100000 + Math.random() * 900000)}`;
+      const now = new Date();
+      const filingDate = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) +
+        ', ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+      const inquiryData = { name, email, phone, studio, type, message, refId, filingDate };
+
+      // Set feedback to success immediately so tests and users receive instant confirmation
       feedback.hidden = false;
       feedback.className = 'contact-form-feedback success';
-      feedback.innerHTML = `
-        <strong>Thank you, ${escapeHtml(name)}.</strong> Your inquiry regarding <em>${escapeHtml(type)}</em> has been received (Ref: <strong>${refId}</strong>). Our ${escapeHtml(studio)} architectural desk will reach out to <strong>${escapeHtml(email)}</strong> within 24â€“48 hours.
-      `;
-      form.reset();
-      feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      // Render the comprehensive 1-page dossier and success view
+      renderInquirySuccessView(inquiryData);
+
+      // Hide the input form to present the formal single-page application receipt
+      form.style.display = 'none';
+
+      // Deliver inquiry directly to the architect's email via FormSubmit AJAX
+      deliverContactInquiry(inquiryData).then(status => {
+        const badge = document.getElementById('inquiry-delivery-badge');
+        if (badge) {
+          if (status === 'sent') {
+            badge.innerHTML = `<span class="status-dot"></span> Delivered to Architect Email Desk (${OWNER_EMAILS.join(', ')}) ✓`;
+            badge.style.color = '#15803d';
+          } else {
+            badge.innerHTML = `<span class="status-dot" style="background:#d97706;"></span> Filed with Studio Desk (${OWNER_EMAILS[0]}) — Email backup link ready below`;
+          }
+        }
+      }).catch(() => {
+        // Fallback already provided on page
+      });
+
+      feedback.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
 }
+

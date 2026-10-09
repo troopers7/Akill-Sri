@@ -10,7 +10,7 @@ export const projectsData = [
     stoneType: "Dense Black Krishna Granite (Karunkal)",
     footprint: "Rajagopuram Complex",
     vimanaHeight: "142 Feet",
-    masterSthapathi: "Dr. K. Sthapathi, Senior Shilpa Guru",
+    masterSthapathi: "R. Akilan Sthapathy",
     image: "/assets/kalahasthi_temple.jpg",
     tags: ["Rajagopuram", "142 Feet", "2015-2016"],
     stats: {
@@ -47,237 +47,237 @@ export const projectsData = [
     }
   },
   {
+    id: "sangarapuram-kovil-rajagopuram",
+    title: "Sangarapuram Kovil Rajagopuram",
+    subtitle: "Multi-Tiered Gateway Tower with Classical Deities",
+    category: "gopuram",
+    location: "Sangarapuram, Tamil Nadu",
+    year: "Completed",
+    status: "Completed",
+    stoneType: "Granite Base + Traditional Sudhai / Stucco Superstructure",
+    footprint: "Rajagopuram Precinct",
+    vimanaHeight: "Soaring Rajagopuram",
+    masterSthapathi: "R. Akilan Sthapathy",
+    image: "/assets/sangarapuram_kovil.jpg",
+    tags: ["Sangarapuram Kovil", "Rajagopuram", "Vibrant Stucco & Deities", "Completed"],
+    stats: {
+      graniteWeight: "Rajagopuram Granite & Sudhai",
+      carvingHours: "Master Sthapathi Craft",
+      jointPrecision: "Agama Canonical Alignment",
+      alignment: "Sangarapuram, Tamil Nadu"
+    },
+    chapters: {
+      vision: {
+        title: "01 / Patron Vision & Sacred Intent",
+        text: "Sangarapuram Kovil Rajagopuram stands as an auspicious gateway tower crowned with sacred kalasams, blessing the community and temple precincts."
+      },
+      concept: {
+        title: "02 / Vastu Purusha Mandala & Ayadi Ratios",
+        text: "Gateway proportioned along the cardinal celestial axis, guiding devotees through the cosmic threshold into the sacred temple interior."
+      },
+      design: {
+        title: "03 / Architectural Blueprint & Multi-Tier Elevation",
+        text: "Engineered granite base supporting multi-tiered diminishing talas adorned with Kuta, Sala niches, and celestial guardian figures."
+      },
+      craft: {
+        title: "04 / Master Sthapathi Hand-Carving & Sudhai Art",
+        text: "Intricate hand-sculpted divine deities, dwarapalakas, and vahanas finished in vibrant, traditional iconographical colors."
+      },
+      execution: {
+        title: "05 / Structural Engineering & Precision Assembly",
+        text: "Engineered load-bearing granite foundation seamlessly integrated with traditional lime-stucco tiers engineered for weather durability."
+      },
+      completed: {
+        title: "06 / Consecration & Completed Sanctuary",
+        text: "Fully consecrated and completed Rajagopuram radiating spiritual presence and architectural splendor."
+      }
+    }
+  },
+  {
     id: "thiruvallur-anjaneyar-rajagopuram",
-    title: "Thiruvallur Panchamuga Anjaneyar Front Rajagopuram",
-    subtitle: "75 Feet Rajagopuram - Tamil Nadu",
+    title: "Thiruvallur Aanjanayar Kovil Front Elevation & Rajagopuram",
+    subtitle: "Sacred Front Elevation & Gateway - Tamil Nadu",
     category: "gopuram",
     location: "Thiruvallur, Tamil Nadu",
-    year: "2010 - 2011",
+    year: "Completed",
     status: "Completed",
-    stoneType: "Granite Base + Stucco Superstructure",
-    footprint: "Rajagopuram Precinct",
-    vimanaHeight: "75 Feet",
-    masterSthapathi: "Ar. S. Ganapathi Acharya",
-    image: "/assets/gopuram_monolith.jpg",
-    tags: ["Rajagopuram", "75 Feet", "2010-2011"],
+    stoneType: "Granite Base + Stucco Superstructure & Sculpted Dwarapalakas",
+    footprint: "Rajagopuram Front Precinct",
+    vimanaHeight: "Sacred Front Elevation",
+    masterSthapathi: "R. Akilan Sthapathy",
+    image: "/assets/aanjanayar_kovil_elevation.jpg",
+    tags: ["Aanjanayar Kovil", "Front Elevation", "Dwarapalakas", "Completed"],
     stats: {
-      graniteWeight: "Rajagopuram Stone Work",
-      carvingHours: "2010-2011 Work",
-      jointPrecision: "75 Feet Tower",
+      graniteWeight: "Granite Plinth & Entrance",
+      carvingHours: "Iconographical Sculpting",
+      jointPrecision: "Sacred Orientation",
       alignment: "Thiruvallur, Tamil Nadu"
     },
     chapters: {
       vision: {
         title: "01 / Patron Vision & Sacred Intent",
-        text: "Thiruvallur Panchamuga Anjaneyar Temple front Rajagopuram constructed in Tamil Nadu during 2010-2011 with 75 feet tower height."
+        text: "Thiruvallur Aanjanayar Kovil front elevation and entrance gateway designed and executed to inspire reverence in approaching devotees."
       },
       concept: {
         title: "02 / Vastu Purusha Mandala & Ayadi Ratios",
-        text: "Gateway proportioned to the temple front axis, guiding devotees from outer street into the sacred Anjaneyar sanctum."
+        text: "Front elevation carefully aligned with the presiding deity's eye line, following exact Agama Shastra entry proportions."
       },
       design: {
-        title: "03 / Architectural Blueprint & 3D Drafting",
-        text: "Solid granite base with tapering superstructure finished in traditional stucco and sculpture work."
+        title: "03 / Architectural Blueprint & Entrance Elevation",
+        text: "Ornate entrance portal flanked by colossal sculpted dwarapalakas, decorative cornice mouldings, and upper tier deities."
       },
       craft: {
         title: "04 / Master Sthapathi Hand-Carving",
-        text: "Hand-sculpted deities and guardian figures carved by hereditary sthapathis in traditional craft."
+        text: "Vibrant polychrome stucco sculptures and hand-carved stone plinths sculpted by traditional sthapathis."
       },
       execution: {
         title: "05 / Structural Engineering & Precision Assembly",
-        text: "Engineered foundation and staged assembly to raise the 75 feet tower safely and precisely."
+        text: "Robust entrance pavilion structure engineered for high devotee throughput with complete structural stability."
       },
       completed: {
         title: "06 / Consecration & Completed Sanctuary",
-        text: "Completed Rajagopuram now stands as the front gateway landmark of the Thiruvallur temple."
+        text: "Magnificent completed front elevation welcoming thousands of pilgrims and devotees daily."
       }
     }
   },
   {
     id: "kolangonda-maari-amman-temple",
-    title: "Kolangonda Maari Amman Temple",
-    subtitle: "Stone Work - Gopuram Temple - Ongoing",
+    title: "Kolangkondan Amman Temple",
+    subtitle: "Intricate Granite Adhisthana Plinth & Stone Carving - Ongoing",
     category: "chola",
-    location: "Kolangonda",
+    location: "Kolangkondan, Tamil Nadu",
     year: "2025 - 2026",
     status: "Ongoing",
-    stoneType: "Granite Stone Work",
-    footprint: "Gopuram Temple Complex",
-    vimanaHeight: "Gopuram Temple",
-    masterSthapathi: "Master Carver K. Balan Sthapathi",
-    image: "/assets/mandapam_hall.jpg",
-    tags: ["Stone Work", "Gopuram Temple", "2025-2026"],
+    stoneType: "Dense Plutonic Granite (Karunkal) Adhisthana & Pilasters",
+    footprint: "Amman Temple Complex",
+    vimanaHeight: "Granite Stone Temple",
+    masterSthapathi: "R. Akilan Sthapathy",
+    image: "/assets/kolangkondan_amman_temple.jpg",
+    tags: ["Kolangkondan Amman", "Granite Adhisthana", "Stone Carving", "Ongoing"],
     stats: {
-      graniteWeight: "Gopuram Stone Work",
-      carvingHours: "2025-2026 Work",
-      jointPrecision: "Stone Temple Work",
-      alignment: "Kolangonda"
+      graniteWeight: "Plutonic Granite Stonework",
+      carvingHours: "Ongoing Artisanal Chiseled Craft",
+      jointPrecision: "Interlocking Mortarless Masonry",
+      alignment: "Kolangkondan, Tamil Nadu"
     },
     chapters: {
       vision: {
         title: "01 / Patron Vision & Sacred Intent",
-        text: "Kolangonda Maari Amman Temple stone work for Gopuram temple, currently ongoing during 2025-2026."
+        text: "Kolangkondan Amman Temple stonework commission aimed at erecting a thousand-year solid granite sanctuary for the divine mother."
       },
       concept: {
         title: "02 / Vastu Purusha Mandala & Ayadi Ratios",
-        text: "Traditional temple layout proportioned for the Amman sanctum and Gopuram gateway."
+        text: "Ground plan calibrated to the sacred Manduka Mandala with harmonious Ayadi ratios governing sanctum and ambulatory paths."
       },
       design: {
         title: "03 / Architectural Blueprint & 3D Drafting",
-        text: "Granite stone detailing with traditional Dravidian Gopuram elevation."
+        text: "Classical moulded adhisthana plinth featuring kumuda torus rolls, padma lotus friezes, and fluted stone pilasters."
       },
       craft: {
         title: "04 / Master Sthapathi Hand-Carving",
-        text: "Hand-carved stone work by traditional sthapathis in ongoing craft."
+        text: "Hereditary stone carvers hand-chiseling crystalline granite blocks on site with carbon-steel chisels and generational mastery."
       },
       execution: {
         title: "05 / Structural Engineering & Precision Assembly",
-        text: "Staged stone assembly with engineered foundation for the Gopuram structure."
+        text: "Staged dry-fit assembly and precision alignment of massive monolithic granite base registers under traditional scaffolding."
       },
       completed: {
         title: "06 / Consecration & Completed Sanctuary",
-        text: "Ongoing stone work progressing towards completion and consecration."
+        text: "Stone craft progressing smoothly on schedule towards sacred Maha Kumbhabhishekam consecration."
       }
     }
   },
   {
     id: "erode-elapuli-sokkanachi-amman-temple",
-    title: "Erode Elapuli Village Sokkanachi Amman Temple",
-    subtitle: "Stone Work - 2025-26",
+    title: "Elupili Sokkanachi Amman Temple Project",
+    subtitle: "Stone Sanctum & Vimana Construction - Ongoing",
     category: "chola",
-    location: "Elapuli Village, Erode",
+    location: "Elupili Village, Erode",
     year: "2025 - 2026",
     status: "Ongoing",
-    stoneType: "Granite Stone Work",
-    footprint: "Amman Temple Complex",
-    vimanaHeight: "Stone Temple",
-    masterSthapathi: "Dr. Ar. Meera Sundaram (Conservation Lead)",
-    image: "/assets/stone_detail.jpg",
-    tags: ["Stone Work", "2025-26", "Amman Temple"],
+    stoneType: "Granite Plinth with Traditional Superstructure",
+    footprint: "Amman Temple Sanctum",
+    vimanaHeight: "Vimana Superstructure",
+    masterSthapathi: "R. Akilan Sthapathy",
+    image: "/assets/elupili_project.jpg",
+    tags: ["Elupili Project", "Vimana Construction", "Stone Work", "Ongoing"],
     stats: {
-      graniteWeight: "Amman Temple Stone Work",
-      carvingHours: "2025-2026 Work",
-      jointPrecision: "Stone Temple Work",
-      alignment: "Elapuli Village, Erode"
+      graniteWeight: "Sanctum Granite Masonry",
+      carvingHours: "Ongoing Field Execution",
+      jointPrecision: "Precision Stone Jointing",
+      alignment: "Elupili Village, Erode"
     },
     chapters: {
       vision: {
         title: "01 / Patron Vision & Sacred Intent",
-        text: "Erode Elapuli Village Sokkanachi Amman Temple stone work, currently ongoing during 2025-2026 in traditional stone craft."
+        text: "Erode Elupili Village Sokkanachi Amman Temple project underway to build an authentic stone sanctum and soaring tiered vimana."
       },
       concept: {
         title: "02 / Vastu Purusha Mandala & Ayadi Ratios",
-        text: "Traditional Amman temple layout proportioned for sanctum, ardha mandapam and circumambulatory passage."
+        text: "Sacred Garbhagriha layout proportioned for acoustic intimacy, thermal stability, and focused divine energy concentration."
       },
       design: {
         title: "03 / Architectural Blueprint & 3D Drafting",
-        text: "Granite stone detailing with traditional elevations for walls, pillars and roof elements."
+        text: "Comprehensive elevation blueprints featuring interlocking granite plinth and tapering tiered stone-brick superstructure."
       },
       craft: {
         title: "04 / Master Sthapathi Hand-Carving",
-        text: "Hand-carved stone work by traditional sthapathis in ongoing craft at site and workshop."
+        text: "Skilled temple builders and sthapathis actively assembling the superstructure from bamboo scaffolding at site."
       },
       execution: {
         title: "05 / Structural Engineering & Precision Assembly",
-        text: "Staged stone assembly with engineered foundation and precise dry-fit jointing."
+        text: "Precision leveling and staged course-by-course construction ensuring structural integrity to withstand generations of monsoons."
       },
       completed: {
         title: "06 / Consecration & Completed Sanctuary",
-        text: "Ongoing stone work progressing towards completion and consecration."
+        text: "Ongoing construction advancing with dedication toward consecration and temple sanctification."
       }
     }
   },
   {
-    id: "chennai-omr-navallur-vengatesa-perumal-temple",
-    title: "Chennai OMR Navallur Vengatesa Perumal Temple",
-    subtitle: "Perumal Temple - Ongoing",
+    id: "sacred-cement-amman-sculpture",
+    title: "Sacred Amman Cement & Sudhai Sculpture",
+    subtitle: "Four-Armed Divine Deity Handcrafted Iconography",
     category: "chola",
-    location: "Navallur, OMR, Chennai",
-    year: "Ongoing",
-    status: "Ongoing",
-    stoneType: "Granite Stone Work",
-    footprint: "Perumal Temple Complex",
-    vimanaHeight: "Temple Complex",
-    masterSthapathi: "Ar. S. Ganapathi Acharya",
-    image: "/assets/hero_temple.jpg",
-    tags: ["Perumal Temple", "OMR Chennai", "Ongoing"],
+    location: "Chennai & Karaikudi Guilds",
+    year: "Completed",
+    status: "Completed",
+    stoneType: "Reinforced Sacred Cement & Sudhai Shilpam",
+    footprint: "Sculptural Sanctum Murti",
+    vimanaHeight: "Agama Murti Iconography",
+    masterSthapathi: "R. Akilan Sthapathy",
+    image: "/assets/cement_sculpture.png",
+    tags: ["Cement Sculpture", "Sudhai Craft", "Amman Deity", "Completed"],
     stats: {
-      graniteWeight: "Perumal Temple Stone Work",
-      carvingHours: "Ongoing Temple Work",
-      jointPrecision: "Stone Temple Work",
-      alignment: "Navallur, OMR, Chennai"
+      graniteWeight: "High-Density Sculptural Mortar",
+      carvingHours: "Direct Hand-Sculpted Art",
+      jointPrecision: "Dasa Tala Canonical Ratios",
+      alignment: "Chennai & Karaikudi Studios"
     },
     chapters: {
       vision: {
-        title: "01 / Patron Vision & Sacred Intent",
-        text: "Chennai OMR Navallur Vengatesa Perumal Temple stone work, currently ongoing in traditional stone craft."
+        title: "01 / Sacred Iconography & Divine Intent",
+        text: "Handcrafted four-armed seated Amman deity sculpted in reinforced cement and traditional Sudhai mortar in strict accordance with Agama and Shilpa Shastras."
       },
       concept: {
-        title: "02 / Vastu Purusha Mandala & Ayadi Ratios",
-        text: "Traditional Perumal temple layout proportioned for sanctum, mandapam and prakaram."
+        title: "02 / Dasa Tala Proportions & Sacred Attributes",
+        text: "Sculpted with the sacred Damaru with Naga, flashing sword of wisdom, purification flame mace, and vessel of grace in royal Lalitasana posture."
       },
       design: {
-        title: "03 / Architectural Blueprint & 3D Drafting",
-        text: "Granite stone detailing with traditional elevations for walls, pillars and roof elements."
+        title: "03 / Architectural & Sculptural Drafting",
+        text: "Intricate ornamentation including Karanda Mukuta crown, cascading ear ornaments, layered chest haras, and detailed adhisthana pedestal."
       },
       craft: {
-        title: "04 / Master Sthapathi Hand-Carving",
-        text: "Hand-carved stone work by traditional sthapathis in ongoing craft at site and workshop."
+        title: "04 / Master Sthapathi Hand-Modeling",
+        text: "Individually hand-modeled and chiseled by hereditary sthapathis without molds, infusing divine prana and artistic vitality into every curve."
       },
       execution: {
-        title: "05 / Structural Engineering & Precision Assembly",
-        text: "Staged stone assembly with engineered foundation and precise dry-fit jointing."
+        title: "05 / Structural Durability & Finishing",
+        text: "Engineered with non-corrosive internal armatures and specialized weather-resistant mortar designed for centuries of environmental resistance."
       },
       completed: {
         title: "06 / Consecration & Completed Sanctuary",
-        text: "Ongoing stone work progressing towards completion and consecration."
-      }
-    }
-  },
-  {
-    id: "chennai-vinagar-temple-rajagopuram",
-    title: "Chennai Vinagar Temple Rajagopuram",
-    subtitle: "Rajagopuram - Ongoing",
-    category: "gopuram",
-    location: "Chennai - Ponagar, Alagapuram",
-    year: "Ongoing",
-    status: "Ongoing",
-    stoneType: "Granite Base + Stucco Superstructure",
-    footprint: "Rajagopuram Temple Complex",
-    vimanaHeight: "Rajagopuram",
-    masterSthapathi: "Master Carver K. Balan Sthapathi",
-    image: "/assets/temple_blueprint.jpg",
-    tags: ["Vinagar Temple", "Rajagopuram", "Ongoing"],
-    stats: {
-      graniteWeight: "Rajagopuram Stone Work",
-      carvingHours: "Ongoing Temple Work",
-      jointPrecision: "Stone Temple Work",
-      alignment: "Chennai - Ponagar, Alagapuram"
-    },
-    chapters: {
-      vision: {
-        title: "01 / Patron Vision & Sacred Intent",
-        text: "Chennai Vinagar Temple Rajagopuram, currently ongoing in traditional granite and stucco craft."
-      },
-      concept: {
-        title: "02 / Vastu Purusha Mandala & Ayadi Ratios",
-        text: "Rajagopuram aligned to the temple axis, proportioned to lead devotees into the Vinagar sanctum."
-      },
-      design: {
-        title: "03 / Architectural Blueprint & 3D Drafting",
-        text: "Granite base with tapering stucco superstructure and traditional sculpture tiers."
-      },
-      craft: {
-        title: "04 / Master Sthapathi Hand-Carving",
-        text: "Hand-sculpted figures and ornamental details carved by hereditary sthapathis."
-      },
-      execution: {
-        title: "05 / Structural Engineering & Precision Assembly",
-        text: "Engineered foundation and staged assembly for the ongoing Rajagopuram work."
-      },
-      completed: {
-        title: "06 / Consecration & Completed Sanctuary",
-        text: "Ongoing Rajagopuram work progressing towards completion and consecration."
+        text: "Exquisite completed Amman murti radiating serenity, grace, and spiritual authority."
       }
     }
   }

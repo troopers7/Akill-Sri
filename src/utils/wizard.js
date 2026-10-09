@@ -1,6 +1,7 @@
 import { servicesData } from '../data/servicesData.js';
 import { escapeHtml as esc, validateWizard, validateReferenceFile, briefEntries, createBriefText } from './planner.js';
 import { createReferenceId, notificationLinks, sendAutomaticNotification, whatsappFallbackLinks, openWhatsappChat } from './notify.js';
+import { generateBriefDocHtml, downloadDocFile } from './documentExport.js';
 
 const categories = [
   ['New Temple Complex', 'A complete temple campus with sanctum, gateway and courtyards.'],
@@ -307,6 +308,7 @@ export function createWizard(view) {
           <dl class="brief-review">${briefEntries(draft).map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>
           <div class="brief-actions">
             <button type="button" id="download-brief" class="btn btn-gold">Download brief ↓</button>
+            <button type="button" id="download-brief-doc" class="btn btn-outline-gold">Download Word (.doc) ↓</button>
             <button type="button" id="print-brief" class="btn btn-outline-gold">Print / Save PDF</button>
             <button type="button" id="edit-brief" class="btn btn-outline-gold">Edit details</button>
             <button type="button" id="reset-brief" class="btn btn-ghost">Clear & start again</button>
@@ -318,6 +320,9 @@ export function createWizard(view) {
       const link = document.createElement('a');
       link.href = url; link.download = 'sri-akil-project-brief.txt'; document.body.append(link); link.click(); link.remove();
       setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+    view.querySelector('#download-brief-doc')?.addEventListener('click', () => {
+      downloadDocFile(`sri-akil-project-brief-${referenceId || 'draft'}.doc`, generateBriefDocHtml(draft, referenceId));
     });
     view.querySelector('#print-brief').addEventListener('click', () => window.print());
     view.querySelector('#edit-brief').addEventListener('click', () => { submitted = false; render(); });
