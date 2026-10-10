@@ -25,9 +25,40 @@ export const aboutData = {
   team: [
     {
       name: "R. Akilan Sthapathy",
-      role: "Principal Sthapathi & Design Director",
-      credentials: "Hereditary Temple Architect • Sacred Stonecraft Specialist",
-      bio: "Leading the studio with hereditary temple knowledge, sacred geometry, and practical execution for granite sanctuaries, heritage restoration, and devotional sculpture."
+      role: "Principal Sthapathi & Guild Master",
+      credentials: "Hereditary Temple Architect • Master Shilpi & Agama Shastra Director",
+      bio: "Leading the architectural practice with four generations of hereditary temple craftsmanship. Specializes in monumental monolithic granite Vimanas, sacred Ayadi proportions, sanctum consecrations, and handcrafted stone iconographies.",
+      image: "/assets/akilan_sthapathy_portrait.jpg"
+    }
+  ],
+  worksArchive: [
+    {
+      id: "kalasam-consecration",
+      title: "Sacred Golden Kalasam Consecration",
+      category: "Maha Kumbhabhishekam",
+      image: "/assets/work_kalasam_ceremony.jpg",
+      caption: "Sthapathy R. Akilan presiding over the ceremonial installation and consecrated abhishekam of the sacred Gopura Golden Kalasam alongside traditional guild artisans."
+    },
+    {
+      id: "divine-sculpture",
+      title: "Divine Shiva & Parvati (Soma Skanda) Iconography",
+      category: "Agama Shilpa Craft",
+      image: "/assets/work_divine_sculpture.png",
+      caption: "Exquisite hand-sculpted polychrome stone and stucco divine couple deities, sculpted to canonical Silparatna canons with traditional mudras and sacred ornamentation."
+    },
+    {
+      id: "sanctum-consecration",
+      title: "Garbhagriha Sthapana & Temple Trust Felicitation",
+      category: "Sanctum Consecration",
+      image: "/assets/work_sanctum_consecration.jpg",
+      caption: "Temple trustees, dignitaries, and chief Vedic priests presenting the sacred Poorna Kumbham and floral honours to Sthapathy R. Akilan at the completed sanctum entrance."
+    },
+    {
+      id: "gopuram-scaffolding",
+      title: "Monumental Raja Gopuram Construction & Inspection",
+      category: "Vimana & Tower Engineering",
+      image: "/assets/work_gopuram_scaffolding.png",
+      caption: "Guiding patrons, trust officials, and dignitaries atop the high Raja Gopuram scaffolding during pinnacle superstructure alignment and final kalasam preparation."
     }
   ],
   values: [

@@ -2,6 +2,7 @@ import { servicesData } from '../data/servicesData.js';
 import { escapeHtml as esc, validateWizard, validateReferenceFile, briefEntries, createBriefText } from './planner.js';
 import { createReferenceId, notificationLinks, sendAutomaticNotification, whatsappFallbackLinks, openWhatsappChat } from './notify.js';
 import { generateBriefDocHtml, downloadDocFile } from './documentExport.js';
+import { downloadBriefPdf } from './pdfExport.js';
 
 const categories = [
   ['New Temple Complex', 'A complete temple campus with sanctum, gateway and courtyards.'],
@@ -253,7 +254,13 @@ export function createWizard(view) {
     notification = notificationLinks(draft, referenceId);
     submitted = true;
     error = '';
-    // Opened inside the submit gesture so browsers allow the WhatsApp tab.
+    // Automatically trigger neat PDF download for the owner/patron records
+    try {
+      downloadBriefPdf(draft, referenceId);
+    } catch (e) {
+      console.warn('PDF auto-download warning:', e);
+    }
+    // Opened inside the submit gesture so browsers allow the WhatsApp tab directly to 9940295932
     handedOff = whatsappFallbackLinks(draft, referenceId);
     handedOff.forEach(entry => openWhatsappChat(entry.href));
     renderReview();
@@ -266,7 +273,7 @@ export function createWizard(view) {
     sent: 'Sent automatically ✓',
     failed: 'Could not send automatically — use the link',
     manual: 'Not switched on yet — use the link',
-    handoff: 'WhatsApp opened — press send'
+    handoff: 'WhatsApp opened to 9940295932 — press send'
   };
 
   /** Paints the delivery outcome in place, so the review screen never jumps. */
@@ -286,8 +293,8 @@ export function createWizard(view) {
     const summary = view.querySelector('#brief-reference');
     if (!summary) return;
     summary.innerHTML = channels.every(([, status]) => status === 'sent')
-      ? `<strong>Reference ${esc(referenceId)}.</strong> Your brief was sent automatically to the studio email and WhatsApp desk — nothing more to do. Download or print a copy for your records.`
-      : `<strong>Reference ${esc(referenceId)}.</strong> Your brief is ready, but not every studio channel could be reached automatically. Use the links below to send it to the remaining owner contacts.`;
+      ? `<strong>Reference ${esc(referenceId)}.</strong> Your brief was dispatched automatically to the studio desk (+91 99402 95932) and email — your neat PDF has been downloaded. Download or print an additional copy below.`
+      : `<strong>Reference ${esc(referenceId)}.</strong> Your brief and neat PDF are prepared. WhatsApp has opened directly to <strong>+91 99402 95932</strong>. Use the buttons below for additional downloads.`;
   }
 
   function renderReview() {
@@ -297,17 +304,17 @@ export function createWizard(view) {
         <div class="confirmation-card">
           <span class="section-tag">Brief submitted</span>
           <h1>Your vision.<br>A considered beginning.</h1>
-          <p class="lead">Your project brief has been filed with the studio desk.</p>
-          <p class="form-notice" id="brief-reference"><strong>Reference ${esc(referenceId)}.</strong> Sending your brief to the studio automatically…</p>
+          <p class="lead">Your project brief has been filed with the studio desk. A neat PDF has been downloaded automatically.</p>
+          <p class="form-notice" id="brief-reference"><strong>Reference ${esc(referenceId)}.</strong> Dispatched to studio WhatsApp (+91 99402 95932) & email…</p>
           <ul class="submission-channels">
             <li><small>Email</small><a id="${channels.email.id}" href="${esc(channels.email.href)}">${esc(channels.email.label)}</a>
               <em class="delivery-status" id="delivery-status-email">${statusText.sending}</em></li>
-            ${channels.whatsapp.map(entry => `<li><small>WhatsApp</small><a id="${entry.id}" href="${esc(entry.href)}">${esc(entry.label)}</a>
+            ${channels.whatsapp.map(entry => `<li><small>WhatsApp (${entry.number === '919940295932' ? 'Primary' : 'Studio'})</small><a id="${entry.id}" href="${esc(entry.href)}">${esc(entry.label)}</a>
               <em class="delivery-status" id="delivery-status-${entry.number}">${statusText.sending}</em></li>`).join('')}
           </ul>
           <dl class="brief-review">${briefEntries(draft).map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>
           <div class="brief-actions">
-            <button type="button" id="download-brief" class="btn btn-gold">Download brief ↓</button>
+            <button type="button" id="download-brief" class="btn btn-gold">📄 Download Neat PDF Brief ↓</button>
             <button type="button" id="download-brief-doc" class="btn btn-outline-gold">Download Word (.doc) ↓</button>
             <button type="button" id="print-brief" class="btn btn-outline-gold">Print / Save PDF</button>
             <button type="button" id="edit-brief" class="btn btn-outline-gold">Edit details</button>
@@ -315,17 +322,14 @@ export function createWizard(view) {
           </div>
         </div>
       </div></section>`;
-    view.querySelector('#download-brief').addEventListener('click', () => {
-      const url = URL.createObjectURL(new Blob([createBriefText(draft, referenceId)], { type: 'text/plain;charset=utf-8' }));
-      const link = document.createElement('a');
-      link.href = url; link.download = 'sri-akil-project-brief.txt'; document.body.append(link); link.click(); link.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    view.querySelector('#download-brief')?.addEventListener('click', () => {
+      downloadBriefPdf(draft, referenceId);
     });
     view.querySelector('#download-brief-doc')?.addEventListener('click', () => {
       downloadDocFile(`sri-akil-project-brief-${referenceId || 'draft'}.doc`, generateBriefDocHtml(draft, referenceId));
     });
-    view.querySelector('#print-brief').addEventListener('click', () => window.print());
-    view.querySelector('#edit-brief').addEventListener('click', () => { submitted = false; render(); });
+    view.querySelector('#print-brief')?.addEventListener('click', () => window.print());
+    view.querySelector('#edit-brief')?.addEventListener('click', () => { submitted = false; render(); });
     view.querySelector('#reset-brief').addEventListener('click', () => {
       if (!window.confirm('Clear this project brief and all entered details?')) return;
       draft = defaults(); submitted = false; referenceId = ''; notification = null;

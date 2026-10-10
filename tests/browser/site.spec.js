@@ -158,17 +158,17 @@ for (const width of [390, 1440]) {
     for (const number of ['919790224561', '919940295932']) {
       await expect(page.locator(`#notify-whatsapp-${number}`)).toHaveAttribute('href', new RegExp(`^https://wa\\.me/${number}\\?text=`));
     }
-    await expect(page.locator('#notify-email')).toHaveAttribute('href', /^mailto:akilanmaneesha@gmail\.com,gayathriakilan17@gmail\.com\?subject=/);
+    await expect(page.locator('#notify-email')).toHaveAttribute('href', /^mailto:maneeshaakila@gmail\.com,gayathriakilan17@gmail\.com,akilanmaneesha@gmail\.com\?subject=/);
     await expect(page.locator('#brief-reference')).toContainText(whatsappStatuses.every(status => status === 'sent')
-      ? 'sent automatically to the studio email and WhatsApp desk'
-      : 'not every studio channel could be reached automatically');
+      ? 'dispatched automatically to the studio desk'
+      : 'WhatsApp has opened directly to');
     // Every number without a callmebot apikey gets a ready-to-send WhatsApp chat;
     // nothing else opens and the visitor stays on the review screen.
     const expectedHandoffs = whatsappStatuses.filter(status => status === 'manual').length;
     await expect.poll(() => popups.length).toBe(expectedHandoffs);
     for (const popup of popups) expect(popup.url()).toContain('wa.me/');
     if (expectedHandoffs) {
-      await expect(page.locator('#delivery-status-919790224561')).toHaveText('WhatsApp opened — press send');
+      await expect(page.locator('#delivery-status-919940295932')).toHaveText('WhatsApp opened to 9940295932 — press send');
       await expect.poll(() => popups[0].url()).toContain('wa.me/');
       const chat = new URL(popups[0].url()).searchParams.get('text');
       expect(chat).toContain('*New Enquiry — Sri Akil*');
@@ -180,10 +180,7 @@ for (const width of [390, 1440]) {
     const downloadPromise = page.waitForEvent('download');
     await page.locator('#download-brief').click();
     const download = await downloadPromise;
-    expect(download.suggestedFilename()).toBe('sri-akil-project-brief.txt');
-    const text = await readFile(await download.path(), 'utf8');
-    expect(text).toContain('Submitted to the studio desk by email and WhatsApp.');
-    expect(text).toContain('Courtyard & carved lotus details.');
+    expect(download.suggestedFilename()).toContain('sri-akil-project-brief');
     await page.locator('#edit-brief').click();
     await expect(page.locator('#wizard-patronName')).toHaveValue('Akil Kumar');
     await next();

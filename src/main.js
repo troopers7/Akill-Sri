@@ -9,6 +9,7 @@ import { escapeHtml, filterProjects } from './utils/planner.js';
 import { createWizard } from './utils/wizard.js';
 import { deliverContactInquiry, contactMailtoUrl, OWNER_EMAILS } from './utils/notify.js';
 import { generateInquiryDocHtml, downloadDocFile } from './utils/documentExport.js';
+import { downloadInquiryPdf } from './utils/pdfExport.js';
 
 // State Management
 const state = {
@@ -18,6 +19,7 @@ const state = {
   selectedProcessStep: '01',
   projectFilter: 'all',
   searchQuery: '',
+  currentWorksSlide: 0,
 };
 
 // Routing & View Controller
@@ -1011,18 +1013,58 @@ function renderAboutPage() {
           <span class="section-tag">Leadership & Lineage</span>
           <h2>The Masters of the Guild</h2>
           <p style="max-width: 680px; margin-bottom: var(--space-6);">
-            Our multidisciplinary practice combines hereditary Shilpi guildmasters with internationally acclaimed architects from CEPT and Harvard GSD.
+            Leading our sacred architectural practice with four generations of hereditary Dravidian stonecraft, sacred geometry, and orthodox Agama Shastra traditions.
           </p>
 
-          <div class="team-grid">
-            ${aboutData.team.map(member => `
-              <div class="team-card">
-                <div class="team-card-role">${member.role}</div>
-                <h3 style="font-size: 1.45rem; margin-bottom: 2px;">${member.name}</h3>
-                <div class="team-credentials">${member.credentials}</div>
-                <p style="font-size: 0.9rem; color: var(--text-ivory-soft); margin: 0;">${member.bio}</p>
+          ${aboutData.team.map(member => `
+            <div class="master-sthapathi-showcase">
+              <div class="sthapathi-photo-frame">
+                <img class="sthapathi-photo-img" src="${member.image}" alt="${escapeHtml(member.name)}" />
+                <div class="sthapathi-photo-badge">
+                  <span class="sthapathi-badge-tag">Hereditary Guild Master</span>
+                  <span class="sthapathi-badge-name">${escapeHtml(member.name)}</span>
+                </div>
               </div>
-            `).join('')}
+              <div class="sthapathi-details">
+                <div class="sthapathi-crest-tag">
+                  <span>🛕</span> <span>${escapeHtml(member.role)}</span>
+                </div>
+                <h3 class="sthapathi-name">${escapeHtml(member.name)}</h3>
+                <div class="sthapathi-credentials-badge">${escapeHtml(member.credentials)}</div>
+                <p class="sthapathi-bio">${escapeHtml(member.bio)}</p>
+                <div class="sthapathi-contact-row">
+                  <a href="tel:+919940295932" class="btn btn-gold" style="padding: 12px 24px; font-size: 0.8rem;">
+                    Direct Call: +91 99402 95932 📞
+                  </a>
+                  <a href="https://wa.me/919940295932" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold" style="padding: 12px 24px; font-size: 0.8rem;">
+                    WhatsApp Desk 💬
+                  </a>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+
+          <!-- Works & Consecrations Slideshow -->
+          <div class="works-slideshow-wrapper" style="margin-top: var(--space-8);">
+            <div class="works-slideshow-header">
+              <div>
+                <span class="section-tag">Living Sacred Heritage</span>
+                <h3 style="font-size: clamp(1.4rem, 2.2vw, 1.95rem); margin-top: 4px;">Sacred Works & Consecration Archive</h3>
+                <p style="font-size: 0.95rem; color: var(--text-soft); margin: 0; max-width: 680px;">
+                  Presiding over temple Kumbhabhishekams, sanctum consecrations, granite iconographies, and monumental tower engineering.
+                </p>
+              </div>
+              <div class="slideshow-controls">
+                <span id="works-slide-counter" class="works-counter">01 / 04</span>
+                <button type="button" id="works-prev-btn" class="btn btn-outline-gold works-nav-btn" aria-label="Previous Slide">←</button>
+                <button type="button" id="works-next-btn" class="btn btn-gold works-nav-btn" aria-label="Next Slide">→</button>
+              </div>
+            </div>
+
+            <div id="works-slideshow-container" class="works-slideshow-container">
+              <div id="works-slides-track" class="works-slides-track"></div>
+              <div id="works-dots-bar" class="works-dots-bar"></div>
+            </div>
           </div>
         </div>
 
@@ -1043,6 +1085,99 @@ function renderAboutPage() {
       </div>
     </div>
   `;
+
+  initWorksSlideshow();
+}
+
+/** Interactive Slideshow for Akilan Sthapathy's works, sculptures & consecrations */
+function initWorksSlideshow() {
+  const container = document.getElementById('works-slideshow-container');
+  if (!container || !aboutData.worksArchive || !aboutData.worksArchive.length) return;
+
+  const slides = aboutData.worksArchive;
+  const track = document.getElementById('works-slides-track');
+  const counter = document.getElementById('works-slide-counter');
+  const dotsBar = document.getElementById('works-dots-bar');
+  const prevBtn = document.getElementById('works-prev-btn');
+  const nextBtn = document.getElementById('works-next-btn');
+
+  let activeIndex = state.currentWorksSlide || 0;
+  let timer = null;
+
+  function renderSlide(index) {
+    activeIndex = (index + slides.length) % slides.length;
+    state.currentWorksSlide = activeIndex;
+    const item = slides[activeIndex];
+
+    if (counter) {
+      counter.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+    }
+
+    if (track) {
+      track.innerHTML = `
+        <div class="works-slide-item">
+          <div class="works-slide-media">
+            <img src="${item.image}" alt="${escapeHtml(item.title)}" class="works-slide-img" />
+            <div class="works-slide-vignette"></div>
+          </div>
+          <div class="works-slide-content">
+            <div class="works-slide-tag">
+              <span>🛕</span> ${escapeHtml(item.category)}
+            </div>
+            <h4 class="works-slide-title">
+              ${escapeHtml(item.title)}
+            </h4>
+            <p class="works-slide-desc">
+              ${escapeHtml(item.caption)}
+            </p>
+            <div class="works-slide-footer">
+              <span class="works-artisan-label">
+                Master Sthapathi: R. Akilan Sthapathy
+              </span>
+              <a href="#start-project" class="btn btn-outline-gold" style="padding: 7px 16px; font-size: 0.72rem;">
+                Commission A Sanctuary →
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    if (dotsBar) {
+      dotsBar.innerHTML = slides.map((_, i) => `
+        <button type="button" class="works-dot ${i === activeIndex ? 'active' : ''}" data-slide-idx="${i}" aria-label="Slide ${i + 1}"></button>
+      `).join('');
+
+      dotsBar.querySelectorAll('.works-dot').forEach(dot => {
+        dot.addEventListener('click', () => {
+          stopTimer();
+          renderSlide(Number(dot.dataset.slideIdx));
+          startTimer();
+        });
+      });
+    }
+  }
+
+  function nextSlide() { renderSlide(activeIndex + 1); }
+  function prevSlide() { renderSlide(activeIndex - 1); }
+
+  prevBtn?.addEventListener('click', () => { stopTimer(); prevSlide(); startTimer(); });
+  nextBtn?.addEventListener('click', () => { stopTimer(); nextSlide(); startTimer(); });
+
+  function startTimer() {
+    stopTimer();
+    timer = setInterval(nextSlide, 5000);
+  }
+  function stopTimer() {
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
+
+  container.addEventListener('mouseenter', stopTimer);
+  container.addEventListener('mouseleave', startTimer);
+
+  renderSlide(activeIndex);
+  startTimer();
 }
 
 /* 7. PROCESS PAGE (8-STAGE TIMELINE) */
@@ -1352,7 +1487,7 @@ function renderContactPage() {
               </p>
               <div class="studio-contact-links">
                 <a href="tel:+919790224561">📞 +91 97902 24561</a>
-                <a href="mailto:akilanmaneesha@gmail.com">✉ thanjavur@sriakil.com</a>
+                <a href="mailto:maneeshaakila@gmail.com">✉ maneeshaakila@gmail.com</a>
                 <span>⏱ Mon – Sat: 8:00 AM – 6:00 PM IST (Visits by Appt)</span>
               </div>
             </div>
@@ -1373,7 +1508,7 @@ function renderContactPage() {
             <div style="font-size: 1.6rem; margin-bottom: 8px;">✉</div>
             <h4>Canonical Advisory Email</h4>
             <p>Send site surveys, CAD drawings, or land documents for our initial evaluation.</p>
-            <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">akilanmaneesha@gmail.com</p>
+            <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">maneeshaakila@gmail.com</p>
           </div>
 
           <div class="quick-channel-card">
@@ -1392,6 +1527,13 @@ function renderContactPage() {
   const feedback = document.getElementById('contact-feedback');
 
   function renderInquirySuccessView(data) {
+    // Automatically trigger instant neat PDF download for applicant & sthapathi records
+    try {
+      downloadInquiryPdf(data);
+    } catch (e) {
+      console.warn('PDF auto-download warning:', e);
+    }
+
     feedback.innerHTML = `
       <div class="inquiry-success-container">
         <!-- Status Notification Banner -->
@@ -1401,15 +1543,15 @@ function renderContactPage() {
             <h4>Inquiry Successfully Dispatched to Principal Architect</h4>
             <p>
               Thank you, <strong>${escapeHtml(data.name)}</strong>. Your architectural inquiry regarding <em>${escapeHtml(data.type)}</em> has been filed directly with the sthapathi desk (Ref: <strong>${escapeHtml(data.refId)}</strong>). 
-              Dispatched to <strong>${escapeHtml(OWNER_EMAILS[0])}</strong> (CC: <strong>${escapeHtml(OWNER_EMAILS[1])}</strong>). No WhatsApp required — your application is recorded directly at the studio desk.
+              Dispatched directly to <strong>${escapeHtml(OWNER_EMAILS[0])}</strong>. Your neat 1-page PDF dossier has been downloaded automatically.
             </p>
             <div class="inquiry-delivery-badge" id="inquiry-delivery-badge">
-              <span class="status-dot"></span> Dispatched to architect email inbox &bull; SLA: 24–48 hours
+              <span class="status-dot"></span> Dispatched to architect email (${OWNER_EMAILS[0]}) &bull; SLA: 24–48 hours
             </div>
           </div>
         </div>
 
-        <!-- 1-Page Formal Architectural Dossier Card (Matching Job Application / Official Submission Layout) -->
+        <!-- 1-Page Formal Architectural Dossier Card -->
         <div class="inquiry-dossier-card" id="inquiry-dossier-card">
           <div class="dossier-topbar">
             <div class="dossier-brand">
@@ -1426,7 +1568,7 @@ function renderContactPage() {
           </div>
 
           <div class="dossier-channel-tag">
-            <span>✉️ <strong>Delivered to Principal Architect Desk:</strong> ${escapeHtml(OWNER_EMAILS.join(', '))}</span>
+            <span>✉️ <strong>Delivered to Principal Architect Desk:</strong> ${escapeHtml(OWNER_EMAILS[0])}</span>
             <span>📅 <strong>Filing Date:</strong> ${escapeHtml(data.filingDate)}</span>
           </div>
 
@@ -1451,7 +1593,7 @@ function renderContactPage() {
           <div class="dossier-block dossier-block-last">
             <h5 class="dossier-block-title">Section 3: Sthapathi Desk Verification &amp; Advisory Notice</h5>
             <p class="dossier-legal">
-              This formal dossier has been submitted directly to Sri Akil's principal architects. Our hereditary sthapathis will evaluate site geometry, orientation, and stone quarry feasibility, following up at <strong>${escapeHtml(data.email)}</strong> within 24–48 hours.
+              This formal dossier has been submitted directly to Sri Akil's principal architects at <strong>${escapeHtml(OWNER_EMAILS[0])}</strong>. Our hereditary sthapathis will evaluate site geometry, orientation, and stone quarry feasibility, following up at <strong>${escapeHtml(data.email)}</strong> within 24–48 hours.
             </p>
             <div class="dossier-sign-row">
               <div>
@@ -1459,8 +1601,8 @@ function renderContactPage() {
                 <small>Chennai Design Studio &bull; Thanjavur Lithic Guild</small>
               </div>
               <div style="text-align: right;">
-                <small>Official Desk: enquiry@sriakil.com</small><br>
-                <small>Hotline: +91 44 2499 1234</small>
+                <small>Official Desk: ${escapeHtml(OWNER_EMAILS[0])}</small><br>
+                <small>Hotline: +91 99402 95932</small>
               </div>
             </div>
           </div>
@@ -1468,14 +1610,17 @@ function renderContactPage() {
 
         <!-- 1-Click Document Actions -->
         <div class="inquiry-actions-bar">
-          <button type="button" class="btn btn-gold" id="btn-download-inquiry-doc">
-            📄 Download Document (.doc) ↓
+          <button type="button" class="btn btn-gold" id="btn-download-inquiry-pdf">
+            📄 Download 1-Page PDF Dossier ↓
+          </button>
+          <button type="button" class="btn btn-outline-gold" id="btn-download-inquiry-doc">
+            Download Word (.doc) ↓
           </button>
           <button type="button" class="btn btn-outline-gold" id="btn-print-inquiry-pdf">
-            🖨️ Print / Save 1-Page PDF
+            🖨️ Print / Save PDF
           </button>
           <a href="${contactMailtoUrl(data)}" class="btn btn-ghost" id="btn-inquiry-mailto">
-            ✉️ Open Mail Client Backup
+            ✉️ Open Mail Client (${escapeHtml(OWNER_EMAILS[0])})
           </a>
           <button type="button" class="btn btn-ghost" id="btn-reset-inquiry">
             + Submit Another Inquiry
@@ -1485,6 +1630,13 @@ function renderContactPage() {
     `;
 
     // Attach event listeners for actions
+    const btnPdf = document.getElementById('btn-download-inquiry-pdf');
+    if (btnPdf) {
+      btnPdf.addEventListener('click', () => {
+        downloadInquiryPdf(data);
+      });
+    }
+
     const btnDoc = document.getElementById('btn-download-inquiry-doc');
     if (btnDoc) {
       btnDoc.addEventListener('click', () => {
@@ -1492,9 +1644,9 @@ function renderContactPage() {
       });
     }
 
-    const btnPdf = document.getElementById('btn-print-inquiry-pdf');
-    if (btnPdf) {
-      btnPdf.addEventListener('click', () => {
+    const btnPrint = document.getElementById('btn-print-inquiry-pdf');
+    if (btnPrint) {
+      btnPrint.addEventListener('click', () => {
         window.print();
       });
     }
