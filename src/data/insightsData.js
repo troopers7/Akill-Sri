@@ -82,6 +82,10 @@ export const insightsData = [
       
       <h3>Internal Armature & Weather Endurance</h3>
       <p>Unlike ordinary plaster sculptures that crack within seasons, sacred cement and sudhai sculptures executed by our guild incorporate internal non-corrosive stainless steel and copper armatures. Multiple graduated coats of fine mineral aggregate, fiber matrix, and waterproof hydraulic binding are hand-troweled and individually chiseled by master craftsmen without mechanical molds. The result is an iconographical masterpiece that withstands relentless tropical sun, monsoon downpours, and environmental exposure for generations.</p>
+
+      <h3>Amman Iconography in Sacred Studio Practice</h3>
+      <p>In our studio work, Mother Amman representations receive a distinct ritual treatment: the face is rendered with a gentle yet powerful expression, the shoulders are widened in a devotional stance, and the ornamentation is layered with sacred floral motifs, protective chest plates, and temple-appropriate jewelry. Every detail is proportioned to read clearly at a devotional distance while retaining the calm power expected of a divine mother form.</p>
+      <p>This is not generic religious sculpture; it is a disciplined continuation of temple tradition, where iconographic rules, spiritual proportion, and durable weatherproof materials are all held together in a single sacred object.</p>
     `
   },
   {

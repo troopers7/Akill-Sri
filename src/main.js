@@ -293,7 +293,7 @@ function renderHomePage() {
       <div class="hero-content">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          <span>Architectural Studio â€¢ Founded 2000</span>
+          <span>Architectural Studio • Founded 2000</span>
         </div>
 
         <h1 class="hero-title">Sacred spaces.<br><em>Timeless legacies.</em></h1>
@@ -303,13 +303,13 @@ function renderHomePage() {
 
         <div class="hero-actions">
           <a href="#start-project" class="btn btn-gold">
-            START YOUR PROJECT <span class="btn-arrow">â†’</span>
+            START YOUR PROJECT <span class="btn-arrow">→</span>
           </a>
           <a href="#projects" class="btn btn-outline-gold">
             EXPLORE OUR WORK
           </a>
         </div>
-        <div class="hero-note"><span class="hero-note-symbol" aria-hidden="true">âœ¦</span><span>Traditional wisdom. Thoughtful design.<br>From the first sketch to the final carved detail.</span></div>
+        <div class="hero-note"><span class="hero-note-symbol" aria-hidden="true">✦</span><span>Traditional wisdom. Thoughtful design.<br>From the first sketch to the final carved detail.</span></div>
       </div>
     </section>
 
@@ -322,12 +322,12 @@ function renderHomePage() {
             <div class="metric-label">Sacred Sanctuaries Built</div>
           </div>
           <div class="metric-item">
-            <div class="metric-value">1,000 Yrs</div>
-            <div class="metric-label">Engineered Granite Lifespan</div>
+            <div class="metric-value">20+ Yrs</div>
+            <div class="metric-label">Hereditary Temple Practice</div>
           </div>
           <div class="metric-item">
-            <div class="metric-value">14</div>
-            <div class="metric-label">Master Sthapathis & Architects</div>
+            <div class="metric-value">1</div>
+            <div class="metric-label">Principal Sthapathi</div>
           </div>
           <div class="metric-item">
             <div class="metric-value">100%</div>
@@ -345,14 +345,14 @@ function renderHomePage() {
             <span class="section-tag">Studio Philosophy</span>
             <h2>Where old temple rules meet modern engineering.</h2>
             <p class="lead">
-              A temple is not just a prayer hall; it is the cosmic bodyâ€”the Viraat Purushaâ€”made into strong stone.
+              A temple is not just a prayer hall; it is the cosmic body—the Viraat Purusha—made into strong stone.
             </p>
             <p>
-              For almost 25 years, our studio has kept alive the granite building style. We avoid weak concrete that breaks in a few decades. Instead, we build sanctuaries with pure black Krishna granite (Karunkal), using dry stone joints and sacred Ayadi ratios.
+              For over 20 years, our studio has kept alive the granite building style. We avoid weak concrete that breaks in a few decades. Instead, we build sanctuaries with pure black Krishna granite (Karunkal), using dry stone joints and sacred Ayadi ratios.
             </p>
             <div style="margin-top: var(--space-4);">
               <a href="#about" class="btn btn-ghost">
-                DISCOVER OUR HERITAGE & STHAPATHIS <span class="btn-arrow">â†’</span>
+                DISCOVER OUR HERITAGE <span class="btn-arrow">→</span>
               </a>
             </div>
           </div>
@@ -410,7 +410,7 @@ function renderHomePage() {
 
             <div>
               <a href="#project-detail" class="btn btn-gold" id="btn-view-spotlight-case">
-                EXPLORE FULL CASE STUDY <span class="btn-arrow">â†’</span>
+                EXPLORE FULL CASE STUDY <span class="btn-arrow">→</span>
               </a>
             </div>
           </div>
@@ -426,7 +426,7 @@ function renderHomePage() {
             <span class="section-tag">Disciplines & Mastery</span>
             <h2>Seven Pillars of Sacred Execution</h2>
           </div>
-          <a href="#services" class="btn btn-outline-gold">View All Services â†’</a>
+          <a href="#services" class="btn btn-outline-gold">View All Services →</a>
         </div>
 
         <div class="service-preview-grid">
@@ -437,7 +437,7 @@ function renderHomePage() {
               <p style="font-family: var(--font-editorial); font-style: italic; color: var(--gold-bright); font-size: 0.95rem; margin-bottom: var(--space-3);">${service.subtitle}</p>
               <p style="font-size: 0.9rem; color: var(--text-ivory-soft);">${service.description.substring(0, 160)}...</p>
               <a href="#services" class="btn-ghost" style="display: inline-block; margin-top: var(--space-3); font-size: 0.8rem;">
-                Learn More â†’
+                Learn More →
               </a>
             </div>
           `).join('')}
@@ -482,7 +482,7 @@ function renderHomePage() {
           Whether envisioning a monumental 11-tier Rajagopuram, a private family sanctum, or preserving an ancient heritage shrine, our master sthapathis are ready to guide your sacred journey.
         </p>
         <a href="#start-project" class="btn btn-gold" style="padding: 18px 44px; font-size: 0.9rem;">
-          START YOUR PROJECT <span class="btn-arrow">â†’</span>
+          START YOUR PROJECT <span class="btn-arrow">→</span>
         </a>
       </div>
     </section>
@@ -523,7 +523,7 @@ function renderProjectsPage() {
 
           <div style="max-width: 480px;">
             <label class="form-label" for="project-search-input">Find your inspiration</label>
-            <input type="search" id="project-search-input" class="form-input" placeholder="Search by name, stone, tradition or locationâ€¦" value="${escapeHtml(state.searchQuery)}">
+            <input type="search" id="project-search-input" class="form-input" placeholder="Search by name, stone, tradition or location…" value="${escapeHtml(state.searchQuery)}">
           </div>
         </div>
 
@@ -550,7 +550,7 @@ function renderProjectsPage() {
 
                 <div style="margin-top: var(--space-4);">
                   <span class="btn-ghost" style="font-size: 0.8rem; padding: 0;">
-                    VIEW ARCHITECTURAL CASE STUDY â†’
+                    VIEW ARCHITECTURAL CASE STUDY →
                   </span>
                 </div>
               </div>
@@ -613,7 +613,7 @@ function renderProjectDetailPage() {
     <!-- Case Study Hero -->
     <section class="case-study-hero">
       <div class="container">
-        <a class="case-back-link" href="#projects">â† Back to all projects</a>
+        <a class="case-back-link" href="#projects">← Back to all projects</a>
         <!-- Project Switcher Tabs -->
         <div style="display: flex; gap: 8px; overflow-x: auto; margin-bottom: var(--space-6); padding-bottom: 8px;">
           ${projectsData.map(p => `
@@ -772,7 +772,7 @@ function renderProjectDetailPage() {
             </div>
 
             <a href="#start-project" class="btn btn-gold" style="width: 100%; margin-top: var(--space-4); font-size: 0.8rem;">
-              COMMISSION SIMILAR PROJECT â†’
+              COMMISSION SIMILAR PROJECT →
             </a>
           </div>
         </div>
@@ -823,7 +823,7 @@ function renderServicesPage() {
                 </ul>
                 <div style="margin-top: var(--space-4);">
                   <a href="#start-project" data-inquire-service="${escapeHtml(service.title)}" class="btn btn-outline-gold" style="font-size: 0.72rem; padding: 8px 16px; width: 100%;">
-                    Inquire For This Discipline â†’
+                    Inquire For This Discipline →
                   </a>
                 </div>
               </div>
@@ -839,7 +839,7 @@ function renderServicesPage() {
             We work with temple trusts, endowment boards, and private patrons worldwide to develop initial feasibility blueprints, Vastu audits, and cost governance frameworks.
           </p>
           <a href="#start-project" class="btn btn-gold">
-            SCHEDULE A SANCTUM CONSULTATION â†’
+            SCHEDULE A SANCTUM CONSULTATION →
           </a>
         </div>
       </div>
@@ -858,7 +858,7 @@ function renderTempleDesignPage() {
           <span class="section-tag">Architectural Canons</span>
           <h1>South Indian Temple Styles & Sacred Anatomy</h1>
           <p class="lead">
-            An exploration of dynastic architectural idiomsâ€”Imperial Chola, Classical Dravidian, Later Pandya, and Vijayanagaraâ€”paired with the sacred anatomical organs of a consecrated temple.
+            An exploration of dynastic architectural idioms—Imperial Chola, Classical Dravidian, Later Pandya, and Vijayanagara—paired with the sacred anatomical organs of a consecrated temple.
           </p>
         </div>
 
@@ -945,7 +945,7 @@ function renderTempleDesignPage() {
 
               <div style="margin-top: var(--space-6);">
                 <a href="#start-project" class="btn btn-outline-gold" style="font-size: 0.75rem; width: 100%;">
-                  Plan This Element In Your Temple â†’
+                  Plan This Element In Your Temple →
                 </a>
               </div>
             </div>
@@ -1091,7 +1091,7 @@ function renderProcessPage() {
 
             <div class="milestone-badge">
               <small>Mandatory Sacred Inspection Gate</small>
-              <span>âœ¦ ${currentStage.milestone}</span>
+              <span>✦ ${currentStage.milestone}</span>
             </div>
           </div>
 
@@ -1105,7 +1105,7 @@ function renderProcessPage() {
 
             <div style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--border-subtle);">
               <a href="#start-project" class="btn btn-gold" style="width: 100%; font-size: 0.78rem;">
-                INITIATE STAGE 01 DISCOVERY â†’
+                INITIATE STAGE 01 DISCOVERY →
               </a>
             </div>
           </div>
@@ -1160,7 +1160,7 @@ function renderInsightsPage() {
                 
                 <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: var(--space-3); margin-top: auto; font-size: 0.78rem; color: var(--text-muted);">
                   <span>By ${article.author} (${article.role})</span>
-                  <span class="btn-ghost" style="padding: 0; font-size: 0.78rem;">Read Article â†’</span>
+                  <span class="btn-ghost" style="padding: 0; font-size: 0.78rem;">Read Article →</span>
                 </div>
               </div>
             </div>
@@ -1212,7 +1212,7 @@ function openArticleModal(articleId) {
         Have questions about applying this research to your upcoming sanctuary?
       </p>
       <a href="#start-project" class="btn btn-gold">
-        COMMISSION ARCHITECTURAL CONSULTATION â†’
+        COMMISSION ARCHITECTURAL CONSULTATION →
       </a>
     </div>
   `;
@@ -1262,7 +1262,7 @@ function renderContactPage() {
             <span class="section-tag">Consultation Request</span>
             <h3>Send an Architectural Inquiry</h3>
             <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-4);">
-              Fill out the form below. A senior sthapathi or project director will review your architectural intent and respond within 24â€“48 hours.
+              Fill out the form below. A senior sthapathi or project director will review your architectural intent and respond within 24–48 hours.
             </p>
 
             <div id="contact-feedback" class="contact-form-feedback" hidden></div>
@@ -1310,15 +1310,15 @@ function renderContactPage() {
 
                 <div class="contact-form-group contact-form-full">
                   <label for="contact-message">Project Vision & Land Details *</label>
-                  <textarea id="contact-message" class="form-input" rows="4" placeholder="Briefly describe your proposed deity, land location, approximate acreage, or architectural questionsâ€¦" required></textarea>
+                  <textarea id="contact-message" class="form-input" rows="4" placeholder="Briefly describe your proposed deity, land location, approximate acreage, or architectural questions…" required></textarea>
                 </div>
 
                 <div class="contact-form-full" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-2);">
                   <button type="submit" class="btn btn-gold" id="btn-submit-contact">
-                    SUBMIT INQUIRY <span class="btn-arrow">â†’</span>
+                    SUBMIT INQUIRY <span class="btn-arrow">→</span>
                   </button>
                   <a href="#start-project" class="btn-ghost" style="font-size: 0.8rem;">
-                    Or launch full 6-Step Project Planner â†’
+                    Or launch full 6-Step Project Planner →
                   </a>
                 </div>
               </div>
@@ -1336,24 +1336,24 @@ function renderContactPage() {
                 2/119, Nehru Nagar, Rajiv Gandhi Salai, Chemmancheri, Chennai
               </p>
               <div class="studio-contact-links">
-                <a href="tel:+919940295932">ðŸ“ž +91 99402 95932</a>
-                <a href="mailto:gayathiriakilan17@gmail.com">âœ‰ chennai@sriakil.com</a>
-                <span>â± Mon â€“ Sat: 9:00 AM â€“ 6:30 PM IST</span>
+                <a href="tel:+919940295932">📞 +91 99402 95932</a>
+                <a href="mailto:gayathiriakilan17@gmail.com">✉ chennai@sriakil.com</a>
+                <span>⏱ Mon – Sat: 9:00 AM – 6:30 PM IST</span>
               </div>
             </div>
 
             <div class="contact-studio-card">
               <div class="studio-card-header">
-                <span class="studio-card-city">Thanjavur Guild</span>
+                <span class="studio-card-city">Karaikudi Guild</span>
                 <span class="studio-card-tag">Works & Architecture</span>
               </div>
               <p class="studio-card-address">
                 E-Ponnagar, Alagappapuram, Karaikudi
               </p>
               <div class="studio-contact-links">
-                <a href="tel:+919790224561">ðŸ“ž +91 97902 24561</a>
-                <a href="mailto:akilanmaneesha@gmail.com">âœ‰ thanjavur@sriakil.com</a>
-                <span>â± Mon â€“ Sat: 8:00 AM â€“ 6:00 PM IST (Visits by Appt)</span>
+                <a href="tel:+919790224561">📞 +91 97902 24561</a>
+                <a href="mailto:akilanmaneesha@gmail.com">✉ thanjavur@sriakil.com</a>
+                <span>⏱ Mon – Sat: 8:00 AM – 6:00 PM IST (Visits by Appt)</span>
               </div>
             </div>
 
@@ -1363,21 +1363,21 @@ function renderContactPage() {
         <!-- Quick Direct Contact Channels Strip -->
         <div class="contact-quick-channels">
           <div class="quick-channel-card">
-            <div style="font-size: 1.6rem; margin-bottom: 8px;">ðŸ“ž</div>
+            <div style="font-size: 1.6rem; margin-bottom: 8px;">📞</div>
             <h4>Direct Sthapathi Hotline</h4>
             <p>Speak directly with our architectural advisory desk for urgent project questions.</p>
             <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">+91 99402 95932</p>
           </div>
 
           <div class="quick-channel-card">
-            <div style="font-size: 1.6rem; margin-bottom: 8px;">âœ‰</div>
+            <div style="font-size: 1.6rem; margin-bottom: 8px;">✉</div>
             <h4>Canonical Advisory Email</h4>
             <p>Send site surveys, CAD drawings, or land documents for our initial evaluation.</p>
             <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">akilanmaneesha@gmail.com</p>
           </div>
 
           <div class="quick-channel-card">
-            <div style="font-size: 1.6rem; margin-bottom: 8px;">ðŸ›</div>
+            <div style="font-size: 1.6rem; margin-bottom: 8px;">🛕</div>
             <h4>Guild Workshop Visits</h4>
             <p>Schedule a private guided meeting at our Chennai or Karaikudi studios.</p>
             <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">By Prior Appointment</p>

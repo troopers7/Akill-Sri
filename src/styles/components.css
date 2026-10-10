@@ -228,23 +228,48 @@
   gap: 0;
   box-shadow: var(--shadow-lg);
   margin-bottom: var(--space-8);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.spotlight-card:hover {
+  border-color: rgba(176,141,87,0.75);
+  box-shadow: 0 22px 48px rgba(52,58,50,0.12), 0 0 34px rgba(176,141,87,0.12);
 }
 
 .spotlight-media {
   position: relative;
   min-height: 480px;
   overflow: hidden;
+  background: #f0ecdf;
 }
 
 .spotlight-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-slow);
+  transition: transform var(--transition-slow), filter var(--transition-fast), object-position var(--transition-normal);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.spotlight-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(25, 24, 20, 0.28), rgba(25, 24, 20, 0.06) 40%, rgba(25, 24, 20, 0));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
 }
 
 .spotlight-card:hover .spotlight-img {
-  transform: scale(1.04);
+  transform: scale(1.22);
+  filter: saturate(1.18) contrast(1.1) brightness(0.96);
+  object-position: center center;
+}
+
+.spotlight-card:hover .spotlight-media::after {
+  opacity: 1;
 }
 
 .spotlight-badge {
@@ -354,15 +379,26 @@
 }
 
 .project-card:hover {
-  border-color: var(--bronze-border-hover);
+  border-color: rgba(176,141,87,0.72);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md), 0 0 25px rgba(176,141,87,0.06);
+  box-shadow: 0 16px 34px rgba(52, 58, 50, 0.12), 0 0 28px rgba(176,141,87,0.14);
 }
 
 .project-card-media {
   position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
+  background: #f0ecdf;
+}
+
+.project-card-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(24, 25, 21, 0.28), rgba(24, 25, 21, 0.06) 45%, rgba(24, 25, 21, 0));
+  opacity: 0;
+  transition: opacity var(--transition-fast), backdrop-filter var(--transition-fast);
+  pointer-events: none;
 }
 
 .project-card-img {
@@ -370,11 +406,20 @@
   height: 100%;
   object-fit: cover;
   object-position: center 10%;
-  transition: transform var(--transition-slow);
+  transition: transform var(--transition-slow), filter var(--transition-fast), object-position var(--transition-normal);
+  transform-origin: center;
+  will-change: transform;
 }
 
 .project-card:hover .project-card-img {
-  transform: scale(1.06);
+  transform: scale(1.22);
+  filter: saturate(1.18) contrast(1.1) brightness(0.96);
+  object-position: center center;
+}
+
+.project-card:hover .project-card-media::after {
+  opacity: 1;
+  backdrop-filter: blur(1px);
 }
 
 .project-tag-chips {
@@ -523,10 +568,32 @@
   overflow: hidden;
 }
 
+.blueprint-img-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(25, 24, 20, 0.16), rgba(25, 24, 20, 0));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
+}
+
 .blueprint-img-wrapper img {
   width: 100%;
   height: auto;
   display: block;
+  transition: transform var(--transition-slow), filter var(--transition-fast);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.blueprint-img-wrapper:hover img {
+  transform: scale(1.06);
+  filter: saturate(1.08) contrast(1.04);
+}
+
+.blueprint-img-wrapper:hover::after {
+  opacity: 1;
 }
 
 /* --- SERVICES PAGE (7 PILLARS) --- */
@@ -939,17 +1006,37 @@
 .insight-media {
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  position: relative;
+  background: #f0ecdf;
+}
+
+.insight-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(24, 25, 21, 0.28), rgba(24, 25, 21, 0.06) 45%, rgba(24, 25, 21, 0));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
 }
 
 .insight-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-slow);
+  transition: transform var(--transition-slow), filter var(--transition-fast), object-position var(--transition-normal);
+  transform-origin: center;
+  will-change: transform;
 }
 
 .insight-card:hover .insight-img {
-  transform: scale(1.05);
+  transform: scale(1.22);
+  filter: saturate(1.18) contrast(1.1) brightness(0.96);
+  object-position: center center;
+}
+
+.insight-card:hover .insight-media::after {
+  opacity: 1;
 }
 
 .insight-body {

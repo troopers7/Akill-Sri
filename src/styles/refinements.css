@@ -6,7 +6,21 @@ button, input, select, textarea { font: inherit; }
 button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 button { color: inherit; }
 button:disabled { opacity: .45; cursor: not-allowed; }
-:focus-visible { outline: 3px solid var(--primary); outline-offset: 5px; }
+body {
+  background:
+    radial-gradient(circle at top left, rgba(176, 141, 87, 0.09), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(101, 122, 91, 0.08), transparent 20%),
+    var(--bg);
+}
+::selection { background: rgba(176, 141, 87, 0.18); }
+a, button, .nav-link, .filter-pill, .option-card, .project-card, .service-pillar-card, .insight-card {
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+}
+:focus-visible {
+  outline: 3px solid rgba(176, 141, 87, 0.55);
+  outline-offset: 5px;
+  box-shadow: 0 0 0 6px rgba(176, 141, 87, 0.15);
+}
 [hidden] { display: none !important; }
 h1, h2, h3 { text-wrap: balance; overflow-wrap: break-word; }
 h1 { font-size: clamp(2rem, 4.4vw, 3.7rem); letter-spacing: -.025em; text-transform: none; }
@@ -84,6 +98,11 @@ p.lead { font-size: 1.4rem; }
 .craft-grid > div { min-height: 300px; }
 .craft-grid .section-tag { color: #FAF7EF; }
 .project-card, .insight-card, .style-card, .team-card, .value-card, .service-pillar-card { border-radius: 10px; box-shadow: var(--shadow-sm); }
+.project-card:hover, .insight-card:hover, .style-card:hover, .team-card:hover, .value-card:hover, .service-pillar-card:hover,
+.option-card:hover, .filter-pill:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
 .project-card-body { padding: 26px; }
 .project-card-subtitle, .service-subtitle, .style-era, .team-card-role, .insight-meta, .form-label, .matrix-cell small, .anatomy-role-badge, .anatomy-detail-item strong { color: var(--primary-deep); }
 .tag-chip { background: var(--bg); color: var(--primary-deep); border-radius: 20px; }
