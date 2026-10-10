@@ -158,7 +158,7 @@ for (const width of [390, 1440]) {
     for (const number of ['919790224561', '919940295932']) {
       await expect(page.locator(`#notify-whatsapp-${number}`)).toHaveAttribute('href', new RegExp(`^https://wa\\.me/${number}\\?text=`));
     }
-    await expect(page.locator('#notify-email')).toHaveAttribute('href', /^mailto:maneeshaakila@gmail\.com,gayathriakilan17@gmail\.com,akilanmaneesha@gmail\.com\?subject=/);
+    await expect(page.locator('#notify-email')).toHaveAttribute('href', /^mailto:akilanmaneesha@gmail\.com,gayathriakilan17@gmail\.com\?subject=/);
     await expect(page.locator('#brief-reference')).toContainText(whatsappStatuses.every(status => status === 'sent')
       ? 'dispatched automatically to the studio desk'
       : 'WhatsApp has opened directly to');

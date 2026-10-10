@@ -40,11 +40,46 @@ export const aboutData = {
       caption: "Sthapathy R. Akilan presiding over the ceremonial installation and consecrated abhishekam of the sacred Gopura Golden Kalasam alongside traditional guild artisans."
     },
     {
+      id: "hanuman-monolith",
+      title: "Monolithic Krishna Shila Sri Hanuman Installation",
+      category: "Monolithic Stonecraft",
+      image: "/assets/work_hanuman_monolith.png",
+      caption: "Sthapathy R. Akilan offering pranams at the newly installed monolithic black granite Sri Hanuman deity, sculpted with refined padmapitha lotus base to Agama Shastras."
+    },
+    {
+      id: "vimana-tower",
+      title: "Polychrome Dravidian Vimana Superstructure Completion",
+      category: "Vimana Architecture",
+      image: "/assets/work_vimana_tower.jpg",
+      caption: "Sthapathy R. Akilan before the consecrated multi-tiered Dravidian Vimana tower, adorned with Somaskanda and divine celestial shilpa stucco embellishments."
+    },
+    {
       id: "divine-sculpture",
       title: "Divine Shiva & Parvati (Soma Skanda) Iconography",
       category: "Agama Shilpa Craft",
       image: "/assets/work_divine_sculpture.png",
       caption: "Exquisite hand-sculpted polychrome stone and stucco divine couple deities, sculpted to canonical Silparatna canons with traditional mudras and sacred ornamentation."
+    },
+    {
+      id: "sanctum-guild-construction",
+      title: "Sanctum Sanctorum (Garbhagriha) Guild Stone Masonry",
+      category: "Heritage Construction",
+      image: "/assets/work_sanctum_guild_construction.jpg",
+      caption: "Sthapathy R. Akilan and guild artisans at the consecrated Garbhagriha doorway under active construction with sacred granite doorframe and scaffolding."
+    },
+    {
+      id: "consecration-award",
+      title: "Sacred Consecration Guild Honor & Memento Presentation",
+      category: "Guild Recognition",
+      image: "/assets/work_consecration_award.jpg",
+      caption: "Temple trustees and head Vedic priests honoring Sthapathy R. Akilan with the ceremonial golden memento plaque during the temple Kumbhabhishekam."
+    },
+    {
+      id: "bhumi-pooja",
+      title: "Auspicious Bhumi Pooja & Foundation Consecration",
+      category: "Foundation Consecration",
+      image: "/assets/work_bhumi_pooja_foundation.jpg",
+      caption: "Sthapathy R. Akilan joining village elders, trustees and Vedic priests during the auspicious preliminary Bhumi Pooja offering for new temple construction."
     },
     {
       id: "sanctum-consecration",

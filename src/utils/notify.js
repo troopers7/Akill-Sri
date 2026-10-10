@@ -21,7 +21,7 @@
  */
 import { briefEntries, createBriefText } from './planner.js';
 
-export const OWNER_EMAILS = ['maneeshaakila@gmail.com', 'gayathriakilan17@gmail.com', 'akilanmaneesha@gmail.com'];
+export const OWNER_EMAILS = ['akilanmaneesha@gmail.com', 'gayathriakilan17@gmail.com'];
 
 /** Owner WhatsApp numbers in international format (no "+" or spaces, as wa.me requires). */
 export const OWNER_WHATSAPP = [

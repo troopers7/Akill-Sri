@@ -1487,7 +1487,7 @@ function renderContactPage() {
               </p>
               <div class="studio-contact-links">
                 <a href="tel:+919790224561">📞 +91 97902 24561</a>
-                <a href="mailto:maneeshaakila@gmail.com">✉ maneeshaakila@gmail.com</a>
+                <a href="mailto:akilanmaneesha@gmail.com">✉ akilanmaneesha@gmail.com</a>
                 <span>⏱ Mon – Sat: 8:00 AM – 6:00 PM IST (Visits by Appt)</span>
               </div>
             </div>
@@ -1508,7 +1508,7 @@ function renderContactPage() {
             <div style="font-size: 1.6rem; margin-bottom: 8px;">✉</div>
             <h4>Canonical Advisory Email</h4>
             <p>Send site surveys, CAD drawings, or land documents for our initial evaluation.</p>
-            <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">maneeshaakila@gmail.com</p>
+            <p style="margin-top: 8px; font-weight: 600; color: var(--gold-bright);">akilanmaneesha@gmail.com</p>
           </div>
 
           <div class="quick-channel-card">
