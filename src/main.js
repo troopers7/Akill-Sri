@@ -287,9 +287,9 @@ function renderHomePage() {
     <!-- Full-Screen Cinematic Temple Hero -->
     <section class="hero-section">
       <div class="hero-bg-wrapper">
-        <img src="/assets/hero_temple.jpg" alt="Dravidian Granite Temple Vimana at Twilight" class="hero-bg-img" fetchpriority="high">
+        <img src="/assets/hero_temple.jpg" alt="Dravidian Temple Vimana and Traditional Cement Work at Twilight" class="hero-bg-img" fetchpriority="high">
         <div class="hero-vignette"></div>
-        <div class="hero-image-caption"><small>The art of sacred architecture</small><span>Carved in stone. Connected to the divine.</span></div>
+        <div class="hero-image-caption"><small>The art of sacred architecture</small><span>Carved in stone & traditional cement work. Connected to the divine.</span></div>
       </div>
 
       <div class="hero-content">
@@ -300,7 +300,7 @@ function renderHomePage() {
 
         <h1 class="hero-title">Sacred spaces.<br><em>Timeless legacies.</em></h1>
         <p class="hero-subtitle">
-          Rooted in tradition. Shaped by hand. We bring temple architecture, Vastu planning and sacred stone sculpture together to create places of lasting meaning.
+          Rooted in tradition. Shaped by hand. We bring temple architecture, Vastu planning, traditional cement work, and sacred stone sculpture together to create places of lasting meaning.
         </p>
 
         <div class="hero-actions">
@@ -350,7 +350,7 @@ function renderHomePage() {
               A temple is not just a prayer hall; it is the cosmic body—the Viraat Purusha—made into strong stone.
             </p>
             <p>
-              For over 20 years, our studio has kept alive the granite building style. We avoid weak concrete that breaks in a few decades. Instead, we build sanctuaries with pure black Krishna granite (Karunkal), using dry stone joints and sacred Ayadi ratios.
+              For over 20 years, our studio has kept alive sacred temple craftsmanship and traditional cement work. We avoid weak plaster that breaks in a few decades. Instead, we build sanctuaries with sacred stone and specialized traditional cement work, using dry stone joints and sacred Ayadi ratios.
             </p>
             <div style="margin-top: var(--space-4);">
               <a href="#about" class="btn btn-ghost">
@@ -393,8 +393,8 @@ function renderHomePage() {
 
             <div class="spotlight-meta-list">
               <div class="spotlight-meta-item">
-                <small>Granite Weight</small>
-                <span>${featuredProject.stats.graniteWeight}</span>
+                <small>Cement & Stone Work</small>
+                <span>${featuredProject.stats.cementWork || featuredProject.stats.graniteWeight}</span>
               </div>
               <div class="spotlight-meta-item">
                 <small>Carving Time</small>
@@ -451,17 +451,17 @@ function renderHomePage() {
     <section class="section-spacing" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Hereditary Stone Craft</span>
-          <h2>The Chisels of Mahabalipuram & Thanjavur</h2>
-          <p>Over 250 hereditary sthapathis hand-carving monolithic black granite in our dedicated stonework guild studios.</p>
+          <span class="section-tag">Hereditary Craft & Cement Work</span>
+          <h2>The Artisanal Studios of Karaikudi & Chennai</h2>
+          <p>Over 250 hereditary sthapathis shaping traditional cement work and sacred stone craft in our dedicated guild studios.</p>
         </div>
 
         <div class="craft-grid">
           <div style="position: relative; border-radius: 4px; overflow: hidden; border: 1px solid var(--gold-border);">
-            <img src="/assets/sthapathi_craft.jpg" alt="Master Sthapathi hand-carving Krishna granite" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="/assets/sthapathi_craft.jpg" alt="Master Sthapathi hand-carving temple stone and traditional cement work" style="width: 100%; height: 100%; object-fit: cover;">
             <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-4); background: linear-gradient(to top, rgba(10,11,13,0.95), transparent);">
               <span class="section-tag">Hand-Sculpted Relief</span>
-              <p style="color: var(--text-ivory); font-weight: 500; margin: 0;">Traditional carbon-steel chiseling of black Krishna granite lotus motifs.</p>
+              <p style="color: var(--text-ivory); font-weight: 500; margin: 0;">Traditional hand-crafting of sacred lotus motifs and classical cement work.</p>
             </div>
           </div>
           <div style="position: relative; border-radius: 4px; overflow: hidden; border: 1px solid var(--gold-border);">
@@ -509,9 +509,9 @@ function renderProjectsPage() {
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Portfolio & Sacred Works</span>
-          <h1>Sanctuaries of Granite & Grace</h1>
+          <h1>Sanctuaries of Cement Work & Sacred Grace</h1>
           <p class="lead">
-            An archival record of Rajagopuram towers and temple stone works — from completed gateway landmarks to ongoing craft at site.
+            An archival record of Rajagopuram towers and traditional cement & stone works — from completed gateway landmarks to ongoing craft at site.
           </p>
         </div>
 
@@ -519,7 +519,7 @@ function renderProjectsPage() {
         <div class="projects-header-filter">
           <div class="filter-pills-bar">
             <button class="filter-pill ${state.projectFilter === 'all' ? 'active' : ''}" data-filter="all">All Sanctuaries (${projectsData.length})</button>
-            <button class="filter-pill ${state.projectFilter === 'chola' ? 'active' : ''}" data-filter="chola">Temple Stone Works</button>
+            <button class="filter-pill ${state.projectFilter === 'chola' ? 'active' : ''}" data-filter="chola">Temple Stone & Cement Works</button>
             <button class="filter-pill ${state.projectFilter === 'gopuram' ? 'active' : ''}" data-filter="gopuram">Rajagopurams</button>
           </div>
 
@@ -634,8 +634,8 @@ function renderProjectDetailPage() {
         <!-- Key Metrics Matrix -->
         <div class="case-study-matrix">
           <div class="matrix-cell">
-            <small>Stone Work</small>
-            <strong>${project.stats.graniteWeight}</strong>
+            <small>Cement & Stone Work</small>
+            <strong>${project.stats.cementWork || project.stats.graniteWeight}</strong>
           </div>
           <div class="matrix-cell">
             <small>Sthapathi Hours</small>

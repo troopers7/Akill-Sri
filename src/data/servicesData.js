@@ -47,11 +47,11 @@ export const servicesData = [
   {
     id: "stone-craft",
     number: "04",
-    title: "Traditional Stone Craft & Masonry",
+    title: "Traditional Stone Craft & Cement Work",
     subtitle: "Generations of Sthapathi Mastery",
-    description: "Hereditary stone sthapathis sculpt dense black Krishna granite (Karunkal) and golden sandstone in our dedicated stonework studios. Using traditional hand chisels alongside precision diamond-wire saws, we carve intricate Yali columns, lotus medallions, and sacred iconography.",
+    description: "Hereditary stone sthapathis sculpt sacred stone, traditional cement work, and Sudhai art in our dedicated studios. Using traditional hand chisels alongside precision craftsmanship, we carve intricate Yali columns, lotus medallions, and sacred iconography.",
     deliverables: [
-      "Hand-Sculpted Granite Icons (Moolavar & Utsava Vastu Statues)",
+      "Hand-Sculpted Cement Work & Stone Icons (Moolavar & Utsava Vastu Statues)",
       "Carved Monolithic Columns, Cornices & Inscribed Ceiling Slabs",
       "Tongue-and-Groove Interlocking Dry-Joint Engineering",
       "Stone Texture Finishing (Rough-chiseled, Eggshell, or Mirror Polish)"
@@ -64,7 +64,7 @@ export const servicesData = [
     number: "05",
     title: "Heavy Foundation & Civil Construction",
     subtitle: "Engineering for the Next Millennium",
-    description: "Erecting a multi-thousand-tonne granite monument demands deep civil engineering prowess. We design seismic-resistant bedrock foundations, mass concrete rafts, and use heavy hydraulic crane rigging to assemble megalithic stones with sub-millimeter precision.",
+    description: "Erecting a multi-thousand-tonne temple monument and cement work demands deep civil engineering prowess. We design seismic-resistant bedrock foundations, mass concrete rafts, and use heavy hydraulic crane rigging to assemble megalithic stones and cement superstructures with sub-millimeter precision.",
     deliverables: [
       "Geotechnical Subsoil Investigation & Bedrock Anchoring",
       "Mass Concrete Raft Foundations with Low-Heat Cement",

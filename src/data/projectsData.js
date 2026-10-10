@@ -7,14 +7,14 @@ export const projectsData = [
     location: "Sri Kalahasthi, Andhra Pradesh",
     year: "2015 - 2016",
     status: "Completed",
-    stoneType: "Dense Black Krishna Granite (Karunkal)",
+    stoneType: "Traditional Stone & Cement Work",
     footprint: "Rajagopuram Complex",
     vimanaHeight: "142 Feet",
     masterSthapathi: "R. Akilan Sthapathy",
     image: "/assets/kalahasthi_temple.jpg",
     tags: ["Rajagopuram", "142 Feet", "2015-2016"],
     stats: {
-      graniteWeight: "Rajagopuram Stone Work",
+      cementWork: "Rajagopuram Stone & Cement Work",
       carvingHours: "2015-2016 Work",
       jointPrecision: "142 Feet Tower",
       alignment: "Sri Kalahasthi, Andhra Pradesh"
@@ -22,7 +22,7 @@ export const projectsData = [
     chapters: {
       vision: {
         title: "01 / Patron Vision & Sacred Intent",
-        text: "Sri Kalahasthi Rajagopuram constructed in Andhra Pradesh during 2015-2016 with a monumental 142 feet tower height, built in traditional Dravidian stone craft."
+        text: "Sri Kalahasthi Rajagopuram constructed in Andhra Pradesh during 2015-2016 with a monumental 142 feet tower height, built in traditional Dravidian stone craft and cement work."
       },
       concept: {
         title: "02 / Vastu Purusha Mandala & Ayadi Ratios",
@@ -30,7 +30,7 @@ export const projectsData = [
       },
       design: {
         title: "03 / Architectural Blueprint & 3D Drafting",
-        text: "Solid granite base with tapering superstructure finished in traditional stucco and sculpture work."
+        text: "Solid base with tapering superstructure finished in traditional cement work, stucco and sculpture work."
       },
       craft: {
         title: "04 / Master Sthapathi Hand-Carving",
@@ -54,14 +54,14 @@ export const projectsData = [
     location: "Sangarapuram, Tamil Nadu",
     year: "Completed",
     status: "Completed",
-    stoneType: "Granite Base + Traditional Sudhai / Stucco Superstructure",
+    stoneType: "Traditional Cement Work + Sudhai / Stucco Superstructure",
     footprint: "Rajagopuram Precinct",
     vimanaHeight: "Soaring Rajagopuram",
     masterSthapathi: "R. Akilan Sthapathy",
     image: "/assets/sangarapuram_kovil.jpg",
     tags: ["Sangarapuram Kovil", "Rajagopuram", "Vibrant Stucco & Deities", "Completed"],
     stats: {
-      graniteWeight: "Rajagopuram Granite & Sudhai",
+      cementWork: "Rajagopuram Cement Work & Sudhai",
       carvingHours: "Master Sthapathi Craft",
       jointPrecision: "Agama Canonical Alignment",
       alignment: "Sangarapuram, Tamil Nadu"
@@ -77,7 +77,7 @@ export const projectsData = [
       },
       design: {
         title: "03 / Architectural Blueprint & Multi-Tier Elevation",
-        text: "Engineered granite base supporting multi-tiered diminishing talas adorned with Kuta, Sala niches, and celestial guardian figures."
+        text: "Engineered base supporting multi-tiered diminishing talas adorned with traditional cement work, Kuta, Sala niches, and celestial guardian figures."
       },
       craft: {
         title: "04 / Master Sthapathi Hand-Carving & Sudhai Art",
@@ -85,7 +85,7 @@ export const projectsData = [
       },
       execution: {
         title: "05 / Structural Engineering & Precision Assembly",
-        text: "Engineered load-bearing granite foundation seamlessly integrated with traditional lime-stucco tiers engineered for weather durability."
+        text: "Engineered load-bearing foundation seamlessly integrated with traditional cement work and lime-stucco tiers engineered for weather durability."
       },
       completed: {
         title: "06 / Consecration & Completed Sanctuary",
@@ -101,14 +101,14 @@ export const projectsData = [
     location: "Thiruvallur, Tamil Nadu",
     year: "Completed",
     status: "Completed",
-    stoneType: "Granite Base + Stucco Superstructure & Sculpted Dwarapalakas",
+    stoneType: "Traditional Cement Work + Stucco Superstructure & Sculpted Dwarapalakas",
     footprint: "Rajagopuram Front Precinct",
     vimanaHeight: "Sacred Front Elevation",
     masterSthapathi: "R. Akilan Sthapathy",
     image: "/assets/aanjanayar_kovil_elevation.jpg",
     tags: ["Aanjanayar Kovil", "Front Elevation", "Dwarapalakas", "Completed"],
     stats: {
-      graniteWeight: "Granite Plinth & Entrance",
+      cementWork: "Cement Work Plinth & Entrance",
       carvingHours: "Iconographical Sculpting",
       jointPrecision: "Sacred Orientation",
       alignment: "Thiruvallur, Tamil Nadu"
@@ -143,19 +143,19 @@ export const projectsData = [
   {
     id: "kolangonda-maari-amman-temple",
     title: "Kolangkondan Amman Temple",
-    subtitle: "Intricate Granite Adhisthana Plinth & Stone Carving - Ongoing",
+    subtitle: "Intricate Adhisthana Plinth & Traditional Cement Work - Ongoing",
     category: "chola",
     location: "Kolangkondan, Tamil Nadu",
     year: "2025 - 2026",
     status: "Ongoing",
-    stoneType: "Dense Plutonic Granite (Karunkal) Adhisthana & Pilasters",
+    stoneType: "Traditional Cement Work & Adhisthana Pilasters",
     footprint: "Amman Temple Complex",
-    vimanaHeight: "Granite Stone Temple",
+    vimanaHeight: "Traditional Stone & Cement Temple",
     masterSthapathi: "R. Akilan Sthapathy",
     image: "/assets/kolangkondan_amman_temple.jpg",
-    tags: ["Kolangkondan Amman", "Granite Adhisthana", "Stone Carving", "Ongoing"],
+    tags: ["Kolangkondan Amman", "Cement Work Adhisthana", "Stone Carving", "Ongoing"],
     stats: {
-      graniteWeight: "Plutonic Granite Stonework",
+      cementWork: "Traditional Cement Work & Stonework",
       carvingHours: "Ongoing Artisanal Chiseled Craft",
       jointPrecision: "Interlocking Mortarless Masonry",
       alignment: "Kolangkondan, Tamil Nadu"
@@ -163,7 +163,7 @@ export const projectsData = [
     chapters: {
       vision: {
         title: "01 / Patron Vision & Sacred Intent",
-        text: "Kolangkondan Amman Temple stonework commission aimed at erecting a thousand-year solid granite sanctuary for the divine mother."
+        text: "Kolangkondan Amman Temple commission aimed at erecting a thousand-year sacred sanctuary with traditional cement work and stone craft for the divine mother."
       },
       concept: {
         title: "02 / Vastu Purusha Mandala & Ayadi Ratios",
@@ -175,15 +175,15 @@ export const projectsData = [
       },
       craft: {
         title: "04 / Master Sthapathi Hand-Carving",
-        text: "Hereditary stone carvers hand-chiseling crystalline granite blocks on site with carbon-steel chisels and generational mastery."
+        text: "Hereditary artisans hand-crafting traditional cement work and stone blocks on site with generational mastery."
       },
       execution: {
         title: "05 / Structural Engineering & Precision Assembly",
-        text: "Staged dry-fit assembly and precision alignment of massive monolithic granite base registers under traditional scaffolding."
+        text: "Staged dry-fit assembly and precision alignment of traditional cement work and base registers under traditional scaffolding."
       },
       completed: {
         title: "06 / Consecration & Completed Sanctuary",
-        text: "Stone craft progressing smoothly on schedule towards sacred Maha Kumbhabhishekam consecration."
+        text: "Craft progressing smoothly on schedule towards sacred Maha Kumbhabhishekam consecration."
       }
     }
   },
@@ -195,14 +195,14 @@ export const projectsData = [
     location: "Elupili Village, Erode",
     year: "2025 - 2026",
     status: "Ongoing",
-    stoneType: "Granite Plinth with Traditional Superstructure",
+    stoneType: "Traditional Plinth with Cement Work Superstructure",
     footprint: "Amman Temple Sanctum",
     vimanaHeight: "Vimana Superstructure",
     masterSthapathi: "R. Akilan Sthapathy",
     image: "/assets/elupili_project.jpg",
-    tags: ["Elupili Project", "Vimana Construction", "Stone Work", "Ongoing"],
+    tags: ["Elupili Project", "Vimana Construction", "Cement Work", "Ongoing"],
     stats: {
-      graniteWeight: "Sanctum Granite Masonry",
+      cementWork: "Sanctum Cement Work & Masonry",
       carvingHours: "Ongoing Field Execution",
       jointPrecision: "Precision Stone Jointing",
       alignment: "Elupili Village, Erode"
@@ -210,7 +210,7 @@ export const projectsData = [
     chapters: {
       vision: {
         title: "01 / Patron Vision & Sacred Intent",
-        text: "Erode Elupili Village Sokkanachi Amman Temple project underway to build an authentic stone sanctum and soaring tiered vimana."
+        text: "Erode Elupili Village Sokkanachi Amman Temple project underway to build an authentic sanctum and soaring tiered vimana with traditional cement work."
       },
       concept: {
         title: "02 / Vastu Purusha Mandala & Ayadi Ratios",
@@ -218,7 +218,7 @@ export const projectsData = [
       },
       design: {
         title: "03 / Architectural Blueprint & 3D Drafting",
-        text: "Comprehensive elevation blueprints featuring interlocking granite plinth and tapering tiered stone-brick superstructure."
+        text: "Comprehensive elevation blueprints featuring interlocking plinth and tapering tiered cement work and stone-brick superstructure."
       },
       craft: {
         title: "04 / Master Sthapathi Hand-Carving",
@@ -249,7 +249,7 @@ export const projectsData = [
     image: "/assets/cement_sculpture.png",
     tags: ["Cement Sculpture", "Sudhai Craft", "Amman Deity", "Completed"],
     stats: {
-      graniteWeight: "High-Density Sculptural Mortar",
+      cementWork: "High-Density Sculptural Mortar & Cement Work",
       carvingHours: "Direct Hand-Sculpted Art",
       jointPrecision: "Dasa Tala Canonical Ratios",
       alignment: "Chennai & Karaikudi Studios"

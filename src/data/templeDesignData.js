@@ -12,14 +12,14 @@ export const templeStylesData = [
       "Kudu arched windows and decorative horse-shoe gavaksha motifs"
     ],
     canonicalText: "Mayamata & Manasara Shilpa Shastras",
-    stonePreference: "Gneissic Granite, Dark Krishna Shila"
+    stonePreference: "Traditional Stone Craft & Cement Work"
   },
   {
     id: "chola",
     name: "Imperial Chola",
     era: "9th – 13th Century CE",
     origin: "Thanjavur, Gangaikonda Cholapuram & Darasuram",
-    description: "The zenith of monumental granite engineering in world history. Marked by colossal Vimanas that dramatically dwarf the peripheral entrance gopurams. Built exclusively of massive interlocking granite monoliths engineered to withstand millennia without structural decay.",
+    description: "The zenith of monumental sacred engineering in world history. Marked by colossal Vimanas that dramatically dwarf the peripheral entrance gopurams. Built with massive interlocking stone monoliths and traditional cement work engineered to withstand millennia without structural decay.",
     keyFeatures: [
       "Monumental Vimana (Up to 216 feet) crowned with a single 80-tonne monolithic cupola",
       "Double-storeyed sanctum ambulatory corridor (Sandhara)",
@@ -27,7 +27,7 @@ export const templeStylesData = [
       "Integrated water engineering (sacred Teppakulam reservoirs)"
     ],
     canonicalText: "Brihat Samhita & Kamika Agama",
-    stonePreference: "Dense Plutonic Granite (Karunkal)"
+    stonePreference: "Dense Temple Stone & Traditional Cement Work"
   },
   {
     id: "pandya",
@@ -42,7 +42,7 @@ export const templeStylesData = [
       "Expansive concentric prakaram stone boulevards"
     ],
     canonicalText: "Kasyapa Shilpa Shastra",
-    stonePreference: "Granite Plinths with Brick-Lime Superstructure"
+    stonePreference: "Traditional Cement Work & Stone Plinths with Stucco Superstructure"
   },
   {
     id: "vijayanagara",
@@ -54,10 +54,10 @@ export const templeStylesData = [
       "Monolithic musical pillars that chime tones when tapped",
       "Rearing Yali and rampant cavalry beast columns carved from single stones",
       "Elaborate pushpa-potika (hanging floral bud) brackets",
-      "Corbelled granite stone ceilings with inverted lotus bosses"
+      "Corbelled stone ceilings and sculpted cement work with inverted lotus bosses"
     ],
     canonicalText: "Suprabhedagama & Shilpa Ratna",
-    stonePreference: "Resonant Crystalline Biotite Granite"
+    stonePreference: "Resonant Stone Craft & Artistic Cement Work"
   }
 ];
 
@@ -68,7 +68,7 @@ export const templeAnatomyData = [
     role: "The Monumental Gateway Tower",
     meaning: "The cosmic threshold bridging the mundane exterior world with the sacred interior reality. Symbolizes the feet of the cosmic deity (Viraat Purusha).",
     geometry: "Oblong rectangular base tapering vertically with a trapezoidal profile, topped with a barrel-vaulted Shala roof and gold-plated Kalasam finials (always an odd number: 5, 7, 9, or 11).",
-    materials: "Dressed granite base (adhisthana) with sculpted stone and lime-mortar superstructure.",
+    materials: "Dressed stone & cement work base (adhisthana) with sculpted traditional cement work and superstructure.",
     significance: "Visible from miles away, reminding travelers to orient their consciousness toward the divine.",
     hotspot: { x: "28%", y: "35%" }
   },
@@ -78,7 +78,7 @@ export const templeAnatomyData = [
     role: "The Sacred Sanctum Tower",
     meaning: "The vertical axis mundi directly crowning the Garbhagriha. Represents the cosmic mountain (Mount Meru) and channels celestial cosmic energy downward into the deity.",
     geometry: "Square base ascending in stepped pyramidal horizontal tiers (Talas), capped by the Greeva (neck), Shikhara (domical stone crown), and Stupi (finial).",
-    materials: "100% solid granite monolithic interlocking masonry.",
+    materials: "100% solid interlocking stone masonry and durable traditional cement work.",
     significance: "The heart and soul of the temple; in Chola tradition, the Vimana dominates the entire landscape.",
     hotspot: { x: "72%", y: "24%" }
   },
@@ -88,7 +88,7 @@ export const templeAnatomyData = [
     role: "The Womb Chamber / Inner Sanctum",
     meaning: "The silent, unadorned center of pure consciousness. Where the consecrated Moolavar deity resides in complete focus and darkness, lit only by oil lamps.",
     geometry: "Perfect square based on the 1x1 central Brahma-sthana of the Vastu Mandala. Thick monolithic walls with no exterior windows to preserve sacred acoustics and thermal stability.",
-    materials: "Dense black Krishna granite (Karunkal), hand-honed to seamless precision.",
+    materials: "Dense sanctum stone and traditional cement work, hand-honed to seamless precision.",
     significance: "All temple geometry, alignments, and Ayadi ratios radiate outward from this singular focal point.",
     hotspot: { x: "72%", y: "68%" }
   },
@@ -98,7 +98,7 @@ export const templeAnatomyData = [
     role: "Acoustic Pillared Assembly Pavilion",
     meaning: "Hypostyle pillared hall designed for sacred gatherings, classical Carnatic music, Veda chanting, and dance rituals (Ardha-Mandapam, Maha-Mandapam, Kalyana-Mandapam).",
     geometry: "Rectangular or square pillared hall with modular rhythmic spacing based on musical intervals and sacred proportional modules.",
-    materials: "Carved granite monolithic columns with monolithic cross-lintels and carved stone roof slabs.",
+    materials: "Carved monolithic columns with traditional cement work embellishments and stone roof slabs.",
     significance: "Transforms reverberating soundwaves into spiritual resonance through acoustic stone geometry.",
     hotspot: { x: "52%", y: "62%" }
   },
@@ -108,7 +108,7 @@ export const templeAnatomyData = [
     role: "Concentric Cloistered Courtyards",
     meaning: "The multi-tiered concentric ambulatory corridors surrounding the central sanctum. Symbolizes the five protective sheaths (Pancha Koshas) enclosing the immortal human soul.",
     geometry: "Concentric rectangular stone-paved walkways flanked by continuous covered colonnades.",
-    materials: "Paved granite slabs with peripheral stone drainage and rainwater harvesting catchments.",
+    materials: "Paved stone slabs with traditional cement work channels and peripheral drainage.",
     significance: "Facilitates Pradakshina (sacred circumambulation), calming the mind step by step before reaching the sanctum.",
     hotspot: { x: "42%", y: "82%" }
   },
@@ -117,8 +117,8 @@ export const templeAnatomyData = [
     name: "Dhwajastambha & Balipeetham (ध्वजस्तम्भ)",
     role: "The Cosmic Flagstaff & Altar of Surrender",
     meaning: "Represents the Sushumna Nadi (the central spine of spiritual energy) and the axis linking earth to the heavens. Devotees offer their ego before entering.",
-    geometry: "Monolithic granite core sheathed in consecrated brass or gold-leaf copper rings, aligned in an exact straight line with the deity.",
-    materials: "Solid seasoned teak or granite core encased in embossed repoussé bronze/gold.",
+    geometry: "Solid consecrated core sheathed in consecrated brass or gold-leaf copper rings, aligned in an exact straight line with the deity.",
+    materials: "Solid seasoned teak or reinforced cement work core encased in embossed repoussé bronze/gold.",
     significance: "Acts as a spiritual lightning rod protecting the sanctum during cosmic events and lightning strikes.",
     hotspot: { x: "36%", y: "58%" }
   }

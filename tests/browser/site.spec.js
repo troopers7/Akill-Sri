@@ -218,7 +218,7 @@ test('contact page validates inputs and submits inquiry', async ({ page }) => {
   await page.locator('#contact-name').fill('Sundar Raman');
   await page.locator('#contact-email').fill('sundar@example.com');
   await page.locator('#contact-phone').fill('+91 98400 12345');
-  await page.locator('#contact-message').fill('Seeking Agama advisory for a monolithic Krishna granite Vimana on a 5-acre property.');
+  await page.locator('#contact-message').fill('Seeking Agama advisory for a monolithic Vimana with traditional cement work on a 5-acre property.');
   await page.locator('#btn-submit-contact').click();
 
   await expect(page.locator('#contact-feedback')).toBeVisible();

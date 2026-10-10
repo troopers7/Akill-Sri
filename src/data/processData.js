@@ -40,7 +40,7 @@ export const processStagesData = [
       "Campus Master Plan with Sacred Zoning",
       "Preliminary Vimana & Gopuram Elevation Studies",
       "Cross-Sectional Architectural Volumetrics",
-      "Material Palette & Granite Selection Strategy"
+      "Material Palette & Cement Work Strategy"
     ],
     milestone: "Concept Master Plan Presentation & Trust Approval"
   },
@@ -76,11 +76,11 @@ export const processStagesData = [
   },
   {
     step: "06",
-    title: "Granite Quarrying & Hand-Carving",
+    title: "Traditional Craft & Cement Work Execution",
     phase: "Phase 3: Craft",
     duration: "Months 6 – 18",
-    summary: "Extracting pristine Krishna granite and hand-carving by hereditary sthapathis.",
-    description: "We quarry select virgin blocks of dense black Krishna granite (Karunkal) tested for acoustic resonance. In our dedicated artisanal stoneworks, over 200 hereditary master stone carvers spend tens of thousands of man-hours sculpting the columns, ceiling medallions, Yali brackets, and sanctum icons.",
+    summary: "Sourcing pristine materials, specialized cement work, and hand-crafting by hereditary sthapathis.",
+    description: "We source select virgin stone materials and specialized high-grade cement work components. In our dedicated artisanal studios, hereditary master sculptors spend tens of thousands of man-hours sculpting the columns, ceiling medallions, Yali brackets, traditional cement work, and sanctum icons.",
     deliverables: [
       "Ultrasonic Stone Flaw & Density Certification",
       "Hand-Sculpted Moolavar Icons & Devata Reliefs",
@@ -95,7 +95,7 @@ export const processStagesData = [
     phase: "Phase 4: Construction",
     duration: "Months 18 – 30",
     summary: "Sub-millimeter dry-stone interlocking assembly and heavy hydraulic rigging.",
-    description: "Stone blocks are dry-fitted in India to verify tolerances under 1.5mm before being carefully transported to the project site. On site, our specialized flying squad of sthapathis and heavy rigging engineers assemble the massive granite courses using tongue-and-groove mortarless interlocks.",
+    description: "Stone blocks are dry-fitted in India to verify tolerances under 1.5mm before being carefully transported to the project site. On site, our specialized flying squad of sthapathis and heavy rigging engineers assemble the massive stone courses and cement work using tongue-and-groove mortarless interlocks.",
     deliverables: [
       "Bedrock Anchor Foundation Casting",
       "Hydraulic Crane Precision Lifting (Up to 80t per lift)",

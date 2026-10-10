@@ -5,7 +5,7 @@ export const aboutData = {
     headquarters: "Karaikudi & Chennai, India",
     globalPresence: "London • Singapore • San Francisco",
     headline: "Custodians of Sacred Geometry and Thousand-Year Stone",
-    story: "Sri Akil is led by R. Akilan Sthapathy, a hereditary temple architect whose practice blends sacred geometry, granite craftsmanship, and contemporary planning. Our studio specializes in sanctuaries, heritage restoration, and divine sculptural work rooted in Agama and Dravidian tradition.",
+    story: "Sri Akil is led by R. Akilan Sthapathy and Ar. Maneesha B.Arch, blending sacred geometry, traditional cement work, and contemporary planning. Our studio specializes in sanctuaries, heritage restoration, and divine sculptural work rooted in Agama and Dravidian tradition.",
     quote: "A temple is not merely a hall of worship. It is the physical manifestation of the cosmic being—the Viraat Purusha rendered in indestructible stone."
   },
   philosophy: [
@@ -15,7 +15,7 @@ export const aboutData = {
     },
     {
       title: "The Thousand-Year Material Canon",
-      description: "We build primarily in crystalline black Krishna granite (Karunkal). We prohibit internal iron rebar inside stone cores, eliminating the concrete cancer and spalling that destroys modern structures within decades."
+      description: "We build with sacred stone and specialized traditional cement work. We prohibit internal iron rebar inside stone cores, eliminating the concrete cancer and spalling that destroys modern structures within decades."
     },
     {
       title: "BIM Meets Ancient Shilpa Shastra",
@@ -27,8 +27,15 @@ export const aboutData = {
       name: "R. Akilan Sthapathy",
       role: "Principal Sthapathi & Guild Master",
       credentials: "Hereditary Temple Architect • Master Shilpi & Agama Shastra Director",
-      bio: "Leading the architectural practice with four generations of hereditary temple craftsmanship. Specializes in monumental monolithic granite Vimanas, sacred Ayadi proportions, sanctum consecrations, and handcrafted stone iconographies.",
+      bio: "Leading the architectural practice with four generations of hereditary temple craftsmanship. Specializes in monumental temple Vimanas, traditional cement work, sacred Ayadi proportions, sanctum consecrations, and handcrafted temple iconographies.",
       image: "/assets/akilan_sthapathy_portrait.jpg"
+    },
+    {
+      name: "Ar. Maneesha B.Arch",
+      role: "Principal Architect & Design Director",
+      credentials: "Registered Architect (B.Arch) • Dravidian Architectural Design & Sacred Geometry Lead",
+      bio: "Spearheading architectural blueprints, 3D visualization, Vastu Purusha spatial planning, and structural integration. Unites classical Agama shastra proportions with contemporary building standards and traditional cement work.",
+      image: "/assets/temple_blueprint.jpg"
     }
   ],
   worksArchive: [
@@ -44,7 +51,7 @@ export const aboutData = {
       title: "Monolithic Krishna Shila Sri Hanuman Installation",
       category: "Monolithic Stonecraft",
       image: "/assets/work_hanuman_monolith.png",
-      caption: "Sthapathy R. Akilan offering pranams at the newly installed monolithic black granite Sri Hanuman deity, sculpted with refined padmapitha lotus base to Agama Shastras."
+      caption: "Sthapathy R. Akilan offering pranams at the newly installed monolithic Sri Hanuman deity and traditional cement artistry, sculpted with refined padmapitha lotus base to Agama Shastras."
     },
     {
       id: "vimana-tower",
@@ -65,7 +72,7 @@ export const aboutData = {
       title: "Sanctum Sanctorum (Garbhagriha) Guild Stone Masonry",
       category: "Heritage Construction",
       image: "/assets/work_sanctum_guild_construction.jpg",
-      caption: "Sthapathy R. Akilan and guild artisans at the consecrated Garbhagriha doorway under active construction with sacred granite doorframe and scaffolding."
+      caption: "Sthapathy R. Akilan and guild artisans at the consecrated Garbhagriha doorway under active construction with sacred sanctum doorframe, traditional cement work and scaffolding."
     },
     {
       id: "consecration-award",

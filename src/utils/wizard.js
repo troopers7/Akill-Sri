@@ -17,9 +17,9 @@ const plannerServices = () => servicesData.filter(service => !plannerExcludedSer
 const footprints = ['Under 5,000 sq.ft (Private / Compact Shrine)', '5,000 – 15,000 sq.ft (Medium Community Sanctuary)',
   '15,000 – 40,000 sq.ft (Monumental Temple Complex)', 'Over 40,000 sq.ft (Grand Regional Pilgrimage Sanctuary)'];
 const stones = [
-  ['Black Krishna Granite (Karunkal)', 'Deep tones and traditional hand-carved detail.'],
-  ['Warm Golden Sandstone', 'Warm hues and fine ornamental carving.'],
-  ['Tawny Grey Granite', 'Subtle crystalline texture for pillars and pavilions.']
+  ['Traditional Cement Work & Sudhai Art', 'Sacred hand-sculpted cement craft and ornamental detail.'],
+  ['Dense Krishna Shila Stone', 'Deep tones and traditional hand-carved stone detail.'],
+  ['Warm Golden Sandstone & Cement Work', 'Warm hues, crystalline texture, and fine sculpted relief.']
 ];
 const stepNames = ['Category', 'Location', 'Tradition', 'Materials', 'Services', 'Your details'];
 const defaults = () => ({

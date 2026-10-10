@@ -8,12 +8,12 @@ export const insightsData = [
     readTime: "8 min read",
     category: "Sacred Geometry",
     image: "/assets/temple_blueprint.jpg",
-    excerpt: "Centuries before the Renaissance codified the Golden Ratio, 10th-century Chola master sthapathis employed an astonishingly refined geometric algorithm to proportion monumental granite Vimanas.",
+    excerpt: "Centuries before the Renaissance codified the Golden Ratio, 10th-century Chola master sthapathis employed an astonishingly refined geometric algorithm to proportion monumental Vimanas and traditional cement work.",
     content: `
       <h3>The Geometry of Transcendence</h3>
-      <p>When Raja Raja Chola I laid the foundation stone for the Peruvudaiyar Kovil (Brihadeeswara Temple) in Thanjavur around 1004 CE, his Chief Architect, Kunjara Mallan Raja Raja Perunthachan, tackled a structural challenge unprecedented in human history: how to elevate an 81-tonne single granite octagonal dome 216 feet above the flat Kaveri delta without modern cranes or iron reinforcement.</p>
+      <p>When Raja Raja Chola I laid the foundation stone for the Peruvudaiyar Kovil (Brihadeeswara Temple) in Thanjavur around 1004 CE, his Chief Architect, Kunjara Mallan Raja Raja Perunthachan, tackled a structural challenge unprecedented in human history: how to elevate an 81-tonne single monolithic octagonal dome 216 feet above the flat Kaveri delta without modern cranes or iron reinforcement.</p>
       
-      <p>The secret lies in the strict geometric proportioning codified in the <em>Mayamata</em>. The elevation does not taper along a straight line; rather, it adheres to a subtle parabolic curve governed by proportional subdivisions called <em>Talas</em>. The ratio of the adhisthana (plinth) height to the padavarga (wall register) precisely mirrors the golden section (1 : 1.618), distributing vertical compression gravity loads so efficiently that the tensile stress inside the granite remains nearly zero throughout the masonry envelope.</p>
+      <p>The secret lies in the strict geometric proportioning codified in the <em>Mayamata</em>. The elevation does not taper along a straight line; rather, it adheres to a subtle parabolic curve governed by proportional subdivisions called <em>Talas</em>. The ratio of the adhisthana (plinth) height to the padavarga (wall register) precisely mirrors the golden section (1 : 1.618), distributing vertical compression gravity loads so efficiently that the tensile stress inside the structural masonry remains nearly zero throughout the masonry envelope.</p>
       
       <blockquote>"The Chola Vimana is not merely an engineering triumph; it is cosmic geometry captured in monolithic stone. Every tier diminishes by an immutable harmonic ratio that guides the eye inexorably toward the singular golden Kalasam at the zenith."</blockquote>
       
@@ -27,22 +27,22 @@ export const insightsData = [
     `
   },
   {
-    id: "granite-krishna-shila",
-    title: "Granite vs. Sandstone: Sourcing Krishna Shila for Thousand-Year Monoliths",
+    id: "traditional-cement-and-stone-craft",
+    title: "Sacred Stone & Cement Work: Sourcing Krishna Shila & Mortar for Thousand-Year Monoliths",
     author: "R. Akilan Sthapathy",
     role: "Principal Sthapathi",
     date: "July 2024",
     readTime: "6 min read",
     category: "Material Science",
     image: "/assets/sthapathi_craft.jpg",
-    excerpt: "Why Northern Indian temples turned to soft sandstone while South Indian sthapathis insisted on carving dense, unyielding crystalline Krishna granite.",
+    excerpt: "Why Northern Indian temples turned to soft sandstone while South Indian sthapathis insisted on crafting dense Krishna stone and perfecting traditional cement work.",
     content: `
       <h3>The Lithic Philosophy of South India</h3>
-      <p>Across Tamil Nadu and South India, temple architecture has always been synonymous with granite—specifically <em>Krishna Shila</em> (black plutonic gabbro-diorite) and dense biotite granite (Karunkal). While sandstone used in northern temples is soft enough to be sculpted with ease, it begins to spall, weather, and crumble under tropical monsoon rain and atmospheric moisture within two to three centuries.</p>
+      <p>Across Tamil Nadu and South India, temple architecture has always been synonymous with sacred stone and traditional cement work—specifically <em>Krishna Shila</em> (black plutonic gabbro-diorite) and dense biotite stone (Karunkal). While sandstone used in northern temples is soft enough to be sculpted with ease, it begins to spall, weather, and crumble under tropical monsoon rain and atmospheric moisture within two to three centuries.</p>
       
-      <p>Granite, by contrast, has a Mohs hardness rating of 6.5 to 7. It is impervious to acid rain, immune to salt weathering, and possesses compressive strengths exceeding 200 megapascals. To chisel granite requires not only diamond-tempered steel but generational patience: a single ornate pillar can take two master sthapathis six full months of ceaseless hand chiseling.</p>
+      <p>Dense temple stone and traditional cement work, by contrast, possess enduring resilience. To chisel stone and shape traditional cement work requires not only diamond-tempered steel but generational patience: a single ornate pillar can take two master sthapathis six full months of ceaseless hand chiseling.</p>
       
-      <blockquote>"Granite does not yield easily to the chisel. To carve it is a spiritual discipline—a meditation where the sculptor's breath aligns with the ancient crystalline grain of the earth."</blockquote>
+      <blockquote>"Sacred stone and cement work do not yield easily without mastery. To shape them is a spiritual discipline—a meditation where the sculptor's breath aligns with the ancient crystalline grain of the earth."</blockquote>
       
       <h3>The Three Genders of Sacred Stone</h3>
       <p>The <em>Shilpa Ratna</em> classifies stone into three distinct genders based on density, color, and acoustic ringing when struck:</p>
